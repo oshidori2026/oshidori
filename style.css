@@ -1,1 +1,281 @@
 
+```css
+/* =========================
+   推しドリ！ style.css
+   ========================= */
+
+/* ページ全体 */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background: #ffeaf5;
+  color: #7b5368;
+  font-size: 15px;
+}
+
+/* 背景 */
+.background {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.8) 0 2px, transparent 3px),
+    linear-gradient(180deg, #fff5fb 0%, #ffe8f4 100%);
+  padding: 20px 12px 30px;
+}
+
+/* =========================
+   ヘッダー
+   ========================= */
+
+.header {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title-decoration {
+  color: #f29ac5;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #f06ca9;
+  font-size: clamp(42px, 10vw, 68px);
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-shadow:
+    2px 2px 0 #fff,
+    4px 4px 0 #f9c4dd;
+}
+
+.subtitle {
+  margin: 8px 0 14px;
+  color: #9b6b82;
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: bold;
+}
+
+.line,
+.footer-line {
+  color: #f08ab9;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin: 10px 0 18px;
+}
+
+/* =========================
+   メイン
+   ========================= */
+
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* 更新履歴 */
+.update-box {
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid #f5a7cb;
+  border-radius: 14px;
+  padding: 12px 16px 15px;
+  box-shadow: 0 3px 8px rgba(210, 120, 160, 0.15);
+  margin-bottom: 16px;
+}
+
+.update-box h2,
+.menu h2 {
+  margin: 0 0 10px;
+  text-align: center;
+  color: #ec70aa;
+  font-size: 18px;
+}
+
+.update-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.update-list p {
+  margin: 0;
+  padding: 9px 11px;
+  background: #fff4fa;
+  border: 1px dashed #f3a4c8;
+  border-radius: 9px;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.update-list span {
+  color: #e86aa4;
+  font-weight: bold;
+}
+
+/* =========================
+   メニュー
+   ========================= */
+
+.menu {
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid #f5a7cb;
+  border-radius: 14px;
+  padding: 14px 16px 17px;
+  box-shadow: 0 3px 8px rgba(210, 120, 160, 0.15);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  display: block;
+  min-height: 82px;
+  padding: 10px 8px;
+  background: linear-gradient(180deg, #fffafd, #ffeaf5);
+  border: 2px solid #f4a5ca;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #d95d96;
+  font-weight: bold;
+  line-height: 1.6;
+  box-shadow: 0 2px 4px rgba(210, 120, 160, 0.12);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.menu a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(210, 120, 160, 0.2);
+}
+
+/* =========================
+   ウェルカム
+   ========================= */
+
+.welcome {
+  max-width: 720px;
+  margin: 18px auto 0;
+  padding: 15px;
+  text-align: center;
+  color: #8d6076;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.welcome p {
+  margin: 7px 0;
+}
+
+.counter {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #fff;
+  border: 1px solid #f3acce;
+  border-radius: 8px;
+  color: #9a6b80;
+}
+
+.counter strong {
+  color: #e65c9b;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   フッター
+   ========================= */
+
+.footer {
+  max-width: 720px;
+  margin: 10px auto 0;
+  text-align: center;
+  color: #9b7184;
+  font-size: 12px;
+}
+
+.footer-line {
+  margin: 10px 0 12px;
+}
+
+.footer nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer a {
+  color: #d65c96;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer span {
+  color: #ef8bb9;
+}
+
+.copyright {
+  margin-top: 8px;
+  color: #b1879a;
+}
+
+/* =========================
+   スマホ表示
+   ========================= */
+
+@media (max-width: 500px) {
+
+  .background {
+    padding: 14px 9px 25px;
+  }
+
+  .header h1 {
+    font-size: 45px;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .update-list {
+    grid-template-columns: 1fr;
+  }
+
+  .menu ul {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .menu a {
+    min-height: 78px;
+    font-size: 13px;
+    padding: 9px 4px;
+  }
+
+}
+```
