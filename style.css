@@ -24,13 +24,15 @@ body {
 
 /* 背景 */
 .background {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9) 0 2px, transparent 3px),
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.8) 0 2px, transparent 3px),
-    linear-gradient(180deg, #fff5fb 0%, #ffe8f4 100%);
-  padding: 20px 12px 30px;
-}
+ min-height: 100vh;
+
+  background-image: url("bg1.png");
+
+  background-repeat: repeat;
+
+  background-position: top left;
+
+  padding: 20px 12px 30px;}
 
 /* =========================
    ヘッダー
