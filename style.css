@@ -1,187 +1,465 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>推しドリ！</title>
-<link rel="stylesheet" href="style.css">
-</head>
+/* =========================
 
-<body>
+   推しドリ！ style.css
 
-<!-- =========================================
-     推しドリ！ INDEX
-     このHTMLは、見本画像のレイアウトを
-     基準に組んでいます。
+   ========================= */
 
-     【画像素材】と書いてある場所だけ、
-     後から本物の画像に差し替えます。
-========================================= -->
+/* ページ全体 */
 
-<div class="wallpaper">
+* {
 
-  <main class="paper">
+  box-sizing: border-box;
 
-    <!-- 上部二重ライン -->
-    <div class="top-border-line">
-      【ライン】
-    </div>
+}
 
-    <!-- ================= TITLE ================= -->
-    <header class="hero">
+html {
 
-      <div class="hero-cloud">【左上の雲】</div>
-      <div class="hero-star">★</div>
+  scroll-behavior: smooth;
 
-      <h1 class="logo" aria-label="推しドリ！">
-        <span class="logo-pink">推</span><span class="logo-blue">し</span><span class="logo-yellow">ド</span><span class="logo-green">リ</span><span class="logo-purple">！</span>
-      </h1>
+}
 
-      <div class="star-divider">
-        【星のライン】
-      </div>
-    </header>
+body {
 
-    <!-- ================= CATCH ================= -->
-    <section class="catch">
+  margin: 0;
 
-      <div class="catch-side left">
-        ★ ☆ ★
-      </div>
+  padding: 0;
 
-      <p>
-        あなたの「推し」が<br>
-        <strong>ドリルの主人公</strong>になる！
-      </p>
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 
-      <div class="catch-side right">
-        ★ ☆ ★
-      </div>
+  background: #f1eadf;
 
-    </section>
+  color: #4f4a43;
 
-    <!-- ================= COUNTER ================= -->
-    <section class="counter-box">
-      <div class="counter-heading">☆ カウンター ☆</div>
-      <div class="counter-number">00001001</div>
-    </section>
+  font-size: 15px;
 
-    <!-- ================= TWO COLUMNS ================= -->
-    <div class="columns">
+}
 
-      <!-- -------- 更新履歴 -------- -->
-      <section class="history-box">
+/* 背景 */
 
-        <span class="frame-star tl">☆</span>
-        <span class="frame-star tr">☆</span>
-        <span class="frame-star bl">☆</span>
-        <span class="frame-star br">☆</span>
+.background {
 
-        <h2 class="ribbon blue-ribbon">
-          <span>★</span> 更新履歴 <span>☆</span>
-        </h2>
+  min-height: 100vh;
 
-        <div class="history-list">
+  background:
 
-          <article class="history-item">
-            <span class="bullet-star">★</span>
-            <div>
-              <time>2026/08/27</time>
-              <p>サイトOPEN！</p>
-            </div>
-          </article>
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.75) 0 2px, transparent 3px),
 
-          <article class="history-item">
-            <span class="bullet-star">★</span>
-            <div>
-              <time>2026/08/27</time>
-              <p>「推しドリ！」<br>制作開始♪</p>
-            </div>
-          </article>
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.65) 0 2px, transparent 3px),
 
-          <p class="updating">☆随時更新中☆</p>
-        </div>
+    linear-gradient(180deg, #faf7f0 0%, #e9e1d5 100%);
 
-        <div class="small-cloud">【下の雲】</div>
-      </section>
+  padding: 20px 12px 30px;
 
+}
 
-      <!-- -------- メニュー -------- -->
-      <section class="menu-box">
+/* =========================
 
-        <span class="frame-star tl purple-star">☆</span>
-        <span class="frame-star tr purple-star">☆</span>
-        <span class="frame-star bl purple-star">☆</span>
-        <span class="frame-star br purple-star">☆</span>
+   ヘッダー
 
-        <h2 class="ribbon purple-ribbon">
-          <span>★</span> メニュー <span>☆</span>
-        </h2>
+   ========================= */
 
-        <nav class="menu-list">
+.header {
 
-          <a href="#" class="menu-item math">
-            <span class="menu-icon">【算数アイコン】</span>
-            <span>推しドリ！算数</span>
-          </a>
+  max-width: 720px;
 
-          <a href="#" class="menu-item japanese">
-            <span class="menu-icon">【国語アイコン】</span>
-            <span>推しドリ！国語</span>
-          </a>
+  margin: 0 auto;
 
-          <a href="#" class="menu-item bbs">
-            <span class="menu-icon">【BBSアイコン】</span>
-            <span>BBS（掲示板）</span>
-          </a>
+  text-align: center;
 
-          <a href="#" class="menu-item about">
-            <span class="menu-icon">【星アイコン】</span>
-            <span>推しドリ！とは</span>
-          </a>
+}
 
-        </nav>
-      </section>
+.title-decoration {
 
-    </div>
+  color: #8b8174;
 
-    <!-- ================= OPERATOR ================= -->
-    <div class="operator-box">
-      <span>☆ ☆ ☆</span>
-      <strong>当サイトは個人が運営しています</strong>
-      <span>☆ ☆ ☆</span>
-    </div>
+  font-size: 13px;
 
-    <!-- ================= FOOTER ================= -->
-    <footer>
+  margin-bottom: 5px;
 
-      <nav class="footer-nav">
+}
 
-        <a href="#" class="home-link">
-          <span class="footer-icon">【家アイコン】</span>
-          <span>HOME</span>
-        </a>
+.header h1 {
 
-        <a href="#" class="links-link">
-          <span class="footer-icon">【星アイコン】</span>
-          <span>リンク集</span>
-        </a>
+  margin: 0;
 
-        <a href="#" class="contact-link">
-          <span class="footer-icon">【雲アイコン】</span>
-          <span>お問い合わせ</span>
-        </a>
+  color: #3f3b36;
 
-      </nav>
+  font-size: clamp(42px, 10vw, 68px);
 
-      <div class="bottom-divider">【下部ライン】</div>
+  font-weight: 900;
 
-      <div class="copyright">© 2026 推しドリ！</div>
+  letter-spacing: 4px;
 
-    </footer>
+  text-shadow:
 
-  </main>
-</div>
+    2px 2px 0 #fff,
 
-</body>
-</html>
+    4px 4px 0 #cfc5b7;
+
+}
+
+.subtitle {
+
+  margin: 8px 0 14px;
+
+  color: #6f675d;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  font-weight: bold;
+
+}
+
+.line,
+
+.footer-line {
+
+  color: #8d8376;
+
+  font-size: 14px;
+
+  letter-spacing: 2px;
+
+  margin: 10px 0 18px;
+
+}
+
+/* =========================
+
+   メイン
+
+   ========================= */
+
+.main {
+
+  max-width: 720px;
+
+  margin: 0 auto;
+
+}
+
+/* 更新履歴 */
+
+.update-box {
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 2px solid #b8aea1;
+
+  border-radius: 8px;
+
+  padding: 12px 16px 15px;
+
+  box-shadow: 0 3px 8px rgba(80, 70, 60, 0.12);
+
+  margin-bottom: 16px;
+
+}
+
+.update-box h2,
+
+.menu h2 {
+
+  margin: 0 0 10px;
+
+  text-align: center;
+
+  color: #5d574f;
+
+  font-size: 18px;
+
+}
+
+.update-list {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+}
+
+.update-list p {
+
+  margin: 0;
+
+  padding: 9px 11px;
+
+  background: #f7f3ed;
+
+  border: 1px dashed #aaa095;
+
+  border-radius: 5px;
+
+  line-height: 1.6;
+
+  font-size: 13px;
+
+}
+
+.update-list span {
+
+  color: #625b52;
+
+  font-weight: bold;
+
+}
+
+/* =========================
+
+   メニュー
+
+   ========================= */
+
+.menu {
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 2px solid #b8aea1;
+
+  border-radius: 8px;
+
+  padding: 14px 16px 17px;
+
+  box-shadow: 0 3px 8px rgba(80, 70, 60, 0.12);
+
+}
+
+.menu ul {
+
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+}
+
+.menu li {
+
+  margin: 0;
+
+}
+
+.menu a {
+
+  display: block;
+
+  min-height: 82px;
+
+  padding: 10px 8px;
+
+  background: linear-gradient(180deg, #fffdf9, #e9e2d8);
+
+  border: 2px solid #aaa095;
+
+  border-radius: 6px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  color: #514b43;
+
+  font-weight: bold;
+
+  line-height: 1.6;
+
+  box-shadow: 0 2px 4px rgba(80, 70, 60, 0.12);
+
+  transition: transform 0.15s, box-shadow 0.15s;
+
+}
+
+.menu a:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 8px rgba(80, 70, 60, 0.2);
+
+}
+
+/* =========================
+
+   ウェルカム
+
+   ========================= */
+
+.welcome {
+
+  max-width: 720px;
+
+  margin: 18px auto 0;
+
+  padding: 15px;
+
+  text-align: center;
+
+  color: #6f675d;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+}
+
+.welcome p {
+
+  margin: 7px 0;
+
+}
+
+.counter {
+
+  display: inline-block;
+
+  padding: 8px 15px;
+
+  background: #fff;
+
+  border: 1px solid #aaa095;
+
+  border-radius: 5px;
+
+  color: #6b6258;
+
+}
+
+.counter strong {
+
+  color: #4d4841;
+
+  letter-spacing: 2px;
+
+}
+
+/* =========================
+
+   フッター
+
+   ========================= */
+
+.footer {
+
+  max-width: 720px;
+
+  margin: 10px auto 0;
+
+  text-align: center;
+
+  color: #756d63;
+
+  font-size: 12px;
+
+}
+
+.footer-line {
+
+  margin: 10px 0 12px;
+
+}
+
+.footer nav {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+}
+
+.footer a {
+
+  color: #5d574f;
+
+  text-decoration: none;
+
+}
+
+.footer a:hover {
+
+  text-decoration: underline;
+
+}
+
+.footer span {
+
+  color: #91877b;
+
+}
+
+.copyright {
+
+  margin-top: 8px;
+
+  color: #91877b;
+
+}
+
+/* =========================
+
+   スマホ表示
+
+   ========================= */
+
+@media (max-width: 500px) {
+
+  .background {
+
+    padding: 14px 9px 25px;
+
+  }
+
+  .header h1 {
+
+    font-size: 45px;
+
+    letter-spacing: 2px;
+
+  }
+
+  .subtitle {
+
+    font-size: 14px;
+
+  }
+
+  .update-list {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .menu ul {
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+  }
+
+  .menu a {
+
+    min-height: 78px;
+
+    font-size: 13px;
+
+    padding: 9px 4px;
+
+  }
+
+}
