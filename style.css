@@ -1,55 +1,38 @@
+/* ==========================================
+   推しドリ！ INDEX
+   ========================================== */
 
-/* ==================================================
 
-   推しドリ！ HOME
-
-   ================================================== */
-
-/* --------------------------------------------------
-
-   基本設定
-
--------------------------------------------------- */
+/* ------------------------------
+   基本
+------------------------------ */
 
 * {
-
     box-sizing: border-box;
-
 }
 
-html {
-
-    scroll-behavior: smooth;
-
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-
-    margin: 0;
-
-    padding: 0;
-
     font-family:
-
         "Hiragino Kaku Gothic ProN",
-
         "Yu Gothic",
-
         "Meiryo",
-
         sans-serif;
 
     color: #333;
 
     background: #fff;
-
 }
 
-/* --------------------------------------------------
 
+/* ==========================================
    壁紙
-
--------------------------------------------------- */
+========================================== */
 
 .wallpaper {
 
@@ -58,116 +41,79 @@ body {
     padding: 25px 0 35px;
 
     /*
+      後で壁紙画像が完成したら
+      ↓これに変更
 
-       今は「壁紙」の画像がないので、
-
-       仮の背景にしています。
-
-       後でここを
-
-       background-image: url("bg1.png");
-
-       に変更するだけ。
-
+      background-image: url("bg1.png");
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
     */
 
     background:
-
         repeating-linear-gradient(
-
             45deg,
-
-            #fff 0px,
-
-            #fff 18px,
-
-            #fce3ec 18px,
-
-            #fce3ec 28px,
-
-            #fff 28px,
-
-            #fff 46px,
-
-            #dff2fa 46px,
-
-            #dff2fa 56px
-
+            #fff,
+            #fff 24px,
+            #f8dce8 24px,
+            #f8dce8 31px,
+            #fff 31px,
+            #fff 48px,
+            #dceef8 48px,
+            #dceef8 55px
         );
-
 }
 
-/* --------------------------------------------------
 
-   白いページ本体
+/* ==========================================
+   白いページ
+========================================== */
 
--------------------------------------------------- */
+.paper {
 
-.page {
+    width: 92%;
 
-    position: relative;
-
-    width: 90%;
-
-    max-width: 1000px;
+    max-width: 940px;
 
     margin: 0 auto;
 
-    padding:
+    padding: 12px 48px 18px;
 
-        30px
+    background: rgba(255,255,253,0.97);
 
-        55px
+    border-left: 2px solid #78bce4;
+    border-right: 2px solid #78bce4;
 
-        20px;
-
-    background: rgba(255, 255, 250, 0.96);
-
-    border-left: 3px solid #9ac8e8;
-
-    border-right: 3px solid #9ac8e8;
-
-    box-shadow:
-
-        0 0 0 3px #fff,
-
-        0 0 0 5px #f4a6c1;
-
+    position: relative;
 }
 
-/* --------------------------------------------------
 
-   上部ライン
-
--------------------------------------------------- */
+/* ==========================================
+   上ライン
+========================================== */
 
 .top-line {
 
-    height: 18px;
+    height: 30px;
 
-    margin-bottom: 25px;
+    border-top: 3px solid #e887ad;
+    border-bottom: 2px solid #83c4e8;
 
-    border-top: 3px solid #ef8db1;
-
-    border-bottom: 2px solid #8fc9ec;
+    color: #999;
 
     text-align: center;
 
-    font-size: 0;
+    font-size: 9px;
 
+    line-height: 24px;
+
+    margin-bottom: 25px;
 }
 
-.top-line span {
 
-    display: none;
-
-}
-
-/* --------------------------------------------------
-
+/* ==========================================
    ヘッダー
-
--------------------------------------------------- */
+========================================== */
 
 .header {
 
@@ -175,547 +121,25 @@ body {
 
     text-align: center;
 
-    padding-top: 15px;
-
+    padding-top: 12px;
 }
 
-/* 雲 */
 
-.cloud {
+/* 左上の雲 */
+
+.cloud-top-left {
 
     position: absolute;
 
-    color: white;
+    left: -35px;
+    top: -15px;
 
-    font-size: 0;
+    width: 115px;
+    height: 65px;
 
-    width: 130px;
+    border: 2px solid #4398d1;
 
-    height: 70px;
-
-    border: 3px solid #579ad1;
-
-    border-radius: 50px;
-
-    background: white;
-
-}
-
-.cloud-left {
-
-    top: -5px;
-
-    left: -25px;
-
-}
-
-/* --------------------------------------------------
-
-   タイトル
-
--------------------------------------------------- */
-
-.site-title {
-
-    margin: 0;
-
-    font-size: clamp(65px, 9vw, 110px);
-
-    font-weight: 900;
-
-    letter-spacing: 8px;
-
-    line-height: 1;
-
-    /*
-
-       文字の色を1色にせず、
-
-       それぞれ少し違う色にするため
-
-       下記のspan化を後で行ってもOK。
-
-    */
-
-    background:
-
-        linear-gradient(
-
-            90deg,
-
-            #f18bb0 0%,
-
-            #f18bb0 25%,
-
-            #8dcce8 25%,
-
-            #8dcce8 43%,
-
-            #f5c34c 43%,
-
-            #f5c34c 63%,
-
-            #83c97c 63%,
-
-            #83c97c 79%,
-
-            #b18bd2 79%,
-
-            #b18bd2 100%
-
-        );
-
-    -webkit-background-clip: text;
-
-    background-clip: text;
-
-    color: transparent;
-
-    -webkit-text-stroke: 2px #3d528d;
-
-    text-shadow:
-
-        4px 4px 0 #fff,
-
-        6px 6px 0 #e28cae;
-
-}
-
-/* --------------------------------------------------
-
-   タイトル下ライン
-
--------------------------------------------------- */
-
-.title-line {
-
-    margin: 25px auto 0;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 12px;
-
-    color: #7d63b6;
-
-    font-size: 22px;
-
-    white-space: nowrap;
-
-}
-
-.title-line i {
-
-    font-style: normal;
-
-    font-size: 12px;
-
-    color: #8ab7d8;
-
-}
-
-/* --------------------------------------------------
-
-   キャッチコピー
-
--------------------------------------------------- */
-
-.catch {
-
-    margin: 30px auto 25px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 35px;
-
-    text-align: center;
-
-    color: #1655a3;
-
-}
-
-.catch p {
-
-    margin: 0;
-
-    font-size: clamp(20px, 3vw, 32px);
-
-    line-height: 1.6;
-
-    font-weight: 700;
-
-}
-
-.catch strong {
-
-    font-weight: 800;
-
-}
-
-.catch-stars {
-
-    display: flex;
-
-    gap: 4px;
-
-    font-size: 24px;
-
-}
-
-/* --------------------------------------------------
-
-   カウンター
-
--------------------------------------------------- */
-
-.counter-box {
-
-    width: 50%;
-
-    min-width: 300px;
-
-    margin: 20px auto 25px;
-
-    padding: 12px 20px 18px;
-
-    border: 2px dashed #54a9db;
-
-    border-radius: 10px;
-
-    text-align: center;
-
-}
-
-.counter-title {
-
-    color: #df5d90;
-
-    font-size: 25px;
-
-    font-weight: bold;
-
-    margin-bottom: 8px;
-
-}
-
-.counter {
-
-    display: inline-block;
-
-    padding: 2px 8px;
-
-    background: #111;
-
-    color: white;
-
-    font-family: monospace;
-
-    font-size: 30px;
-
-    letter-spacing: 4px;
-
-    line-height: 1.1;
-
-}
-
-/* --------------------------------------------------
-
-   左右2カラム
-
--------------------------------------------------- */
-
-.contents {
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 30px;
-
-    margin-top: 10px;
-
-}
-
-/* --------------------------------------------------
-
-   共通ボックス
-
--------------------------------------------------- */
-
-.history-box,
-
-.menu-box {
-
-    position: relative;
-
-    min-height: 475px;
-
-    padding: 20px;
-
-    background: rgba(255,255,255,0.65);
-
-    border-radius: 8px;
-
-}
-
-/* --------------------------------------------------
-
-   更新履歴
-
--------------------------------------------------- */
-
-.history-box {
-
-    border: 2px dashed #59a9df;
-
-}
-
-.history-title {
-
-    display: table;
-
-    margin: 0 auto 25px;
-
-    padding: 5px 25px;
-
-    border-radius: 6px;
-
-    background: #5ba9dc;
-
-    color: white;
-
-    font-size: 26px;
-
-    letter-spacing: 2px;
-
-}
-
-.history-item {
-
-    display: flex;
-
-    gap: 10px;
-
-    padding: 10px 5px 18px;
-
-    border-bottom: 2px dashed #c8d9e7;
-
-}
-
-.small-star {
-
-    flex: 0 0 auto;
-
-    color: #237bc0;
-
-    font-size: 20px;
-
-}
-
-.history-item p {
-
-    margin: 0;
-
-    font-size: 19px;
-
-    line-height: 1.7;
-
-}
-
-.history-item time {
-
-    font-size: 17px;
-
-}
-
-.history-bottom {
-
-    margin-top: 25px;
-
-    font-size: 19px;
-
-    text-align: center;
-
-    color: #444;
-
-}
-
-/* --------------------------------------------------
-
-   更新履歴の星
-
--------------------------------------------------- */
-
-.box-star {
-
-    position: absolute;
-
-    font-size: 36px;
-
-    z-index: 2;
-
-}
-
-.star-1 {
-
-    left: -20px;
-
-    top: -24px;
-
-    color: #55a7db;
-
-}
-
-.star-2 {
-
-    right: -20px;
-
-    top: -24px;
-
-    color: #b68bd4;
-
-}
-
-/* --------------------------------------------------
-
-   雲
-
--------------------------------------------------- */
-
-.mini-cloud {
-
-    position: absolute;
-
-    right: 10px;
-
-    bottom: 0;
-
-    font-size: 90px;
-
-    color: white;
-
-    text-shadow:
-
-        -2px -2px 0 #579bd2,
-
-        2px -2px 0 #579bd2,
-
-        -2px 2px 0 #579bd2,
-
-        2px 2px 0 #579bd2;
-
-}
-
-/* --------------------------------------------------
-
-   メニュー
-
--------------------------------------------------- */
-
-.menu-box {
-
-    border: 2px dashed #a77bc9;
-
-}
-
-.menu-title {
-
-    display: table;
-
-    margin: 0 auto 18px;
-
-    padding: 5px 25px;
-
-    border-radius: 6px;
-
-    background: #9a6ac2;
-
-    color: white;
-
-    font-size: 26px;
-
-    letter-spacing: 2px;
-
-}
-
-/* --------------------------------------------------
-
-   メニュー項目
-
--------------------------------------------------- */
-
-.menu-item {
-
-    display: flex;
-
-    align-items: center;
-
-    min-height: 75px;
-
-    padding: 8px 5px;
-
-    text-decoration: none;
-
-    border-bottom: 2px dashed #d2bce1;
-
-    transition: 0.2s;
-
-}
-
-.menu-item:last-child {
-
-    border-bottom: none;
-
-}
-
-.menu-item:hover {
-
-    transform: translateX(5px);
-
-    background: rgba(255,255,255,0.7);
-
-}
-
-/* --------------------------------------------------
-
-   メニューアイコン
-
--------------------------------------------------- */
-
-.menu-icon {
-
-    width: 85px;
-
-    flex-shrink: 0;
-
-    text-align: center;
-
-}
-
-.image-placeholder {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 58px;
-
-    height: 48px;
-
-    padding: 3px;
-
-    border: 1px dashed #999;
-
-    border-radius: 8px;
+    border-radius: 50%;
 
     background: white;
 
@@ -723,123 +147,566 @@ body {
 
     font-size: 10px;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
-/* --------------------------------------------------
 
-   メニュー文字
+/* 右上星 */
 
--------------------------------------------------- */
+.star-top-right {
 
-.menu-text {
+    position: absolute;
 
-    font-size: 26px;
+    right: -15px;
+    top: -10px;
 
-    font-weight: bold;
+    font-size: 65px;
 
+    color: #f5c84a;
+
+    -webkit-text-stroke: 2px #e28b98;
+
+    transform: rotate(-8deg);
 }
 
-/* 色 */
 
-.math .menu-text {
+/* ==========================================
+   ロゴ
+========================================== */
 
-    color: #df5583;
+.logo {
 
+    margin: 0;
+
+    font-size: clamp(62px, 8vw, 105px);
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    font-weight: 900;
+
+    -webkit-text-stroke: 2px #394b88;
+
+    text-shadow:
+        4px 4px 0 white,
+        6px 6px 0 #e58ba9;
 }
 
-.japanese .menu-text {
 
-    color: #41a85a;
-
+.logo span {
+    display: inline-block;
 }
 
-.bbs .menu-text {
 
-    color: #1768ae;
+/* それぞれの色 */
 
+.logo .pink {
+    color: #ef82a9;
 }
 
-.about .menu-text {
-
-    color: #7040a3;
-
+.logo .blue {
+    color: #83c6e3;
 }
 
-/* --------------------------------------------------
-
-   メニュー星
-
--------------------------------------------------- */
-
-.menu-star-1 {
-
-    left: -20px;
-
-    top: -24px;
-
-    color: #aa75cb;
-
+.logo .yellow {
+    color: #f4c64e;
 }
 
-.menu-star-2 {
-
-    right: -20px;
-
-    top: -24px;
-
-    color: #aa75cb;
-
+.logo .green {
+    color: #83c77c;
 }
 
-/* --------------------------------------------------
-
-   個人運営表示
-
--------------------------------------------------- */
-
-.operator-box {
-
-    width: 78%;
-
-    margin: 30px auto 25px;
-
-    padding: 13px 15px;
-
-    border: 2px dashed #e6cb58;
-
-    border-radius: 8px;
-
-    text-align: center;
-
-    font-size: 17px;
-
-    color: #d6b638;
-
+.logo .purple {
+    color: #aa83c9;
 }
 
-.operator-box span {
 
-    color: #315e9e;
+/* ==========================================
+   タイトル下ライン
+========================================== */
+
+.star-line {
+
+    margin-top: 22px;
 
     font-size: 19px;
 
-    font-weight: bold;
+    color: #5e9fd1;
 
-    margin: 0 10px;
+    letter-spacing: 4px;
 
+    white-space: nowrap;
+
+    overflow: hidden;
 }
 
-/* --------------------------------------------------
 
-   フッター
+/* ==========================================
+   キャッチコピー
+========================================== */
 
--------------------------------------------------- */
+.catch-copy {
 
-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    margin-top: 30px;
+
+    margin-bottom: 25px;
 
     text-align: center;
 
+    color: #1454a0;
 }
+
+
+.catch-text {
+
+    font-size: clamp(20px, 2.8vw, 31px);
+
+    line-height: 1.55;
+
+    font-weight: 700;
+}
+
+
+.catch-text strong {
+    font-weight: 800;
+}
+
+
+.catch-decoration {
+
+    color: #4777bd;
+
+    font-size: 24px;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   カウンター
+========================================== */
+
+.counter-area {
+
+    width: 52%;
+
+    min-width: 300px;
+
+    margin: 0 auto 25px;
+
+    padding: 11px 15px 17px;
+
+    border: 2px dashed #58a9dc;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+
+.counter-title {
+
+    color: #dc6390;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.counter-number {
+
+    display: inline-block;
+
+    padding: 2px 7px;
+
+    background: #111;
+
+    color: white;
+
+    font-family: monospace;
+
+    font-size: 28px;
+
+    letter-spacing: 4px;
+
+    line-height: 1;
+}
+
+
+/* ==========================================
+   左右カラム
+========================================== */
+
+.main-columns {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.05fr;
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+/* ==========================================
+   共通ボックス
+========================================== */
+
+.history,
+.menu {
+
+    position: relative;
+
+    min-height: 465px;
+
+    background:
+        rgba(255,255,255,0.55);
+
+    border-radius: 5px;
+
+    padding: 17px 18px;
+}
+
+
+/* 更新履歴の枠 */
+
+.history {
+    border: 2px dashed #62addc;
+}
+
+
+/* メニューの枠 */
+
+.menu {
+    border: 2px dashed #a77acb;
+}
+
+
+/* ==========================================
+   セクションタイトル
+========================================== */
+
+.section-title {
+
+    width: fit-content;
+
+    margin: 0 auto 18px;
+
+    padding: 5px 22px;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.section-title span {
+
+    margin: 0 7px;
+
+}
+
+
+/* 更新履歴タイトル */
+
+.history-title {
+    background: #55a7dc;
+}
+
+
+/* メニュータイトル */
+
+.menu-title {
+    background: #9667be;
+}
+
+
+/* ==========================================
+   枠の星
+========================================== */
+
+.corner-star {
+
+    position: absolute;
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    z-index: 5;
+}
+
+
+.left-star {
+    left: -20px;
+    top: -24px;
+    color: #4f9fd5;
+}
+
+
+.right-star {
+    right: -20px;
+    top: -24px;
+    color: #a276c8;
+}
+
+
+.menu-left-star {
+    left: -20px;
+    top: -24px;
+    color: #a276c8;
+}
+
+
+.menu-right-star {
+    right: -20px;
+    top: -24px;
+    color: #a276c8;
+}
+
+
+/* ==========================================
+   更新履歴
+========================================== */
+
+.history-item {
+
+    display: flex;
+
+    gap: 9px;
+
+    padding: 10px 3px 19px;
+
+    margin-bottom: 5px;
+
+    border-bottom: 2px dashed #c5dbe9;
+}
+
+
+.history-star {
+
+    color: #2380c4;
+
+    font-size: 20px;
+
+    flex-shrink: 0;
+}
+
+
+.date {
+
+    font-size: 17px;
+
+    margin-bottom: 7px;
+}
+
+
+.history-text {
+
+    font-size: 18px;
+
+    line-height: 1.65;
+}
+
+
+.history-now {
+
+    margin-top: 22px;
+
+    font-size: 17px;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   更新履歴の雲
+========================================== */
+
+.history-cloud {
+
+    position: absolute;
+
+    right: 12px;
+
+    bottom: -5px;
+
+    width: 105px;
+
+    height: 58px;
+
+    border: 2px solid #58a6d7;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* ==========================================
+   メニュー
+========================================== */
+
+.menu-list {
+    margin-top: 5px;
+}
+
+
+.menu-item {
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 7px 4px;
+
+    border-bottom: 2px dashed #ceb9df;
+
+    text-decoration: none;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    transition: 0.15s;
+}
+
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+
+.menu-item:hover {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================
+   メニュー画像
+========================================== */
+
+.menu-image {
+
+    width: 82px;
+
+    flex-shrink: 0;
+
+    height: 58px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #888;
+
+    font-size: 9px;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   メニュー文字色
+========================================== */
+
+.math {
+    color: #dc5480;
+}
+
+
+.japanese {
+    color: #42a05c;
+}
+
+
+.bbs {
+    color: #1765aa;
+}
+
+
+.about {
+    color: #70409e;
+}
+
+
+/* ==========================================
+   個人運営
+========================================== */
+
+.operator {
+
+    width: 80%;
+
+    margin: 30px auto 23px;
+
+    padding: 12px 10px;
+
+    border: 2px dashed #e7ce62;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #e0c349;
+
+    font-size: 16px;
+}
+
+
+.operator strong {
+
+    color: #345e9b;
+
+    font-size: 18px;
+
+    margin: 0 12px;
+}
+
+
+/* ==========================================
+   フッター
+========================================== */
 
 .footer-menu {
 
@@ -849,11 +716,11 @@ footer {
 
     align-items: center;
 
-    gap: 55px;
+    gap: 50px;
 
-    margin: 10px 0 20px;
-
+    margin-bottom: 17px;
 }
+
 
 .footer-menu a {
 
@@ -861,73 +728,7 @@ footer {
 
     align-items: center;
 
-    gap: 10px;
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    text-decoration: underline;
-
-}
-
-.footer-menu a:nth-child(1) {
-
-    color: #d95d8b;
-
-}
-
-.footer-menu a:nth-child(2) {
-
-    color: #175eaa;
-
-}
-
-.footer-menu a:nth-child(3) {
-
-    color: #389153;
-
-}
-
-.footer-icon {
-
-    font-size: 32px;
-
-    text-decoration: none;
-
-}
-
-/* --------------------------------------------------
-
-   下部ライン
-
--------------------------------------------------- */
-
-.bottom-line {
-
-    margin: 5px auto 15px;
-
-    color: #75a9ce;
-
-    font-size: 13px;
-
-    letter-spacing: 5px;
-
-    overflow: hidden;
-
-}
-
-/* --------------------------------------------------
-
-   コピーライト
-
--------------------------------------------------- */
-
-.copyright {
-
-    margin: 0;
-
-    color: #633d9a;
+    gap: 8px;
 
     font-size: 21px;
 
@@ -935,57 +736,114 @@ footer {
 
 }
 
+
+.footer-home {
+    color: #d85788;
+}
+
+
+.footer-links {
+    color: #195fa9;
+}
+
+
+.footer-contact {
+    color: #368d4d;
+}
+
+
+.footer-icon {
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   下ライン
+========================================== */
+
+.bottom-dots {
+
+    margin: 0 auto 13px;
+
+    text-align: center;
+
+    color: #7eabd0;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   コピーライト
+========================================== */
+
+.copyright {
+
+    text-align: center;
+
+    color: #633e9c;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    padding-bottom: 2px;
+}
+
+
 /* ==================================================
-
    スマホ
-
-   ================================================== */
+================================================== */
 
 @media screen and (max-width: 700px) {
 
-    /* ----------------------------------------------
 
+    /* ------------------------------
        壁紙
-
-    ---------------------------------------------- */
+    ------------------------------ */
 
     .wallpaper {
-
-        padding: 10px 0 20px;
-
+        padding: 8px 0 15px;
     }
 
-    /* ----------------------------------------------
 
-       ページ
+    /* ------------------------------
+       白いページ
+    ------------------------------ */
 
-    ---------------------------------------------- */
+    .paper {
 
-    .page {
-
-        width: 94%;
+        width: 95%;
 
         padding:
-
-            20px
-
-            15px
-
+            10px
+            13px
             15px;
-
-        border-left-width: 2px;
-
-        border-right-width: 2px;
 
     }
 
-    /* ----------------------------------------------
 
-       ヘッダー
+    /* ------------------------------
+       上ライン
+    ------------------------------ */
 
-    ---------------------------------------------- */
+    .top-line {
+        margin-bottom: 18px;
+    }
 
-    .cloud-left {
+
+    /* ------------------------------
+       タイトル
+    ------------------------------ */
+
+    .cloud-top-left {
 
         width: 75px;
 
@@ -993,275 +851,255 @@ footer {
 
         left: -5px;
 
-        top: 0;
+        top: -5px;
 
     }
 
-    .star-top {
 
-        right: 0;
+    .star-top-right {
+
+        right: -2px;
+
+        top: -5px;
+
+        font-size: 43px;
 
     }
 
-    .site-title {
 
-        margin-top: 35px;
+    .logo {
+
+        padding-top: 30px;
 
         font-size: 54px;
 
+        letter-spacing: 0;
+
+        -webkit-text-stroke: 1px #394b88;
+
+        text-shadow:
+            2px 2px 0 white,
+            3px 3px 0 #e58ba9;
+
+    }
+
+
+    .star-line {
+
+        margin-top: 13px;
+
+        font-size: 13px;
+
         letter-spacing: 2px;
 
-        -webkit-text-stroke: 1px #3d528d;
+    }
+
+
+    /* ------------------------------
+       キャッチコピー
+    ------------------------------ */
+
+    .catch-copy {
+
+        gap: 5px;
+
+        margin-top: 18px;
+
+        margin-bottom: 20px;
 
     }
 
-    .title-line {
 
-        gap: 6px;
+    .catch-text {
 
-        margin-top: 15px;
+        font-size: 17px;
 
-        font-size: 16px;
-
-        overflow: hidden;
+        line-height: 1.55;
 
     }
 
-    /* ----------------------------------------------
 
-       キャッチ
+    .catch-decoration {
 
-    ---------------------------------------------- */
-
-    .catch {
-
-        gap: 8px;
-
-        margin: 20px auto;
+        font-size: 12px;
 
     }
 
-    .catch p {
 
-        font-size: 19px;
-
-        line-height: 1.5;
-
-    }
-
-    .catch-stars {
-
-        font-size: 15px;
-
-        flex-shrink: 0;
-
-    }
-
-    /* ----------------------------------------------
-
+    /* ------------------------------
        カウンター
+    ------------------------------ */
 
-    ---------------------------------------------- */
-
-    .counter-box {
+    .counter-area {
 
         width: 90%;
 
         min-width: 0;
 
-        padding: 10px;
+        padding: 9px;
 
     }
+
 
     .counter-title {
-
-        font-size: 20px;
-
+        font-size: 19px;
     }
 
-    .counter {
 
-        font-size: 23px;
+    .counter-number {
+
+        font-size: 22px;
 
         letter-spacing: 2px;
 
     }
 
-    /* ----------------------------------------------
 
-       2カラム→縦並び
+    /* ------------------------------
+       2列→1列
+    ------------------------------ */
 
-    ---------------------------------------------- */
-
-    .contents {
+    .main-columns {
 
         grid-template-columns: 1fr;
 
-        gap: 25px;
+        gap: 22px;
 
     }
 
-    /* ----------------------------------------------
 
+    /* ------------------------------
        ボックス
+    ------------------------------ */
 
-    ---------------------------------------------- */
+    .history,
+    .menu {
 
-    .history-box,
+        min-height: 0;
 
-    .menu-box {
-
-        min-height: auto;
-
-        padding: 15px;
+        padding: 15px 12px;
 
     }
 
-    /* ----------------------------------------------
 
+    /* ------------------------------
        タイトル
+    ------------------------------ */
 
-    ---------------------------------------------- */
+    .section-title {
 
-    .history-title,
+        font-size: 19px;
 
-    .menu-title {
+        padding: 5px 15px;
 
-        font-size: 21px;
-
-        padding: 5px 18px;
-
-        margin-bottom: 15px;
+        margin-bottom: 13px;
 
     }
 
-    /* ----------------------------------------------
 
+    /* ------------------------------
        更新履歴
-
-    ---------------------------------------------- */
+    ------------------------------ */
 
     .history-item {
 
-        padding: 8px 2px 15px;
+        padding: 8px 2px 14px;
 
     }
 
-    .history-item p {
 
-        font-size: 16px;
+    .date {
 
-        line-height: 1.6;
-
-    }
-
-    .history-item time {
-
-        font-size: 15px;
+        font-size: 14px;
 
     }
 
-    .history-bottom {
+
+    .history-text {
 
         font-size: 16px;
 
     }
 
-    .mini-cloud {
 
-        font-size: 65px;
+    .history-now {
+
+        font-size: 14px;
 
     }
 
-    /* ----------------------------------------------
 
+    /* ------------------------------
        メニュー
-
-    ---------------------------------------------- */
+    ------------------------------ */
 
     .menu-item {
 
         min-height: 65px;
 
+        font-size: 19px;
+
     }
 
-    .menu-icon {
+
+    .menu-image {
 
         width: 65px;
 
-    }
-
-    .image-placeholder {
-
-        width: 48px;
-
-        height: 40px;
-
-        font-size: 8px;
+        height: 48px;
 
     }
 
-    .menu-text {
 
-        font-size: 20px;
-
-    }
-
-    /* ----------------------------------------------
-
+    /* ------------------------------
        個人運営
+    ------------------------------ */
 
-    ---------------------------------------------- */
-
-    .operator-box {
+    .operator {
 
         width: 100%;
 
-        padding: 10px 5px;
+        margin-top: 22px;
 
-        font-size: 13px;
+        font-size: 11px;
+
+        padding: 9px 4px;
 
     }
 
-    .operator-box span {
 
-        font-size: 15px;
+    .operator strong {
+
+        font-size: 14px;
 
         margin: 0 4px;
 
     }
 
-    /* ----------------------------------------------
 
+    /* ------------------------------
        フッター
-
-    ---------------------------------------------- */
+    ------------------------------ */
 
     .footer-menu {
 
         flex-direction: column;
 
-        gap: 12px;
-
-        margin-top: 15px;
+        gap: 10px;
 
     }
+
 
     .footer-menu a {
 
-        font-size: 18px;
+        font-size: 17px;
 
     }
 
-    .footer-icon {
-
-        font-size: 27px;
-
-    }
 
     .copyright {
 
-        font-size: 17px;
+        font-size: 16px;
 
     }
 
