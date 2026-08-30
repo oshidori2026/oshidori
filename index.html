@@ -2,399 +2,186 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>推しドリ！</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-<!-- =========================
-     壁紙
-========================= -->
+<!-- =========================================
+     推しドリ！ INDEX
+     このHTMLは、見本画像のレイアウトを
+     基準に組んでいます。
+
+     【画像素材】と書いてある場所だけ、
+     後から本物の画像に差し替えます。
+========================================= -->
 
 <div class="wallpaper">
 
-    <!-- =========================
-         白いメインページ
-    ========================= -->
+  <main class="paper">
 
-    <div class="paper">
+    <!-- 上部二重ライン -->
+    <div class="top-border-line">
+      【ライン】
+    </div>
 
+    <!-- ================= TITLE ================= -->
+    <header class="hero">
 
-        <!-- 上のライン -->
+      <div class="hero-cloud">【左上の雲】</div>
+      <div class="hero-star">★</div>
 
-        <div class="top-line">
-            【ライン】
+      <h1 class="logo" aria-label="推しドリ！">
+        <span class="logo-pink">推</span><span class="logo-blue">し</span><span class="logo-yellow">ド</span><span class="logo-green">リ</span><span class="logo-purple">！</span>
+      </h1>
+
+      <div class="star-divider">
+        【星のライン】
+      </div>
+    </header>
+
+    <!-- ================= CATCH ================= -->
+    <section class="catch">
+
+      <div class="catch-side left">
+        ★ ☆ ★
+      </div>
+
+      <p>
+        あなたの「推し」が<br>
+        <strong>ドリルの主人公</strong>になる！
+      </p>
+
+      <div class="catch-side right">
+        ★ ☆ ★
+      </div>
+
+    </section>
+
+    <!-- ================= COUNTER ================= -->
+    <section class="counter-box">
+      <div class="counter-heading">☆ カウンター ☆</div>
+      <div class="counter-number">00001001</div>
+    </section>
+
+    <!-- ================= TWO COLUMNS ================= -->
+    <div class="columns">
+
+      <!-- -------- 更新履歴 -------- -->
+      <section class="history-box">
+
+        <span class="frame-star tl">☆</span>
+        <span class="frame-star tr">☆</span>
+        <span class="frame-star bl">☆</span>
+        <span class="frame-star br">☆</span>
+
+        <h2 class="ribbon blue-ribbon">
+          <span>★</span> 更新履歴 <span>☆</span>
+        </h2>
+
+        <div class="history-list">
+
+          <article class="history-item">
+            <span class="bullet-star">★</span>
+            <div>
+              <time>2026/08/27</time>
+              <p>サイトOPEN！</p>
+            </div>
+          </article>
+
+          <article class="history-item">
+            <span class="bullet-star">★</span>
+            <div>
+              <time>2026/08/27</time>
+              <p>「推しドリ！」<br>制作開始♪</p>
+            </div>
+          </article>
+
+          <p class="updating">☆随時更新中☆</p>
         </div>
 
+        <div class="small-cloud">【下の雲】</div>
+      </section>
 
 
-        <!-- =====================
-             タイトル部分
-        ====================== -->
+      <!-- -------- メニュー -------- -->
+      <section class="menu-box">
 
-        <header class="header">
+        <span class="frame-star tl purple-star">☆</span>
+        <span class="frame-star tr purple-star">☆</span>
+        <span class="frame-star bl purple-star">☆</span>
+        <span class="frame-star br purple-star">☆</span>
 
-            <!-- 左上の雲 -->
+        <h2 class="ribbon purple-ribbon">
+          <span>★</span> メニュー <span>☆</span>
+        </h2>
 
-            <div class="cloud-top-left">
-                【雲】
-            </div>
+        <nav class="menu-list">
 
+          <a href="#" class="menu-item math">
+            <span class="menu-icon">【算数アイコン】</span>
+            <span>推しドリ！算数</span>
+          </a>
 
-            <!-- 右上の星 -->
+          <a href="#" class="menu-item japanese">
+            <span class="menu-icon">【国語アイコン】</span>
+            <span>推しドリ！国語</span>
+          </a>
 
-            <div class="star-top-right">
-                ★
-            </div>
+          <a href="#" class="menu-item bbs">
+            <span class="menu-icon">【BBSアイコン】</span>
+            <span>BBS（掲示板）</span>
+          </a>
 
+          <a href="#" class="menu-item about">
+            <span class="menu-icon">【星アイコン】</span>
+            <span>推しドリ！とは</span>
+          </a>
 
-            <h1 class="logo">
-                <span class="pink">推</span>
-                <span class="blue">し</span>
-                <span class="yellow">ド</span>
-                <span class="green">リ</span>
-                <span class="purple">！</span>
-            </h1>
-
-
-            <!-- タイトル下のライン -->
-
-            <div class="star-line">
-                ★　・　★　・　★　・　★　・　★　・　★　・　★　・　★
-            </div>
-
-        </header>
-
-
-
-        <!-- =====================
-             キャッチコピー
-        ====================== -->
-
-        <div class="catch-copy">
-
-            <div class="catch-decoration">
-                ★ ☆ ★
-            </div>
-
-            <div class="catch-text">
-                あなたの「推し」が<br>
-                <strong>ドリルの主人公</strong>になる！
-            </div>
-
-            <div class="catch-decoration">
-                ★ ☆ ★
-            </div>
-
-        </div>
-
-
-
-        <!-- =====================
-             カウンター
-        ====================== -->
-
-        <div class="counter-area">
-
-            <div class="counter-title">
-                ☆ カウンター ☆
-            </div>
-
-            <div class="counter-number">
-                00001001
-            </div>
-
-        </div>
-
-
-
-        <!-- =====================
-             左右2カラム
-        ====================== -->
-
-        <div class="main-columns">
-
-
-            <!-- =================
-                 更新履歴
-            ================== -->
-
-            <section class="history">
-
-                <!-- 枠の飾り -->
-
-                <div class="corner-star left-star">
-                    ☆
-                </div>
-
-                <div class="corner-star right-star">
-                    ☆
-                </div>
-
-
-                <div class="section-title history-title">
-                    <span>★</span>
-                    更新履歴
-                    <span>☆</span>
-                </div>
-
-
-
-                <div class="history-content">
-
-
-                    <div class="history-item">
-
-                        <span class="history-star">
-                            ★
-                        </span>
-
-                        <div>
-                            <div class="date">
-                                2026/08/27
-                            </div>
-
-                            <div class="history-text">
-                                サイトOPEN！
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="history-item">
-
-                        <span class="history-star">
-                            ★
-                        </span>
-
-                        <div>
-
-                            <div class="date">
-                                2026/08/27
-                            </div>
-
-                            <div class="history-text">
-                                「推しドリ！」<br>
-                                制作開始♪
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="history-now">
-                        ☆随時更新中☆
-                    </div>
-
-
-                </div>
-
-
-                <!-- 下の雲 -->
-
-                <div class="history-cloud">
-                    【雲】
-                </div>
-
-            </section>
-
-
-
-
-            <!-- =================
-                 メニュー
-            ================== -->
-
-            <section class="menu">
-
-                <!-- 枠の飾り -->
-
-                <div class="corner-star menu-left-star">
-                    ☆
-                </div>
-
-                <div class="corner-star menu-right-star">
-                    ☆
-                </div>
-
-
-
-                <div class="section-title menu-title">
-                    <span>★</span>
-                    メニュー
-                    <span>☆</span>
-                </div>
-
-
-
-                <nav class="menu-list">
-
-
-                    <!-- 算数 -->
-
-                    <a href="#" class="menu-item math">
-
-                        <div class="menu-image">
-                            【算数アイコン】
-                        </div>
-
-                        <div>
-                            推しドリ！算数
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- 国語 -->
-
-                    <a href="#" class="menu-item japanese">
-
-                        <div class="menu-image">
-                            【国語アイコン】
-                        </div>
-
-                        <div>
-                            推しドリ！国語
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- BBS -->
-
-                    <a href="#" class="menu-item bbs">
-
-                        <div class="menu-image">
-                            【BBSアイコン】
-                        </div>
-
-                        <div>
-                            BBS（掲示板）
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- 推しドリとは -->
-
-                    <a href="#" class="menu-item about">
-
-                        <div class="menu-image">
-                            【星アイコン】
-                        </div>
-
-                        <div>
-                            推しドリ！とは
-                        </div>
-
-                    </a>
-
-
-                </nav>
-
-            </section>
-
-
-        </div>
-
-
-
-        <!-- =====================
-             個人運営
-        ====================== -->
-
-        <div class="operator">
-
-            <span>☆ ☆ ☆</span>
-
-            <strong>
-                当サイトは個人が運営しています
-            </strong>
-
-            <span>☆ ☆ ☆</span>
-
-        </div>
-
-
-
-        <!-- =====================
-             フッター
-        ====================== -->
-
-        <footer>
-
-
-            <div class="footer-menu">
-
-
-                <a href="#" class="footer-home">
-
-                    <span class="footer-icon">
-                        【HOMEアイコン】
-                    </span>
-
-                    HOME
-
-                </a>
-
-
-
-                <a href="#" class="footer-links">
-
-                    <span class="footer-icon">
-                        【星アイコン】
-                    </span>
-
-                    リンク集
-
-                </a>
-
-
-
-                <a href="#" class="footer-contact">
-
-                    <span class="footer-icon">
-                        【雲アイコン】
-                    </span>
-
-                    お問い合わせ
-
-                </a>
-
-
-            </div>
-
-
-
-            <div class="bottom-dots">
-                ・ ・ ・ ・ ・ ・ ・ ・ ・ ・ ・ ・ ・ ・ ・
-            </div>
-
-
-            <div class="copyright">
-                © 2026 推しドリ！
-            </div>
-
-
-        </footer>
-
+        </nav>
+      </section>
 
     </div>
 
-</div>
+    <!-- ================= OPERATOR ================= -->
+    <div class="operator-box">
+      <span>☆ ☆ ☆</span>
+      <strong>当サイトは個人が運営しています</strong>
+      <span>☆ ☆ ☆</span>
+    </div>
 
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+      <nav class="footer-nav">
+
+        <a href="#" class="home-link">
+          <span class="footer-icon">【家アイコン】</span>
+          <span>HOME</span>
+        </a>
+
+        <a href="#" class="links-link">
+          <span class="footer-icon">【星アイコン】</span>
+          <span>リンク集</span>
+        </a>
+
+        <a href="#" class="contact-link">
+          <span class="footer-icon">【雲アイコン】</span>
+          <span>お問い合わせ</span>
+        </a>
+
+      </nav>
+
+      <div class="bottom-divider">【下部ライン】</div>
+
+      <div class="copyright">© 2026 推しドリ！</div>
+
+    </footer>
+
+  </main>
+</div>
 
 </body>
 </html>
