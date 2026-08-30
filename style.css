@@ -1,1 +1,1268 @@
 
+/* ==================================================
+
+   推しドリ！ HOME
+
+   ================================================== */
+
+/* --------------------------------------------------
+
+   基本設定
+
+-------------------------------------------------- */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family:
+
+        "Hiragino Kaku Gothic ProN",
+
+        "Yu Gothic",
+
+        "Meiryo",
+
+        sans-serif;
+
+    color: #333;
+
+    background: #fff;
+
+}
+
+/* --------------------------------------------------
+
+   壁紙
+
+-------------------------------------------------- */
+
+.wallpaper {
+
+    min-height: 100vh;
+
+    padding: 25px 0 35px;
+
+    /*
+
+       今は「壁紙」の画像がないので、
+
+       仮の背景にしています。
+
+       後でここを
+
+       background-image: url("bg1.png");
+
+       に変更するだけ。
+
+    */
+
+    background:
+
+        repeating-linear-gradient(
+
+            45deg,
+
+            #fff 0px,
+
+            #fff 18px,
+
+            #fce3ec 18px,
+
+            #fce3ec 28px,
+
+            #fff 28px,
+
+            #fff 46px,
+
+            #dff2fa 46px,
+
+            #dff2fa 56px
+
+        );
+
+}
+
+/* --------------------------------------------------
+
+   白いページ本体
+
+-------------------------------------------------- */
+
+.page {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding:
+
+        30px
+
+        55px
+
+        20px;
+
+    background: rgba(255, 255, 250, 0.96);
+
+    border-left: 3px solid #9ac8e8;
+
+    border-right: 3px solid #9ac8e8;
+
+    box-shadow:
+
+        0 0 0 3px #fff,
+
+        0 0 0 5px #f4a6c1;
+
+}
+
+/* --------------------------------------------------
+
+   上部ライン
+
+-------------------------------------------------- */
+
+.top-line {
+
+    height: 18px;
+
+    margin-bottom: 25px;
+
+    border-top: 3px solid #ef8db1;
+
+    border-bottom: 2px solid #8fc9ec;
+
+    text-align: center;
+
+    font-size: 0;
+
+}
+
+.top-line span {
+
+    display: none;
+
+}
+
+/* --------------------------------------------------
+
+   ヘッダー
+
+-------------------------------------------------- */
+
+.header {
+
+    position: relative;
+
+    text-align: center;
+
+    padding-top: 15px;
+
+}
+
+/* 雲 */
+
+.cloud {
+
+    position: absolute;
+
+    color: white;
+
+    font-size: 0;
+
+    width: 130px;
+
+    height: 70px;
+
+    border: 3px solid #579ad1;
+
+    border-radius: 50px;
+
+    background: white;
+
+}
+
+.cloud-left {
+
+    top: -5px;
+
+    left: -25px;
+
+}
+
+/* --------------------------------------------------
+
+   タイトル
+
+-------------------------------------------------- */
+
+.site-title {
+
+    margin: 0;
+
+    font-size: clamp(65px, 9vw, 110px);
+
+    font-weight: 900;
+
+    letter-spacing: 8px;
+
+    line-height: 1;
+
+    /*
+
+       文字の色を1色にせず、
+
+       それぞれ少し違う色にするため
+
+       下記のspan化を後で行ってもOK。
+
+    */
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #f18bb0 0%,
+
+            #f18bb0 25%,
+
+            #8dcce8 25%,
+
+            #8dcce8 43%,
+
+            #f5c34c 43%,
+
+            #f5c34c 63%,
+
+            #83c97c 63%,
+
+            #83c97c 79%,
+
+            #b18bd2 79%,
+
+            #b18bd2 100%
+
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    -webkit-text-stroke: 2px #3d528d;
+
+    text-shadow:
+
+        4px 4px 0 #fff,
+
+        6px 6px 0 #e28cae;
+
+}
+
+/* --------------------------------------------------
+
+   タイトル下ライン
+
+-------------------------------------------------- */
+
+.title-line {
+
+    margin: 25px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #7d63b6;
+
+    font-size: 22px;
+
+    white-space: nowrap;
+
+}
+
+.title-line i {
+
+    font-style: normal;
+
+    font-size: 12px;
+
+    color: #8ab7d8;
+
+}
+
+/* --------------------------------------------------
+
+   キャッチコピー
+
+-------------------------------------------------- */
+
+.catch {
+
+    margin: 30px auto 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    text-align: center;
+
+    color: #1655a3;
+
+}
+
+.catch p {
+
+    margin: 0;
+
+    font-size: clamp(20px, 3vw, 32px);
+
+    line-height: 1.6;
+
+    font-weight: 700;
+
+}
+
+.catch strong {
+
+    font-weight: 800;
+
+}
+
+.catch-stars {
+
+    display: flex;
+
+    gap: 4px;
+
+    font-size: 24px;
+
+}
+
+/* --------------------------------------------------
+
+   カウンター
+
+-------------------------------------------------- */
+
+.counter-box {
+
+    width: 50%;
+
+    min-width: 300px;
+
+    margin: 20px auto 25px;
+
+    padding: 12px 20px 18px;
+
+    border: 2px dashed #54a9db;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+.counter-title {
+
+    color: #df5d90;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+.counter {
+
+    display: inline-block;
+
+    padding: 2px 8px;
+
+    background: #111;
+
+    color: white;
+
+    font-family: monospace;
+
+    font-size: 30px;
+
+    letter-spacing: 4px;
+
+    line-height: 1.1;
+
+}
+
+/* --------------------------------------------------
+
+   左右2カラム
+
+-------------------------------------------------- */
+
+.contents {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    margin-top: 10px;
+
+}
+
+/* --------------------------------------------------
+
+   共通ボックス
+
+-------------------------------------------------- */
+
+.history-box,
+
+.menu-box {
+
+    position: relative;
+
+    min-height: 475px;
+
+    padding: 20px;
+
+    background: rgba(255,255,255,0.65);
+
+    border-radius: 8px;
+
+}
+
+/* --------------------------------------------------
+
+   更新履歴
+
+-------------------------------------------------- */
+
+.history-box {
+
+    border: 2px dashed #59a9df;
+
+}
+
+.history-title {
+
+    display: table;
+
+    margin: 0 auto 25px;
+
+    padding: 5px 25px;
+
+    border-radius: 6px;
+
+    background: #5ba9dc;
+
+    color: white;
+
+    font-size: 26px;
+
+    letter-spacing: 2px;
+
+}
+
+.history-item {
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 10px 5px 18px;
+
+    border-bottom: 2px dashed #c8d9e7;
+
+}
+
+.small-star {
+
+    flex: 0 0 auto;
+
+    color: #237bc0;
+
+    font-size: 20px;
+
+}
+
+.history-item p {
+
+    margin: 0;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+}
+
+.history-item time {
+
+    font-size: 17px;
+
+}
+
+.history-bottom {
+
+    margin-top: 25px;
+
+    font-size: 19px;
+
+    text-align: center;
+
+    color: #444;
+
+}
+
+/* --------------------------------------------------
+
+   更新履歴の星
+
+-------------------------------------------------- */
+
+.box-star {
+
+    position: absolute;
+
+    font-size: 36px;
+
+    z-index: 2;
+
+}
+
+.star-1 {
+
+    left: -20px;
+
+    top: -24px;
+
+    color: #55a7db;
+
+}
+
+.star-2 {
+
+    right: -20px;
+
+    top: -24px;
+
+    color: #b68bd4;
+
+}
+
+/* --------------------------------------------------
+
+   雲
+
+-------------------------------------------------- */
+
+.mini-cloud {
+
+    position: absolute;
+
+    right: 10px;
+
+    bottom: 0;
+
+    font-size: 90px;
+
+    color: white;
+
+    text-shadow:
+
+        -2px -2px 0 #579bd2,
+
+        2px -2px 0 #579bd2,
+
+        -2px 2px 0 #579bd2,
+
+        2px 2px 0 #579bd2;
+
+}
+
+/* --------------------------------------------------
+
+   メニュー
+
+-------------------------------------------------- */
+
+.menu-box {
+
+    border: 2px dashed #a77bc9;
+
+}
+
+.menu-title {
+
+    display: table;
+
+    margin: 0 auto 18px;
+
+    padding: 5px 25px;
+
+    border-radius: 6px;
+
+    background: #9a6ac2;
+
+    color: white;
+
+    font-size: 26px;
+
+    letter-spacing: 2px;
+
+}
+
+/* --------------------------------------------------
+
+   メニュー項目
+
+-------------------------------------------------- */
+
+.menu-item {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 75px;
+
+    padding: 8px 5px;
+
+    text-decoration: none;
+
+    border-bottom: 2px dashed #d2bce1;
+
+    transition: 0.2s;
+
+}
+
+.menu-item:last-child {
+
+    border-bottom: none;
+
+}
+
+.menu-item:hover {
+
+    transform: translateX(5px);
+
+    background: rgba(255,255,255,0.7);
+
+}
+
+/* --------------------------------------------------
+
+   メニューアイコン
+
+-------------------------------------------------- */
+
+.menu-icon {
+
+    width: 85px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+}
+
+.image-placeholder {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 58px;
+
+    height: 48px;
+
+    padding: 3px;
+
+    border: 1px dashed #999;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #999;
+
+    font-size: 10px;
+
+}
+
+/* --------------------------------------------------
+
+   メニュー文字
+
+-------------------------------------------------- */
+
+.menu-text {
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+}
+
+/* 色 */
+
+.math .menu-text {
+
+    color: #df5583;
+
+}
+
+.japanese .menu-text {
+
+    color: #41a85a;
+
+}
+
+.bbs .menu-text {
+
+    color: #1768ae;
+
+}
+
+.about .menu-text {
+
+    color: #7040a3;
+
+}
+
+/* --------------------------------------------------
+
+   メニュー星
+
+-------------------------------------------------- */
+
+.menu-star-1 {
+
+    left: -20px;
+
+    top: -24px;
+
+    color: #aa75cb;
+
+}
+
+.menu-star-2 {
+
+    right: -20px;
+
+    top: -24px;
+
+    color: #aa75cb;
+
+}
+
+/* --------------------------------------------------
+
+   個人運営表示
+
+-------------------------------------------------- */
+
+.operator-box {
+
+    width: 78%;
+
+    margin: 30px auto 25px;
+
+    padding: 13px 15px;
+
+    border: 2px dashed #e6cb58;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    color: #d6b638;
+
+}
+
+.operator-box span {
+
+    color: #315e9e;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    margin: 0 10px;
+
+}
+
+/* --------------------------------------------------
+
+   フッター
+
+-------------------------------------------------- */
+
+footer {
+
+    text-align: center;
+
+}
+
+.footer-menu {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 55px;
+
+    margin: 10px 0 20px;
+
+}
+
+.footer-menu a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    text-decoration: underline;
+
+}
+
+.footer-menu a:nth-child(1) {
+
+    color: #d95d8b;
+
+}
+
+.footer-menu a:nth-child(2) {
+
+    color: #175eaa;
+
+}
+
+.footer-menu a:nth-child(3) {
+
+    color: #389153;
+
+}
+
+.footer-icon {
+
+    font-size: 32px;
+
+    text-decoration: none;
+
+}
+
+/* --------------------------------------------------
+
+   下部ライン
+
+-------------------------------------------------- */
+
+.bottom-line {
+
+    margin: 5px auto 15px;
+
+    color: #75a9ce;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    overflow: hidden;
+
+}
+
+/* --------------------------------------------------
+
+   コピーライト
+
+-------------------------------------------------- */
+
+.copyright {
+
+    margin: 0;
+
+    color: #633d9a;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+}
+
+/* ==================================================
+
+   スマホ
+
+   ================================================== */
+
+@media screen and (max-width: 700px) {
+
+    /* ----------------------------------------------
+
+       壁紙
+
+    ---------------------------------------------- */
+
+    .wallpaper {
+
+        padding: 10px 0 20px;
+
+    }
+
+    /* ----------------------------------------------
+
+       ページ
+
+    ---------------------------------------------- */
+
+    .page {
+
+        width: 94%;
+
+        padding:
+
+            20px
+
+            15px
+
+            15px;
+
+        border-left-width: 2px;
+
+        border-right-width: 2px;
+
+    }
+
+    /* ----------------------------------------------
+
+       ヘッダー
+
+    ---------------------------------------------- */
+
+    .cloud-left {
+
+        width: 75px;
+
+        height: 45px;
+
+        left: -5px;
+
+        top: 0;
+
+    }
+
+    .star-top {
+
+        right: 0;
+
+    }
+
+    .site-title {
+
+        margin-top: 35px;
+
+        font-size: 54px;
+
+        letter-spacing: 2px;
+
+        -webkit-text-stroke: 1px #3d528d;
+
+    }
+
+    .title-line {
+
+        gap: 6px;
+
+        margin-top: 15px;
+
+        font-size: 16px;
+
+        overflow: hidden;
+
+    }
+
+    /* ----------------------------------------------
+
+       キャッチ
+
+    ---------------------------------------------- */
+
+    .catch {
+
+        gap: 8px;
+
+        margin: 20px auto;
+
+    }
+
+    .catch p {
+
+        font-size: 19px;
+
+        line-height: 1.5;
+
+    }
+
+    .catch-stars {
+
+        font-size: 15px;
+
+        flex-shrink: 0;
+
+    }
+
+    /* ----------------------------------------------
+
+       カウンター
+
+    ---------------------------------------------- */
+
+    .counter-box {
+
+        width: 90%;
+
+        min-width: 0;
+
+        padding: 10px;
+
+    }
+
+    .counter-title {
+
+        font-size: 20px;
+
+    }
+
+    .counter {
+
+        font-size: 23px;
+
+        letter-spacing: 2px;
+
+    }
+
+    /* ----------------------------------------------
+
+       2カラム→縦並び
+
+    ---------------------------------------------- */
+
+    .contents {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+    /* ----------------------------------------------
+
+       ボックス
+
+    ---------------------------------------------- */
+
+    .history-box,
+
+    .menu-box {
+
+        min-height: auto;
+
+        padding: 15px;
+
+    }
+
+    /* ----------------------------------------------
+
+       タイトル
+
+    ---------------------------------------------- */
+
+    .history-title,
+
+    .menu-title {
+
+        font-size: 21px;
+
+        padding: 5px 18px;
+
+        margin-bottom: 15px;
+
+    }
+
+    /* ----------------------------------------------
+
+       更新履歴
+
+    ---------------------------------------------- */
+
+    .history-item {
+
+        padding: 8px 2px 15px;
+
+    }
+
+    .history-item p {
+
+        font-size: 16px;
+
+        line-height: 1.6;
+
+    }
+
+    .history-item time {
+
+        font-size: 15px;
+
+    }
+
+    .history-bottom {
+
+        font-size: 16px;
+
+    }
+
+    .mini-cloud {
+
+        font-size: 65px;
+
+    }
+
+    /* ----------------------------------------------
+
+       メニュー
+
+    ---------------------------------------------- */
+
+    .menu-item {
+
+        min-height: 65px;
+
+    }
+
+    .menu-icon {
+
+        width: 65px;
+
+    }
+
+    .image-placeholder {
+
+        width: 48px;
+
+        height: 40px;
+
+        font-size: 8px;
+
+    }
+
+    .menu-text {
+
+        font-size: 20px;
+
+    }
+
+    /* ----------------------------------------------
+
+       個人運営
+
+    ---------------------------------------------- */
+
+    .operator-box {
+
+        width: 100%;
+
+        padding: 10px 5px;
+
+        font-size: 13px;
+
+    }
+
+    .operator-box span {
+
+        font-size: 15px;
+
+        margin: 0 4px;
+
+    }
+
+    /* ----------------------------------------------
+
+       フッター
+
+    ---------------------------------------------- */
+
+    .footer-menu {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        margin-top: 15px;
+
+    }
+
+    .footer-menu a {
+
+        font-size: 18px;
+
+    }
+
+    .footer-icon {
+
+        font-size: 27px;
+
+    }
+
+    .copyright {
+
+        font-size: 17px;
+
+    }
+
+}
