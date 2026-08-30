@@ -1,1106 +1,187 @@
-/* ==========================================
-   推しドリ！ INDEX
-   ========================================== */
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>推しドリ！</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<!-- =========================================
+     推しドリ！ INDEX
+     このHTMLは、見本画像のレイアウトを
+     基準に組んでいます。
+
+     【画像素材】と書いてある場所だけ、
+     後から本物の画像に差し替えます。
+========================================= -->
+
+<div class="wallpaper">
+
+  <main class="paper">
 
-/* ------------------------------
-   基本
------------------------------- */
+    <!-- 上部二重ライン -->
+    <div class="top-border-line">
+      【ライン】
+    </div>
 
-* {
-    box-sizing: border-box;
-}
+    <!-- ================= TITLE ================= -->
+    <header class="hero">
+
+      <div class="hero-cloud">【左上の雲】</div>
+      <div class="hero-star">★</div>
+
+      <h1 class="logo" aria-label="推しドリ！">
+        <span class="logo-pink">推</span><span class="logo-blue">し</span><span class="logo-yellow">ド</span><span class="logo-green">リ</span><span class="logo-purple">！</span>
+      </h1>
+
+      <div class="star-divider">
+        【星のライン】
+      </div>
+    </header>
+
+    <!-- ================= CATCH ================= -->
+    <section class="catch">
+
+      <div class="catch-side left">
+        ★ ☆ ★
+      </div>
+
+      <p>
+        あなたの「推し」が<br>
+        <strong>ドリルの主人公</strong>になる！
+      </p>
+
+      <div class="catch-side right">
+        ★ ☆ ★
+      </div>
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
+    </section>
+
+    <!-- ================= COUNTER ================= -->
+    <section class="counter-box">
+      <div class="counter-heading">☆ カウンター ☆</div>
+      <div class="counter-number">00001001</div>
+    </section>
+
+    <!-- ================= TWO COLUMNS ================= -->
+    <div class="columns">
+
+      <!-- -------- 更新履歴 -------- -->
+      <section class="history-box">
+
+        <span class="frame-star tl">☆</span>
+        <span class="frame-star tr">☆</span>
+        <span class="frame-star bl">☆</span>
+        <span class="frame-star br">☆</span>
 
-body {
-    font-family:
-        "Hiragino Kaku Gothic ProN",
-        "Yu Gothic",
-        "Meiryo",
-        sans-serif;
+        <h2 class="ribbon blue-ribbon">
+          <span>★</span> 更新履歴 <span>☆</span>
+        </h2>
 
-    color: #333;
+        <div class="history-list">
 
-    background: #fff;
-}
+          <article class="history-item">
+            <span class="bullet-star">★</span>
+            <div>
+              <time>2026/08/27</time>
+              <p>サイトOPEN！</p>
+            </div>
+          </article>
 
+          <article class="history-item">
+            <span class="bullet-star">★</span>
+            <div>
+              <time>2026/08/27</time>
+              <p>「推しドリ！」<br>制作開始♪</p>
+            </div>
+          </article>
 
-/* ==========================================
-   壁紙
-========================================== */
+          <p class="updating">☆随時更新中☆</p>
+        </div>
 
-.wallpaper {
+        <div class="small-cloud">【下の雲】</div>
+      </section>
 
-    min-height: 100vh;
 
-    padding: 25px 0 35px;
+      <!-- -------- メニュー -------- -->
+      <section class="menu-box">
 
-    /*
-      後で壁紙画像が完成したら
-      ↓これに変更
+        <span class="frame-star tl purple-star">☆</span>
+        <span class="frame-star tr purple-star">☆</span>
+        <span class="frame-star bl purple-star">☆</span>
+        <span class="frame-star br purple-star">☆</span>
 
-      background-image: url("bg1.png");
-      background-size: cover;
-      background-position: center top;
-      background-attachment: fixed;
-    */
+        <h2 class="ribbon purple-ribbon">
+          <span>★</span> メニュー <span>☆</span>
+        </h2>
 
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #fff,
-            #fff 24px,
-            #f8dce8 24px,
-            #f8dce8 31px,
-            #fff 31px,
-            #fff 48px,
-            #dceef8 48px,
-            #dceef8 55px
-        );
-}
+        <nav class="menu-list">
 
+          <a href="#" class="menu-item math">
+            <span class="menu-icon">【算数アイコン】</span>
+            <span>推しドリ！算数</span>
+          </a>
 
-/* ==========================================
-   白いページ
-========================================== */
+          <a href="#" class="menu-item japanese">
+            <span class="menu-icon">【国語アイコン】</span>
+            <span>推しドリ！国語</span>
+          </a>
 
-.paper {
+          <a href="#" class="menu-item bbs">
+            <span class="menu-icon">【BBSアイコン】</span>
+            <span>BBS（掲示板）</span>
+          </a>
 
-    width: 92%;
+          <a href="#" class="menu-item about">
+            <span class="menu-icon">【星アイコン】</span>
+            <span>推しドリ！とは</span>
+          </a>
 
-    max-width: 940px;
+        </nav>
+      </section>
 
-    margin: 0 auto;
+    </div>
 
-    padding: 12px 48px 18px;
+    <!-- ================= OPERATOR ================= -->
+    <div class="operator-box">
+      <span>☆ ☆ ☆</span>
+      <strong>当サイトは個人が運営しています</strong>
+      <span>☆ ☆ ☆</span>
+    </div>
 
-    background: rgba(255,255,253,0.97);
+    <!-- ================= FOOTER ================= -->
+    <footer>
 
-    border-left: 2px solid #78bce4;
-    border-right: 2px solid #78bce4;
+      <nav class="footer-nav">
 
-    position: relative;
-}
+        <a href="#" class="home-link">
+          <span class="footer-icon">【家アイコン】</span>
+          <span>HOME</span>
+        </a>
 
+        <a href="#" class="links-link">
+          <span class="footer-icon">【星アイコン】</span>
+          <span>リンク集</span>
+        </a>
 
-/* ==========================================
-   上ライン
-========================================== */
+        <a href="#" class="contact-link">
+          <span class="footer-icon">【雲アイコン】</span>
+          <span>お問い合わせ</span>
+        </a>
 
-.top-line {
+      </nav>
 
-    height: 30px;
+      <div class="bottom-divider">【下部ライン】</div>
 
-    border-top: 3px solid #e887ad;
-    border-bottom: 2px solid #83c4e8;
+      <div class="copyright">© 2026 推しドリ！</div>
 
-    color: #999;
+    </footer>
 
-    text-align: center;
+  </main>
+</div>
 
-    font-size: 9px;
-
-    line-height: 24px;
-
-    margin-bottom: 25px;
-}
-
-
-/* ==========================================
-   ヘッダー
-========================================== */
-
-.header {
-
-    position: relative;
-
-    text-align: center;
-
-    padding-top: 12px;
-}
-
-
-/* 左上の雲 */
-
-.cloud-top-left {
-
-    position: absolute;
-
-    left: -35px;
-    top: -15px;
-
-    width: 115px;
-    height: 65px;
-
-    border: 2px solid #4398d1;
-
-    border-radius: 50%;
-
-    background: white;
-
-    color: #999;
-
-    font-size: 10px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-/* 右上星 */
-
-.star-top-right {
-
-    position: absolute;
-
-    right: -15px;
-    top: -10px;
-
-    font-size: 65px;
-
-    color: #f5c84a;
-
-    -webkit-text-stroke: 2px #e28b98;
-
-    transform: rotate(-8deg);
-}
-
-
-/* ==========================================
-   ロゴ
-========================================== */
-
-.logo {
-
-    margin: 0;
-
-    font-size: clamp(62px, 8vw, 105px);
-
-    line-height: 1;
-
-    letter-spacing: 2px;
-
-    font-weight: 900;
-
-    -webkit-text-stroke: 2px #394b88;
-
-    text-shadow:
-        4px 4px 0 white,
-        6px 6px 0 #e58ba9;
-}
-
-
-.logo span {
-    display: inline-block;
-}
-
-
-/* それぞれの色 */
-
-.logo .pink {
-    color: #ef82a9;
-}
-
-.logo .blue {
-    color: #83c6e3;
-}
-
-.logo .yellow {
-    color: #f4c64e;
-}
-
-.logo .green {
-    color: #83c77c;
-}
-
-.logo .purple {
-    color: #aa83c9;
-}
-
-
-/* ==========================================
-   タイトル下ライン
-========================================== */
-
-.star-line {
-
-    margin-top: 22px;
-
-    font-size: 19px;
-
-    color: #5e9fd1;
-
-    letter-spacing: 4px;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-}
-
-
-/* ==========================================
-   キャッチコピー
-========================================== */
-
-.catch-copy {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 35px;
-
-    margin-top: 30px;
-
-    margin-bottom: 25px;
-
-    text-align: center;
-
-    color: #1454a0;
-}
-
-
-.catch-text {
-
-    font-size: clamp(20px, 2.8vw, 31px);
-
-    line-height: 1.55;
-
-    font-weight: 700;
-}
-
-
-.catch-text strong {
-    font-weight: 800;
-}
-
-
-.catch-decoration {
-
-    color: #4777bd;
-
-    font-size: 24px;
-
-    white-space: nowrap;
-}
-
-
-/* ==========================================
-   カウンター
-========================================== */
-
-.counter-area {
-
-    width: 52%;
-
-    min-width: 300px;
-
-    margin: 0 auto 25px;
-
-    padding: 11px 15px 17px;
-
-    border: 2px dashed #58a9dc;
-
-    border-radius: 10px;
-
-    text-align: center;
-}
-
-
-.counter-title {
-
-    color: #dc6390;
-
-    font-size: 23px;
-
-    font-weight: bold;
-
-    margin-bottom: 8px;
-}
-
-
-.counter-number {
-
-    display: inline-block;
-
-    padding: 2px 7px;
-
-    background: #111;
-
-    color: white;
-
-    font-family: monospace;
-
-    font-size: 28px;
-
-    letter-spacing: 4px;
-
-    line-height: 1;
-}
-
-
-/* ==========================================
-   左右カラム
-========================================== */
-
-.main-columns {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1.05fr;
-
-    gap: 25px;
-
-    align-items: stretch;
-}
-
-
-/* ==========================================
-   共通ボックス
-========================================== */
-
-.history,
-.menu {
-
-    position: relative;
-
-    min-height: 465px;
-
-    background:
-        rgba(255,255,255,0.55);
-
-    border-radius: 5px;
-
-    padding: 17px 18px;
-}
-
-
-/* 更新履歴の枠 */
-
-.history {
-    border: 2px dashed #62addc;
-}
-
-
-/* メニューの枠 */
-
-.menu {
-    border: 2px dashed #a77acb;
-}
-
-
-/* ==========================================
-   セクションタイトル
-========================================== */
-
-.section-title {
-
-    width: fit-content;
-
-    margin: 0 auto 18px;
-
-    padding: 5px 22px;
-
-    border-radius: 5px;
-
-    color: white;
-
-    font-size: 23px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-}
-
-
-.section-title span {
-
-    margin: 0 7px;
-
-}
-
-
-/* 更新履歴タイトル */
-
-.history-title {
-    background: #55a7dc;
-}
-
-
-/* メニュータイトル */
-
-.menu-title {
-    background: #9667be;
-}
-
-
-/* ==========================================
-   枠の星
-========================================== */
-
-.corner-star {
-
-    position: absolute;
-
-    font-size: 38px;
-
-    line-height: 1;
-
-    z-index: 5;
-}
-
-
-.left-star {
-    left: -20px;
-    top: -24px;
-    color: #4f9fd5;
-}
-
-
-.right-star {
-    right: -20px;
-    top: -24px;
-    color: #a276c8;
-}
-
-
-.menu-left-star {
-    left: -20px;
-    top: -24px;
-    color: #a276c8;
-}
-
-
-.menu-right-star {
-    right: -20px;
-    top: -24px;
-    color: #a276c8;
-}
-
-
-/* ==========================================
-   更新履歴
-========================================== */
-
-.history-item {
-
-    display: flex;
-
-    gap: 9px;
-
-    padding: 10px 3px 19px;
-
-    margin-bottom: 5px;
-
-    border-bottom: 2px dashed #c5dbe9;
-}
-
-
-.history-star {
-
-    color: #2380c4;
-
-    font-size: 20px;
-
-    flex-shrink: 0;
-}
-
-
-.date {
-
-    font-size: 17px;
-
-    margin-bottom: 7px;
-}
-
-
-.history-text {
-
-    font-size: 18px;
-
-    line-height: 1.65;
-}
-
-
-.history-now {
-
-    margin-top: 22px;
-
-    font-size: 17px;
-
-    text-align: center;
-}
-
-
-/* ==========================================
-   更新履歴の雲
-========================================== */
-
-.history-cloud {
-
-    position: absolute;
-
-    right: 12px;
-
-    bottom: -5px;
-
-    width: 105px;
-
-    height: 58px;
-
-    border: 2px solid #58a6d7;
-
-    border-radius: 50%;
-
-    background: white;
-
-    color: #aaa;
-
-    font-size: 9px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-
-/* ==========================================
-   メニュー
-========================================== */
-
-.menu-list {
-    margin-top: 5px;
-}
-
-
-.menu-item {
-
-    min-height: 76px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding: 7px 4px;
-
-    border-bottom: 2px dashed #ceb9df;
-
-    text-decoration: none;
-
-    font-size: 25px;
-
-    font-weight: bold;
-
-    transition: 0.15s;
-}
-
-
-.menu-item:last-child {
-    border-bottom: none;
-}
-
-
-.menu-item:hover {
-    transform: translateX(4px);
-}
-
-
-/* ==========================================
-   メニュー画像
-========================================== */
-
-.menu-image {
-
-    width: 82px;
-
-    flex-shrink: 0;
-
-    height: 58px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    color: #888;
-
-    font-size: 9px;
-
-    text-align: center;
-}
-
-
-/* ==========================================
-   メニュー文字色
-========================================== */
-
-.math {
-    color: #dc5480;
-}
-
-
-.japanese {
-    color: #42a05c;
-}
-
-
-.bbs {
-    color: #1765aa;
-}
-
-
-.about {
-    color: #70409e;
-}
-
-
-/* ==========================================
-   個人運営
-========================================== */
-
-.operator {
-
-    width: 80%;
-
-    margin: 30px auto 23px;
-
-    padding: 12px 10px;
-
-    border: 2px dashed #e7ce62;
-
-    border-radius: 7px;
-
-    text-align: center;
-
-    color: #e0c349;
-
-    font-size: 16px;
-}
-
-
-.operator strong {
-
-    color: #345e9b;
-
-    font-size: 18px;
-
-    margin: 0 12px;
-}
-
-
-/* ==========================================
-   フッター
-========================================== */
-
-.footer-menu {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 50px;
-
-    margin-bottom: 17px;
-}
-
-
-.footer-menu a {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    font-size: 21px;
-
-    font-weight: bold;
-
-}
-
-
-.footer-home {
-    color: #d85788;
-}
-
-
-.footer-links {
-    color: #195fa9;
-}
-
-
-.footer-contact {
-    color: #368d4d;
-}
-
-
-.footer-icon {
-
-    font-size: 13px;
-
-    text-decoration: none;
-}
-
-
-/* ==========================================
-   下ライン
-========================================== */
-
-.bottom-dots {
-
-    margin: 0 auto 13px;
-
-    text-align: center;
-
-    color: #7eabd0;
-
-    font-size: 12px;
-
-    letter-spacing: 4px;
-
-    overflow: hidden;
-}
-
-
-/* ==========================================
-   コピーライト
-========================================== */
-
-.copyright {
-
-    text-align: center;
-
-    color: #633e9c;
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    padding-bottom: 2px;
-}
-
-
-/* ==================================================
-   スマホ
-================================================== */
-
-@media screen and (max-width: 700px) {
-
-
-    /* ------------------------------
-       壁紙
-    ------------------------------ */
-
-    .wallpaper {
-        padding: 8px 0 15px;
-    }
-
-
-    /* ------------------------------
-       白いページ
-    ------------------------------ */
-
-    .paper {
-
-        width: 95%;
-
-        padding:
-            10px
-            13px
-            15px;
-
-    }
-
-
-    /* ------------------------------
-       上ライン
-    ------------------------------ */
-
-    .top-line {
-        margin-bottom: 18px;
-    }
-
-
-    /* ------------------------------
-       タイトル
-    ------------------------------ */
-
-    .cloud-top-left {
-
-        width: 75px;
-
-        height: 45px;
-
-        left: -5px;
-
-        top: -5px;
-
-    }
-
-
-    .star-top-right {
-
-        right: -2px;
-
-        top: -5px;
-
-        font-size: 43px;
-
-    }
-
-
-    .logo {
-
-        padding-top: 30px;
-
-        font-size: 54px;
-
-        letter-spacing: 0;
-
-        -webkit-text-stroke: 1px #394b88;
-
-        text-shadow:
-            2px 2px 0 white,
-            3px 3px 0 #e58ba9;
-
-    }
-
-
-    .star-line {
-
-        margin-top: 13px;
-
-        font-size: 13px;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    /* ------------------------------
-       キャッチコピー
-    ------------------------------ */
-
-    .catch-copy {
-
-        gap: 5px;
-
-        margin-top: 18px;
-
-        margin-bottom: 20px;
-
-    }
-
-
-    .catch-text {
-
-        font-size: 17px;
-
-        line-height: 1.55;
-
-    }
-
-
-    .catch-decoration {
-
-        font-size: 12px;
-
-    }
-
-
-    /* ------------------------------
-       カウンター
-    ------------------------------ */
-
-    .counter-area {
-
-        width: 90%;
-
-        min-width: 0;
-
-        padding: 9px;
-
-    }
-
-
-    .counter-title {
-        font-size: 19px;
-    }
-
-
-    .counter-number {
-
-        font-size: 22px;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    /* ------------------------------
-       2列→1列
-    ------------------------------ */
-
-    .main-columns {
-
-        grid-template-columns: 1fr;
-
-        gap: 22px;
-
-    }
-
-
-    /* ------------------------------
-       ボックス
-    ------------------------------ */
-
-    .history,
-    .menu {
-
-        min-height: 0;
-
-        padding: 15px 12px;
-
-    }
-
-
-    /* ------------------------------
-       タイトル
-    ------------------------------ */
-
-    .section-title {
-
-        font-size: 19px;
-
-        padding: 5px 15px;
-
-        margin-bottom: 13px;
-
-    }
-
-
-    /* ------------------------------
-       更新履歴
-    ------------------------------ */
-
-    .history-item {
-
-        padding: 8px 2px 14px;
-
-    }
-
-
-    .date {
-
-        font-size: 14px;
-
-    }
-
-
-    .history-text {
-
-        font-size: 16px;
-
-    }
-
-
-    .history-now {
-
-        font-size: 14px;
-
-    }
-
-
-    /* ------------------------------
-       メニュー
-    ------------------------------ */
-
-    .menu-item {
-
-        min-height: 65px;
-
-        font-size: 19px;
-
-    }
-
-
-    .menu-image {
-
-        width: 65px;
-
-        height: 48px;
-
-    }
-
-
-    /* ------------------------------
-       個人運営
-    ------------------------------ */
-
-    .operator {
-
-        width: 100%;
-
-        margin-top: 22px;
-
-        font-size: 11px;
-
-        padding: 9px 4px;
-
-    }
-
-
-    .operator strong {
-
-        font-size: 14px;
-
-        margin: 0 4px;
-
-    }
-
-
-    /* ------------------------------
-       フッター
-    ------------------------------ */
-
-    .footer-menu {
-
-        flex-direction: column;
-
-        gap: 10px;
-
-    }
-
-
-    .footer-menu a {
-
-        font-size: 17px;
-
-    }
-
-
-    .copyright {
-
-        font-size: 16px;
-
-    }
-
-}
+</body>
+</html>
