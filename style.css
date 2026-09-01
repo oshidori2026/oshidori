@@ -40,10 +40,6 @@ body {
 
   min-height: 100vh;
 
-  background:
-
-  min-height: 100vh;
-
   background-image: url("bg1.png");
 
   background-repeat: repeat;
@@ -101,11 +97,11 @@ body {
 
 .subtitle {
 
-  margin: 8px 0 14px;
+  margin: 8px 0 2px;
 
   color: #6f675d;
 
-  font-size: 13px;
+  font-size: 8px;
 
   line-height: 1.8;
 
@@ -117,9 +113,9 @@ body {
 
 .footer-line {
 
-  color: #8d8376;
+  color: #00008b;
 
-  font-size: 14px;
+  font-size: 20px;
 
   letter-spacing: 2px;
 
@@ -128,12 +124,12 @@ body {
 }
 
 .li1 {
-  width: 80px;
+  width: 600px;
   height: auto;
 }
 
 .li2 {
-  width: 50px;
+  width: 100px;
   height: auto;
 }
 /* =========================
@@ -270,7 +266,9 @@ body {
 
 .menu a {
 
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   min-height: 82px;
 
@@ -286,7 +284,7 @@ body {
 
   text-decoration: none;
 
-  color: #514b43;
+  color:#514b43;
 
   font-weight: bold;
 
@@ -305,6 +303,37 @@ body {
   box-shadow: 0 4px 8px rgba(80, 70, 60, 0.2);
 
 }
+
+.ic1 {
+  width: 50px;
+  height: auto;
+}
+
+.menu a.sansu {
+
+  color: #FF69B4;
+font-size: 20px;
+
+}
+
+.menu a.kokugo {
+
+  color: #228B22;
+font-size: 20px;
+}
+
+.menu a.bbs {
+
+  color: #0000CD;
+font-size: 20px;
+}
+
+.menu a.about {
+
+  color: #8A2BE2;
+font-size: 20px;
+}
+
 
 /* =========================
 
