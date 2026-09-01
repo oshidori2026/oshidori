@@ -472,3 +472,24 @@ body {
   }
 
 }
+.line {
+
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+
+}
+
+.li1 {
+
+  display: inline-block;
+
+  width: 60%;
+
+  max-width: 450px;
+
+  height: auto;
+
+}
