@@ -45,9 +45,25 @@ body {
   background-repeat: repeat;
 
   background-position: top left;   
-  padding: 20px 12px 30px;
+  padding: 60px 0px 30px;
 
 }
+
+.ivory-panel {
+
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  background: #fffaf0;
+
+  padding: 0px 0px;
+
+border: 6px dotted #EE82EE;
+
+}
+
+
 
 /* =========================
 
@@ -65,73 +81,16 @@ body {
 
 }
 
-.title-decoration {
+.title {
 
-  color: #8b8174;
-
-  font-size: 15px;
-
-  margin-bottom: 5px;
-
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: -20px auto 0;
 }
 
-.header h1 {
 
-  margin: 0;
 
-  color: #3f3b36;
-
-  font-size: clamp(42px, 10vw, 68px);
-
-  font-weight: 900;
-
-  letter-spacing: 4px;
-
-  text-shadow:
-
-    2px 2px 0 #fff,
-
-    4px 4px 0 #cfc5b7;
-
-}
-
-.subtitle {
-
-  margin: 8px 0 2px;
-
-  color: #6f675d;
-
-  font-size: 8px;
-
-  line-height: 1.8;
-
-  font-weight: bold;
-
-}
-
-.line,
-
-.footer-line {
-
-  color: #00008b;
-
-  font-size: 20px;
-
-  letter-spacing: 2px;
-
-  margin: 10px 0 18px;
-
-}
-
-.li1 {
-  width: 600px;
-  height: auto;
-}
-
-.li2 {
-  width: 100px;
-  height: auto;
-}
 /* =========================
 
    メイン
@@ -157,6 +116,15 @@ body {
 
 /* 更新履歴 */
 
+.bn{
+  display: block;
+  max-width: 100%;
+  height: auto;
+ width: 200px;
+ margin: 0 auto;
+
+}
+
 .update-box {
 
   background: rgba(255, 255, 255, 0.82);
@@ -168,6 +136,7 @@ body {
   padding: 12px;
 
   box-shadow: 0 3px 8px rgba(80, 70, 60, 0.12);
+ transform: translateY(-40px);
 
 }
 
@@ -182,6 +151,7 @@ body {
   color: #5d574f;
 
   font-size: 18px;
+ 
 
 }
 
@@ -239,6 +209,7 @@ body {
   padding: 14px 16px 17px;
 
   box-shadow: 0 3px 8px rgba(80, 70, 60, 0.12);
+ transform: translateY(-40px);
 
 }
 
@@ -312,7 +283,7 @@ body {
 .menu a.sansu {
 
   color: #FF69B4;
-font-size: 30px;
+font-size: 20px;
 
 }
 
@@ -334,60 +305,6 @@ font-size: 20px;
 font-size: 20px;
 }
 
-
-/* =========================
-
-   ウェルカム
-
-   ========================= */
-
-.welcome {
-
-  max-width: 720px;
-
-  margin: 18px auto 0;
-
-  padding: 15px;
-
-  text-align: center;
-
-  color: #6f675d;
-
-  font-size: 13px;
-
-  line-height: 1.8;
-
-}
-
-.welcome p {
-
-  margin: 7px 0;
-
-}
-
-.counter {
-
-  display: inline-block;
-
-  padding: 8px 15px;
-
-  background: #fff;
-
-  border: 1px solid #aaa095;
-
-  border-radius: 5px;
-
-  color: #6b6258;
-
-}
-
-.counter strong {
-
-  color: #4d4841;
-
-  letter-spacing: 2px;
-
-}
 
 /* =========================
 
@@ -449,13 +366,75 @@ font-size: 20px;
 
 }
 
+
+.li1 {
+  width: 500px;
+  height: auto;
+}
+
+
 .copyright {
 
   margin-top: 8px;
 
   color: #91877b;
 
+ font-size: 20px;
+
 }
+
+.home {
+  width: 180px;
+  height: auto;
+}
+
+.kojin {
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 600px;
+
+  margin: 0 auto;
+
+}
+
+
+
+
+.kojin-text {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  color: #fff;
+
+  text-shadow:
+
+    2px 2px 0 #555,
+
+    -2px -2px 0 #555,
+
+    2px -2px 0 #555,
+
+    -2px 2px 0 #555;
+
+  white-space: nowrap;
+
+
+
 
 /* =========================
 
@@ -486,6 +465,7 @@ font-size: 20px;
   }
 
   .update-list {
+
 
     grid-template-columns: 1fr;
 
