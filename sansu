@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>推しドリ！算数</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: white;
+      color: black;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1000px;
+      margin: 30px auto;
+      border: 1px solid black;
+    }
+
+    .side-menu {
+      width: 250px;
+      padding: 20px;
+      border-right: 1px solid black;
+    }
+
+    .content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .grade summary {
+      cursor: pointer;
+      font-weight: bold;
+      padding: 8px;
+      border: 1px solid black;
+    }
+
+    .unit-menu a {
+      display: block;
+      padding: 8px;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <aside class="side-menu">
+
+      <h2>算数</h2>
+
+      <details class="grade">
+
+        <summary>5年生</summary>
+
+        <div class="unit-menu">
+
+          <a href="#kazu">数と計算</a>
+
+          <a href="#yakusu">約数と倍数</a>
+
+        </div>
+
+      </details>
+
+    </aside>
+
+
+    <main class="content">
+
+      <h1>推しドリ！算数</h1>
+
+      <p>左のメニューから単元を選んでね。</p>
+
+      <section id="kazu">
+
+        <h2>数と計算</h2>
+
+        <p>ここに問題を表示します。</p>
+
+      </section>
+
+      <section id="yakusu">
+
+        <h2>約数と倍数</h2>
+
+        <p>ここに問題を表示します。</p>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>
