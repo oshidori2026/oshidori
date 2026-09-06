@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>数と計算｜推しドリ！</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: white;
+      color: #514b43;
+    }
+
+
+    /* =========================
+       ページ全体
+       ========================= */
+
+    .math-page {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 30px;
+    }
+
+
+
+    /* =========================
+       タイトル
+       ========================= */
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .page-title {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .page-description {
+      margin-top: 12px;
+      line-height: 1.8;
+    }
+
+
+    /* =========================
+       問題エリア
+       ========================= */
+
+    .question-box {
+      margin-bottom: 20px;
+      padding: 25px;
+      border: 2px solid #aaa095;
+      border-radius: 8px;
+      background: #fffaf0;
+    }
+
+
+    /* =========================
+       問題番号
+       ========================= */
+
+    .question-number {
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+
+    /* =========================
+       問題文
+       ========================= */
+
+    .question-text {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+
+    /* =========================
+       答え入力
+       ========================= */
+
+    .answer-area {
+      text-align: center;
+    }
+
+    .answer-label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .answer-input {
+      width: 220px;
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      border: 1px solid #888;
+      border-radius: 5px;
+    }
+
+
+    /* =========================
+       正誤表示
+       ========================= */
+
+    .result-mark {
+      display: none;
+      margin-top: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       答え合わせボタン
+       ========================= */
+
+    .check-area {
+      margin-top: 35px;
+      text-align: center;
+    }
+
+    .check-button {
+      padding: 14px 35px;
+      border: 1px solid #888;
+      border-radius: 6px;
+      background: white;
+      color: #514b43;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .check-button:hover {
+      background: #eeeeee;
+    }
+
+
+    /* =========================
+       結果表示
+       ========================= */
+
+    .total-result {
+      display: none;
+      margin-top: 30px;
+      padding: 25px;
+      text-align: center;
+      border: 2px solid #aaa095;
+      border-radius: 8px;
+      background: #fffdf9;
+    }
+
+    .score {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .result-message {
+      margin-top: 15px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+
+    /* =========================
+       結果後のボタン
+       ========================= */
+
+    .after-buttons {
+      display: none;
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .retry-button,
+    .home-button {
+      display: inline-block;
+      padding: 11px 25px;
+      margin: 5px;
+      border: 1px solid #aaa095;
+      border-radius: 6px;
+      background: white;
+      color: #514b43;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .retry-button:hover,
+    .home-button:hover {
+      background: #eeeeee;
+    }
+
+
+    /* =========================
+       スマホ
+       ========================= */
+
+    @media (max-width: 600px) {
+
+      .math-page {
+        padding: 15px;
+      }
+
+      .page-title {
+        font-size: 26px;
+      }
+
+      .question-box {
+        padding: 15px;
+      }
+
+      .question-text {
+        padding: 15px;
+        font-size: 16px;
+      }
+
+      .answer-input {
+        width: 180px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main class="math-page">
+
+
+
+
+
+    <!-- =========================
+         タイトル
+         ========================= -->
+
+    <header class="page-header">
+
+      <h1 class="page-title">
+        数と計算
+      </h1>
+
+      <p class="page-description">
+        数のしくみや計算についての問題に挑戦しよう！
+      </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         第1問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第1問
+      </div>
+
+    <div class="question-text" id="questionText1"></div>
+
+
+      <div class="answer-area">
+
+        <label
+          for="answer1"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer1"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result1"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第2問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第2問
+      </div>
+
+      <div class="question-text">
+
+        【第2問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer2"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer2"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result2"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第3問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第3問
+      </div>
+
+      <div class="question-text">
+
+        【第3問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer3"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer3"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result3"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第4問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第4問
+      </div>
+
+      <div class="question-text">
+
+        【第4問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer4"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer4"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result4"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第5問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第5問
+      </div>
+
+      <div class="question-text">
+
+        【第5問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer5"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer5"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result5"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第6問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第6問
+      </div>
+
+      <div class="question-text">
+
+        【第6問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer6"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer6"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result6"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第7問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第7問
+      </div>
+
+      <div class="question-text">
+
+        【第7問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer7"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer7"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result7"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第8問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第8問
+      </div>
+
+      <div class="question-text">
+
+        【第8問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer8"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer8"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result8"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第9問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第9問
+      </div>
+
+      <div class="question-text">
+
+        【第9問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer9"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer9"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result9"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         第10問
+         ========================= -->
+
+    <section class="question-box">
+
+      <div class="question-number">
+        第10問
+      </div>
+
+      <div class="question-text">
+
+        【第10問の問題文】
+
+      </div>
+
+      <div class="answer-area">
+
+        <label
+          for="answer10"
+          class="answer-label">
+
+          答え
+
+        </label>
+
+        <input
+          type="text"
+          id="answer10"
+          class="answer-input"
+          autocomplete="off">
+
+      </div>
+
+      <div
+        id="result10"
+        class="result-mark">
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         一括答え合わせ
+         ========================= -->
+
+    <div class="check-area">
+
+      <button
+        type="button"
+        class="check-button"
+        onclick="checkAllAnswers()">
+
+        10問まとめて答え合わせ
+
+      </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         結果
+         ========================= -->
+
+    <section
+      id="totalResult"
+      class="total-result">
+
+      <div class="score">
+
+        <span id="scoreNumber">0</span>問正解！
+
+      </div>
+
+      <div
+        id="resultMessage"
+        class="result-message">
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         結果後ボタン
+         ========================= -->
+
+    <div
+      id="afterButtons"
+      class="after-buttons">
+
+      <button
+        type="button"
+        class="retry-button"
+        onclick="retryQuiz()">
+
+        もう一度挑戦
+
+      </button>
+
+      <a
+        href="index.html"
+        class="home-button">
+
+        HOME
+
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+
+  <script>
+
+
+    /* =========================
+       正解データ
+       
+       今は仮の答え。
+       問題文が決まったら
+       ここを書き換える。
+       ========================= */
+
+    const correctAnswers = [
+
+      "24 56 90",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+
+    ];
+
+
+
+    /* =========================
+       推し設定を読み込む
+       ========================= */
+
+    const savedSettings =
+      localStorage.getItem("oshiDoriSettings");
+
+    let oshiSettings = null;
+
+
+    if (savedSettings) {
+
+      try {
+
+        oshiSettings =
+          JSON.parse(savedSettings);
+
+      } catch (error) {
+
+        console.log(
+          "推し設定の読み込みに失敗しました。"
+        );
+
+      }
+
+    }
+
+
+function createQuestion1() {
+
+  let mainName = "あなた";
+  let oshiName = "はる";
+
+  if (oshiSettings) {
+
+    if (oshiSettings.mainCharacter) {
+      mainName = oshiSettings.mainCharacter;
+    }
+
+    if (
+      oshiSettings.names &&
+      oshiSettings.names.length > 0
+    ) {
+
+      const randomIndex =
+        Math.floor(
+          Math.random() * oshiSettings.names.length
+        );
+
+      oshiName =
+        oshiSettings.names[randomIndex];
+
+    }
+
+  }
+
+document.getElementById("questionText1").innerHTML =
+    "<strong>" + oshiName + "</strong>は数字カードを持っています。<br>" +
+    "この中から偶数のカードだけ" +
+    "<strong>" + mainName + "</strong>にプレゼントしてくれます。<br>" +
+    "もらったカードはどれですか。<br><br>" +
+    "24、37、56、81、90、103"; 
+}
+
+
+
+    /* =========================
+       答え合わせ
+       ========================= */
+
+    function checkAllAnswers() {
+
+
+      let score = 0;
+
+
+      for (
+        let i = 1;
+        i <= 10;
+        i++
+      ) {
+
+
+        const input =
+          document.getElementById(
+            "answer" + i
+          );
+
+
+        const result =
+          document.getElementById(
+            "result" + i
+          );
+
+
+        const userAnswer =
+          input.value.trim();
+
+
+        const correctAnswer =
+          correctAnswers[i - 1];
+
+
+        if (
+          userAnswer !== "" &&
+          userAnswer === correctAnswer
+        ) {
+
+          score++;
+
+
+          result.textContent =
+            "○ 正解！";
+
+        } else {
+
+          result.textContent =
+            "✕ 不正解";
+
+        }
+
+
+        result.style.display =
+          "block";
+
+      }
+
+
+
+      /* =========================
+         合計結果
+         ========================= */
+
+      document.getElementById(
+        "scoreNumber"
+      ).textContent = score;
+
+
+      let message = "";
+
+
+      if (score === 10) {
+
+        message =
+          "🎉 全問正解！すごい！";
+
+      } else if (score >= 8) {
+
+        message =
+          "🌟 よくできました！あと少し！";
+
+      } else if (score >= 5) {
+
+        message =
+          "👍 がんばったね！もう一度挑戦してみよう！";
+
+      } else {
+
+        message =
+          "💪 もう一度チャレンジしてみよう！";
+
+      }
+
+
+      document.getElementById(
+        "resultMessage"
+      ).textContent = message;
+
+
+      document.getElementById(
+        "totalResult"
+      ).style.display = "block";
+
+
+      document.getElementById(
+        "afterButtons"
+      ).style.display = "block";
+
+
+      /* 結果までスクロール */
+
+      document.getElementById(
+        "totalResult"
+      ).scrollIntoView({
+        behavior: "smooth"
+      });
+
+    }
+
+
+
+    /* =========================
+       もう一度挑戦
+       ========================= */
+
+    function retryQuiz() {
+
+
+      for (
+        let i = 1;
+        i <= 10;
+        i++
+      ) {
+
+
+        document.getElementById(
+          "answer" + i
+        ).value = "";
+
+
+        document.getElementById(
+          "result" + i
+        ).style.display = "none";
+
+      }
+
+
+      document.getElementById(
+        "totalResult"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "afterButtons"
+      ).style.display = "none";
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+createQuestion1();
+
+  </script>
+
+
+</body>
+
+</html>
