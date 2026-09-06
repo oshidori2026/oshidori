@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>推し設定｜推しドリ！</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: white;
+      color: black;
+    }
+
+    .setting-page {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 30px;
+      border: 1px solid black;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    .explanation {
+      margin-bottom: 25px;
+    }
+
+    .mode {
+      margin: 15px 0;
+      padding: 15px;
+      border: 1px solid black;
+    }
+
+    .mode-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .name-list {
+      margin-top: 15px;
+    }
+
+    .name-row {
+      margin: 8px 0;
+    }
+
+    .name-row label {
+      display: inline-block;
+      width: 35px;
+    }
+
+    input[type="text"] {
+      width: 220px;
+      padding: 7px;
+      font-size: 16px;
+      border: 1px solid #888;
+      background: white;
+    }
+
+    input[type="text"]::placeholder {
+      color: #999;
+      opacity: 1;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .default-names {
+      margin-top: 15px;
+      padding: 15px;
+      border: 1px solid #888;
+      background: #f7f7f7;
+    }
+
+    .default-names ul {
+      margin-bottom: 0;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 15px;
+      border: 1px solid black;
+    }
+
+    .error {
+      margin-top: 15px;
+      font-weight: bold;
+      min-height: 24px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    button,
+    .home-button {
+      display: inline-block;
+      padding: 10px 25px;
+      margin: 5px;
+      border: 1px solid black;
+      background: white;
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover,
+    .home-button:hover {
+      background: #eeeeee;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="setting-page">
+
+    <h1>★ 推し設定</h1>
+
+    <p class="explanation">
+      問題に登場する主人公や推しの名前を設定できます。<br>
+      設定した名前は、算数・国語などの問題で共通して使われます。
+    </p>
+
+
+    <!-- 主人公 -->
+
+    <h2>主人公</h2>
+
+    <div class="name-row">
+
+      <label for="mainCharacter">名前</label>
+
+      <input
+        type="text"
+        id="mainCharacter"
+        maxlength="20"
+        placeholder="あなた">
+
+    </div>
+
+    <p>
+      ※入力しない場合は「あなた」が使われます。
+    </p>
+
+
+    <!-- 登場方法 -->
+
+    <h2>推しの登場方法</h2>
+
+
+    <!-- ランダム -->
+
+    <div class="mode">
+
+      <div class="mode-title">
+
+        <label>
+          <input
+            type="radio"
+            name="mode"
+            value="random"
+            checked>
+
+          ランダムで登場
+        </label>
+
+      </div>
+
+      <p>
+        登録した名前の中からランダムで登場します。<br>
+        最大10人まで登録できます。<br>
+        ※登録がない場合はデフォルト名の表示となります
+      </p>
+
+
+      <div class="name-list">
+
+        <div class="name-row">
+          <label>①</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="はる">
+        </div>
+
+        <div class="name-row">
+          <label>②</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="あき">
+        </div>
+
+        <div class="name-row">
+          <label>③</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="そら">
+        </div>
+
+        <div class="name-row">
+          <label>④</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="ゆう">
+        </div>
+
+        <div class="name-row">
+          <label>⑤</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="りん">
+        </div>
+
+        <div class="name-row">
+          <label>⑥</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="なお">
+        </div>
+
+        <div class="name-row">
+          <label>⑦</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="けい">
+        </div>
+
+        <div class="name-row">
+          <label>⑧</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="まお">
+        </div>
+
+        <div class="name-row">
+          <label>⑨</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="つばさ">
+        </div>
+
+        <div class="name-row">
+          <label>⑩</label>
+          <input type="text" class="random-name" maxlength="20" placeholder="ひなた">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 優先 -->
+
+    <div class="mode">
+
+      <div class="mode-title">
+
+        <label>
+          <input
+            type="radio"
+            name="mode"
+            value="priority">
+
+          上から優先して登場
+        </label>
+
+      </div>
+
+      <p>
+        上から順番に優先して登場します。<br>
+        最大5人まで登録できます。<br>
+        ※登録がない場合はデフォルト名の表示となります
+      </p>
+
+
+      <div class="name-list">
+
+        <div class="name-row">
+          <label>①</label>
+          <input type="text" class="priority-name" maxlength="20" placeholder="はる">
+        </div>
+
+        <div class="name-row">
+          <label>②</label>
+          <input type="text" class="priority-name" maxlength="20" placeholder="あき">
+        </div>
+
+        <div class="name-row">
+          <label>③</label>
+          <input type="text" class="priority-name" maxlength="20" placeholder="そら">
+        </div>
+
+        <div class="name-row">
+          <label>④</label>
+          <input type="text" class="priority-name" maxlength="20" placeholder="ゆう">
+        </div>
+
+        <div class="name-row">
+          <label>⑤</label>
+          <input type="text" class="priority-name" maxlength="20" placeholder="りん">
+        </div>
+
+      </div>
+
+    </div>
+
+
+ 
+
+    <!-- 注意 -->
+
+    <div class="notice">
+
+      <strong>名前についての注意</strong>
+
+      <p>
+        ・主人公、推し、デフォルト名を含め、
+        同じ名前を2回以上登録することはできません。
+      </p>
+
+      <p>
+        ・登録した名前が登場人数に足りない場合は、
+        デフォルト名で補われます。
+      </p>
+
+      <p>
+        ・デフォルト名と同じ名前は登録できません。
+      </p>
+
+    </div>
+
+
+    <div id="errorMessage" class="error"></div>
+
+
+    <!-- ボタン -->
+
+    <div class="buttons">
+
+      <button type="button" onclick="saveSettings()">
+        設定を保存する
+      </button>
+
+      <a href="index.html" class="home-button">
+        HOME
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const defaultNames = [
+      "あなた",
+      "はる",
+      "あき",
+      "そら",
+      "ゆう",
+      "りん",
+      "なお",
+      "けい",
+      "まお",
+      "つばさ",
+      "ひなた"
+    ];
+
+
+    function saveSettings() {
+
+      const errorMessage =
+        document.getElementById("errorMessage");
+
+      errorMessage.textContent = "";
+
+
+      const mainCharacter =
+        document.getElementById("mainCharacter").value.trim();
+
+
+      const mode =
+        document.querySelector(
+          'input[name="mode"]:checked'
+        ).value;
+
+
+      let names = [];
+
+
+      if (mode === "random") {
+
+        document
+          .querySelectorAll(".random-name")
+          .forEach(input => {
+
+            const name = input.value.trim();
+
+            if (name !== "") {
+              names.push(name);
+            }
+
+          });
+
+      } else {
+
+        document
+          .querySelectorAll(".priority-name")
+          .forEach(input => {
+
+            const name = input.value.trim();
+
+            if (name !== "") {
+              names.push(name);
+            }
+
+          });
+
+      }
+
+
+      const allNames = [];
+
+
+      if (mainCharacter !== "") {
+        allNames.push(mainCharacter);
+      }
+
+
+      names.forEach(name => {
+        allNames.push(name);
+      });
+
+
+      const duplicates = [];
+
+
+      allNames.forEach((name, index) => {
+
+        if (
+          allNames.indexOf(name) !== index &&
+          !duplicates.includes(name)
+        ) {
+          duplicates.push(name);
+        }
+
+      });
+
+
+      const defaultDuplicate =
+        allNames.filter(name =>
+          defaultNames.includes(name)
+        );
+
+
+      if (duplicates.length > 0) {
+
+        errorMessage.textContent =
+          "⚠️ 同じ名前を2回登録することはできません。主人公と推しを含め、名前が重複しないようにしてください。";
+
+        return;
+
+      }
+
+
+      if (defaultDuplicate.length > 0) {
+
+        errorMessage.textContent =
+          "⚠️ デフォルト名と同じ名前は登録できません。別の名前を入力してください。";
+
+        return;
+
+      }
+
+
+      const settings = {
+
+        mainCharacter: mainCharacter,
+
+        mode: mode,
+
+        names: names
+
+      };
+
+
+      localStorage.setItem(
+        "oshiDoriSettings",
+        JSON.stringify(settings)
+      );
+
+
+      errorMessage.textContent =
+        "✓ 設定を保存しました！";
+
+    }
+
+
+    function loadSettings() {
+
+      const saved =
+        localStorage.getItem("oshiDoriSettings");
+
+
+      if (!saved) {
+        return;
+      }
+
+
+      try {
+
+        const settings =
+          JSON.parse(saved);
+
+
+        if (settings.mainCharacter) {
+
+          document.getElementById(
+            "mainCharacter"
+          ).value = settings.mainCharacter;
+
+        }
+
+
+        if (settings.mode) {
+
+          const radio =
+            document.querySelector(
+              'input[name="mode"][value="' +
+              settings.mode +
+              '"]'
+            );
+
+          if (radio) {
+            radio.checked = true;
+          }
+
+        }
+
+
+        if (
+          settings.names &&
+          Array.isArray(settings.names)
+        ) {
+
+          let selector;
+
+          if (settings.mode === "priority") {
+
+            selector = ".priority-name";
+
+          } else {
+
+            selector = ".random-name";
+
+          }
+
+
+          const inputs =
+            document.querySelectorAll(selector);
+
+
+          settings.names.forEach(
+            (name, index) => {
+
+              if (inputs[index]) {
+
+                inputs[index].value = name;
+
+              }
+
+            }
+          );
+
+        }
+
+      } catch (error) {
+
+        console.log(
+          "設定の読み込みに失敗しました。",
+          error
+        );
+
+      }
+
+    }
+
+
+    window.addEventListener(
+      "DOMContentLoaded",
+      loadSettings
+    );
+
+  </script>
+
+</body>
+
+</html>
