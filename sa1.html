@@ -115,6 +115,21 @@
     }
 
 
+.choice-button {
+  font-size: 20px;
+  padding: 14px 28px;
+  margin: 5px;
+  min-width: 150px;
+  min-height: 55px;
+  cursor: pointer;
+}
+
+.choice-button.selected {
+  background: #f3d6e4;
+  border: 2px solid #c98aa8;
+}
+
+
     /* =========================
        正誤表示
        ========================= */
@@ -150,6 +165,7 @@
     .check-button:hover {
       background: #eeeeee;
     }
+
 
 
     /* =========================
@@ -315,15 +331,12 @@
 
     <section class="question-box">
 
-      <div class="question-number">
+ <div class="question-number">
         第2問
       </div>
 
-      <div class="question-text">
+     <div class="question-text" id="questionText2"></div>
 
-        【第2問の問題文】
-
-      </div>
 
       <div class="answer-area">
 
@@ -358,34 +371,41 @@
 
     <section class="question-box">
 
-      <div class="question-number">
+ <div class="question-number">
         第3問
       </div>
 
-      <div class="question-text">
+        <div class="question-text" id="questionText3"></div>
 
-        【第3問の問題文】
 
-      </div>
+<div class="answer-area">
 
-      <div class="answer-area">
+ <button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer3(this, '正しい')">
 
-        <label
-          for="answer3"
-          class="answer-label">
+  正しい
 
-          答え
+</button>
 
-        </label>
+<button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer3(this, '正しくない')">
 
-        <input
-          type="text"
-          id="answer3"
-          class="answer-input"
-          autocomplete="off">
+  正しくない
 
-      </div>
+</button>
 
+  <input
+    type="hidden"
+    id="answer3">
+
+</div>
+
+
+    
       <div
         id="result3"
         class="result-mark">
@@ -401,15 +421,12 @@
 
     <section class="question-box">
 
-      <div class="question-number">
+ <div class="question-number">
         第4問
       </div>
 
-      <div class="question-text">
+      <div class="question-text" id="questionText4"></div>
 
-        【第4問の問題文】
-
-      </div>
 
       <div class="answer-area">
 
@@ -448,30 +465,46 @@
         第5問
       </div>
 
-      <div class="question-text">
-
-        【第5問の問題文】
-
-      </div>
+      <div class="question-text" id="questionText5"></div>
 
       <div class="answer-area">
 
-        <label
-          for="answer5"
-          class="answer-label">
+  <button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer5(this, '偶数が多い')">
 
-          答え
+  偶数が多い
 
-        </label>
+</button>
 
-        <input
-          type="text"
-          id="answer5"
-          class="answer-input"
-          autocomplete="off">
+<button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer5(this, '奇数が多い')">
 
-      </div>
+  奇数が多い
 
+</button>
+
+<button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer5(this, 'どちらも同じ')">
+
+  どちらも同じ
+
+</button>
+
+
+<input
+    type="hidden"
+    id="answer5">
+
+</div>
+
+
+    
       <div
         id="result5"
         class="result-mark">
@@ -491,12 +524,10 @@
         第6問
       </div>
 
-      <div class="question-text">
+ <div class="question-text" id="questionText6"></div>
 
-        【第6問の問題文】
 
-      </div>
-
+    
       <div class="answer-area">
 
         <label
@@ -534,30 +565,37 @@
         第7問
       </div>
 
-      <div class="question-text">
+      <div class="question-text" id="questionText7"></div>
 
-        【第7問の問題文】
-
-      </div>
 
       <div class="answer-area">
 
-        <label
-          for="answer7"
-          class="answer-label">
+  <button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer7(this, '偶数')">
 
-          答え
+  偶数
 
-        </label>
+</button>
 
-        <input
-          type="text"
-          id="answer7"
-          class="answer-input"
-          autocomplete="off">
+<button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer7(this, '奇数')">
 
-      </div>
+  奇数
 
+</button>
+
+  <input
+    type="hidden"
+    id="answer7">
+
+</div>
+
+
+    
       <div
         id="result7"
         class="result-mark">
@@ -577,37 +615,45 @@
         第8問
       </div>
 
-      <div class="question-text">
-
-        【第8問の問題文】
+   <div class="question-text"id="questionText8">
 
       </div>
 
       <div class="answer-area">
 
-        <label
-          for="answer8"
-          class="answer-label">
+       
+<button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer8(this, '偶数')">
 
-          答え
+  偶数
 
-        </label>
+</button>
 
-        <input
-          type="text"
-          id="answer8"
-          class="answer-input"
-          autocomplete="off">
+<button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer8(this, '奇数')">
 
-      </div>
+  奇数
 
+</button>
+
+  <input
+    type="hidden"
+    id="answer8">
+
+</div>
+
+
+    
       <div
         id="result8"
         class="result-mark">
       </div>
 
     </section>
-
 
 
     <!-- =========================
@@ -620,30 +666,41 @@
         第9問
       </div>
 
-      <div class="question-text">
-
-        【第9問の問題文】
+    
+<div class="question-text" id="questionText9">
 
       </div>
 
       <div class="answer-area">
 
-        <label
-          for="answer9"
-          class="answer-label">
+       
 
-          答え
+<button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer9(this, '偶数')">
 
-        </label>
+  偶数
 
-        <input
-          type="text"
-          id="answer9"
-          class="answer-input"
-          autocomplete="off">
+</button>
 
-      </div>
+<button
+  type="button"
+  class="choice-button"
+  onclick="selectAnswer9(this, '奇数')">
 
+  奇数
+
+</button>
+
+  <input
+    type="hidden"
+    id="answer9">
+
+</div>
+
+
+    
       <div
         id="result9"
         class="result-mark">
@@ -663,9 +720,8 @@
         第10問
       </div>
 
-      <div class="question-text">
-
-        【第10問の問題文】
+     
+<div class="question-text" id="questionText10">
 
       </div>
 
@@ -776,24 +832,21 @@
 
     /* =========================
        正解データ
-       
-       今は仮の答え。
-       問題文が決まったら
-       ここを書き換える。
+
        ========================= */
 
     const correctAnswers = [
 
       "24 56 90",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10"
+      "48 72 100",
+      "正しい",
+      "1 3 5 7 9 11 13 15 17 19",
+      "どちらも同じ",
+      "28 42 64 86",
+      "奇数",
+      "奇数",
+      "奇数",
+      "14 32"
 
     ];
 
@@ -807,6 +860,10 @@
       localStorage.getItem("oshiDoriSettings");
 
     let oshiSettings = null;
+
+
+let mainName = "あなた";
+let oshiNames = [];
 
 
     if (savedSettings) {
@@ -826,43 +883,289 @@
 
     }
 
+function prepareOshiNames() {
 
-function createQuestion1() {
+  if (
+    oshiSettings &&
+    oshiSettings.names &&
+    oshiSettings.names.length > 0
+  ) {
 
-  let mainName = "あなた";
-  let oshiName = "はる";
+    oshiNames = [...oshiSettings.names];
 
-  if (oshiSettings) {
+  } else {
 
-    if (oshiSettings.mainCharacter) {
-      mainName = oshiSettings.mainCharacter;
-    }
-
-    if (
-      oshiSettings.names &&
-      oshiSettings.names.length > 0
-    ) {
-
-      const randomIndex =
-        Math.floor(
-          Math.random() * oshiSettings.names.length
-        );
-
-      oshiName =
-        oshiSettings.names[randomIndex];
-
-    }
+    oshiNames = [
+      "はる",
+      "あき",
+      "そら",
+      "ゆう",
+      "りん",
+      "なお",
+      "けい",
+      "まお",
+      "つばさ",
+      "ひなた"
+    ];
 
   }
 
-document.getElementById("questionText1").innerHTML =
-    "<strong>" + oshiName + "</strong>は数字カードを持っています。<br>" +
+  oshiNames.sort(() => Math.random() - 0.5);
+
+}
+
+
+function getNextOshiName() {
+
+  if (oshiNames.length === 0) {
+    prepareOshiNames();
+  }
+
+  return oshiNames.shift();
+
+}
+
+
+
+function createQuestion1() {
+
+  if (oshiSettings && oshiSettings.mainCharacter) {
+    mainName = oshiSettings.mainCharacter;
+  }
+
+  const oshiName1 = getNextOshiName();
+
+  document.getElementById("questionText1").innerHTML =
+    "<strong>" + oshiName1 + "</strong>は数字カードを持っています。<br>" +
     "この中から偶数のカードだけ" +
     "<strong>" + mainName + "</strong>にプレゼントしてくれます。<br>" +
     "もらったカードはどれですか。<br><br>" +
-    "24、37、56、81、90、103"; 
+    "数字は小さい順に、スペースを入れて答えてね。<br><br>" +
+    "24、37、56、81、90、103";
 }
 
+
+function createQuestion2() {
+
+  const oshiName2 = getNextOshiName();
+
+  document.getElementById("questionText2").innerHTML =
+    "<strong>" + oshiName2 + "</strong>は、ある数について「この数は偶数です」と言いました。<br>" +
+    "次のうち、" +
+    "<strong>" + oshiName2 + "</strong>の言っていることが正しい数をすべて選びましょう。<br><br>" +
+"数字は小さい順に、スペースを入れて答えてね。<br><br>" +
+"48　65　72　91　100";
+}
+
+
+function createQuestion3() {
+
+  const oshiName3 = getNextOshiName();
+
+  document.getElementById("questionText3").innerHTML =
+    "<strong>" + oshiName3 + "</strong>は、次のように言いました。<br><br>" +
+    "「一の位が 0、2、4、6、8 のどれかなら、その数は偶数だよ。」<br><br>" +
+    "<strong>" + oshiName3 + "</strong>の考えは正しいですか。<br><br>";
+}
+
+function createQuestion4() {
+
+  const oshiName4 = getNextOshiName();
+
+  document.getElementById("questionText4").innerHTML =
+    "<strong>" + oshiName4 + "</strong>は、1から20までの整数を並べました。<br><br>" +
+    "その中から<strong>奇数をすべて</strong>選びましょう。<br><br>" +
+    "数字は小さい順に、スペースを入れて答えてね。";
+
+}
+
+
+function createQuestion5() {
+
+  const oshiName5 = getNextOshiName();
+
+  document.getElementById("questionText5").innerHTML =
+"<strong>" + oshiName5 + "</strong>と" +
+"<strong>" + mainName + "</strong>が、1から30までの整数について調べました。<br><br>" +
+"<strong>" + oshiName5 + "</strong>「偶数の方が多いよ」<br>" +
+"<strong>" + mainName + "</strong>「奇数の方が多いよ」<br><br>"+
+"どちらの考えが正しいでしょうか。";
+
+
+}
+
+
+function createQuestion6() {
+
+const oshiName6 = getNextOshiName();
+
+document.getElementById("questionText6").innerHTML =
+"<strong>" + mainName + "</strong>が数字カードをみていると、"+
+"<strong>" + oshiName6 + "</strong>が「偶数だけちょうだい」といいました。<br>"+
+"どのカードを"+
+"<strong>" + oshiName6 + "</strong>に渡しますか。<br><br>"+
+
+
+ "数字は小さい順に、スペースを入れて答えてね。<br><br>" +
+    "17、28、35、42、53、64、71、86、99";
+
+}
+
+
+
+function createQuestion7() {
+
+const oshiName7 = getNextOshiName();
+const oshiName8 = getNextOshiName();
+
+document.getElementById("questionText7").innerHTML =
+
+
+"<strong>" + oshiName7 + "</strong>と"+
+"<strong>" + oshiName8 + "</strong>は整数を一つ選びました。<br>"+
+"その数について"+
+"<strong>" + oshiName7 + "</strong>はこう言いました。「奇数だったよ」<br>"+
+"そして"+
+"<strong>" + oshiName8 + "</strong>はこう言いました。「"+
+"<strong>" + oshiName7 + "</strong>の数より2大きいよ」<br><br>"+
+
+"<strong>" + oshiName8 + "</strong>の数は、偶数ですか、奇数ですか。";
+
+
+}
+
+
+function createQuestion8() {
+
+const oshiName9 = getNextOshiName();
+
+document.getElementById("questionText8").innerHTML =
+
+"<strong>" + oshiName9 + "</strong>のラッキーナンバーに1を足すと、偶数になりました。<br>"+
+"<strong>" + oshiName9 + "</strong>のラッキーナンバーは偶数と奇数どちらでしょうか。";
+
+}
+
+
+function createQuestion9() {
+
+const oshiName10 = getNextOshiName();
+
+document.getElementById("questionText9").innerHTML =
+
+"<strong>" + oshiName10 + "</strong>は次の計算をしました。<br>"+
+"18＋25<br>"+
+"実際に計算せずに答えます。答えは偶数ですか、奇数ですか。";
+
+}
+
+
+function createQuestion10() {
+
+const oshiName11 = getNextOshiName();
+const oshiName12 = getNextOshiName();
+
+document.getElementById("questionText10").innerHTML =
+
+
+"<strong>" + oshiName11 + "</strong>と"+
+"<strong>" + oshiName12 + "</strong>は数字カードを使ったゲームをしています。<br>"+
+"2人が引いたカードの数を足して、答えが偶数なら"+
+"<strong>" + oshiName11 + "</strong>の勝ち<br>"+
+"奇数なら"+
+"<strong>" + oshiName12 + "</strong>の勝ちです。<br><br>"+
+
+"あるゲームで"+
+"<strong>" + oshiName11 + "</strong>は27のカードを引きました。<br>"+
+"<strong>" + oshiName12 + "</strong>はどのカードを引けば勝てるでしょうか。<br><br>"+
+
+ "数字は小さい順に、スペースを入れて答えてね。<br><br>"+
+
+"14、25、32、41";
+
+}
+
+
+
+
+
+function selectAnswer3(button, answer) {
+
+  document.getElementById("answer3").value = answer;
+
+  const buttons =
+    button.parentElement.querySelectorAll(".choice-button");
+
+  buttons.forEach(function(btn) {
+    btn.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+}
+
+
+
+function selectAnswer5(button, answer) {
+
+  document.getElementById("answer5").value = answer;
+
+  const buttons =
+    button.parentElement.querySelectorAll(".choice-button");
+
+  buttons.forEach(function(btn) {
+    btn.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+}
+
+
+
+function selectAnswer7(button, answer) {
+
+  document.getElementById("answer7").value = answer;
+
+  const buttons =
+    button.parentElement.querySelectorAll(".choice-button");
+
+  buttons.forEach(function(btn) {
+    btn.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+}
+
+
+
+function selectAnswer8(button, answer) {
+
+  document.getElementById("answer8").value = answer;
+
+  const buttons =
+    button.parentElement.querySelectorAll(".choice-button");
+
+  buttons.forEach(function(btn) {
+    btn.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+}
+
+
+
+function selectAnswer9(button, answer) {
+
+  document.getElementById("answer9").value = answer;
+
+  const buttons =
+    button.parentElement.querySelectorAll(".choice-button");
+
+  buttons.forEach(function(btn) {
+    btn.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+}
 
 
     /* =========================
@@ -893,19 +1196,29 @@ document.getElementById("questionText1").innerHTML =
             "result" + i
           );
 
+const userAnswer =
+  input.value
+    .replace(/[０-９]/g, function(s) {
+      return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    })
+    .replace(/[ 　]/g, "")
+    .trim();
 
-        const userAnswer =
-          input.value.trim();
+
+const correctAnswer =
+  correctAnswers[i - 1]
+    .replace(/[０-９]/g, function(s) {
+      return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    })
+    .replace(/[ 　]/g, "")
+    .trim();
 
 
-        const correctAnswer =
-          correctAnswers[i - 1];
-
-
-        if (
-          userAnswer !== "" &&
-          userAnswer === correctAnswer
-        ) {
+if (
+  userAnswer !== "" &&
+  userAnswer === correctAnswer
+) {
+     
 
           score++;
 
@@ -1026,6 +1339,11 @@ document.getElementById("questionText1").innerHTML =
       ).style.display = "none";
 
 
+  document.querySelectorAll(".choice-button").forEach(function(button) {
+        button.classList.remove("selected");
+      });
+
+
       window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -1034,8 +1352,17 @@ document.getElementById("questionText1").innerHTML =
     }
 
 createQuestion1();
+createQuestion2();
+createQuestion3();
+createQuestion4();
+createQuestion5();
+createQuestion6();
+createQuestion7();
+createQuestion8();
+createQuestion9();
+createQuestion10();
 
-  </script>
+</script>
 
 
 </body>

@@ -279,7 +279,10 @@
 
         <div class="name-row">
           <label>①</label>
-          <input type="text" class="priority-name" maxlength="20" placeholder="はる">
+
+<input type="text" class="priority-name" maxlength="20" placeholder="はる">
+      
+
         </div>
 
         <div class="name-row">
@@ -337,17 +340,21 @@
 
     <!-- ボタン -->
 
-    <div class="buttons">
+   <div class="buttons">
 
-      <button type="button" onclick="saveSettings()">
-        設定を保存する
-      </button>
+  <button type="button" onclick="saveSettings()">
+    設定を保存する
+  </button>
 
-      <a href="index.html" class="home-button">
-        HOME
-      </a>
+  <button type="button" onclick="resetSettings()">
+    デフォルトに戻す
+  </button>
 
-    </div>
+  <a href="index.html" class="home-button">
+    HOME
+  </a>
+
+</div>
 
   </div>
 
@@ -475,15 +482,18 @@
       }
 
 
-      const settings = {
+     const settings = {
 
-        mainCharacter: mainCharacter,
+  mainCharacter: mainCharacter,
 
-        mode: mode,
+  mode: mode,
 
-        names: names
+  names: names.length > 0
+    ? names
+    : defaultNames.slice(1)
 
-      };
+};
+
 
 
       localStorage.setItem(
@@ -496,6 +506,22 @@
         "✓ 設定を保存しました！";
 
     }
+
+
+
+function resetSettings() {
+
+  if (!confirm("デフォルトの名前に戻しますか？")) {
+    return;
+  }
+
+  localStorage.removeItem("oshiDoriSettings");
+
+  location.reload();
+
+}
+
+
 
 
     function loadSettings() {
@@ -588,10 +614,13 @@
     }
 
 
-    window.addEventListener(
-      "DOMContentLoaded",
-      loadSettings
-    );
+
+  window.addEventListener(
+  "DOMContentLoaded",
+  loadSettings
+);
+
+
 
   </script>
 
