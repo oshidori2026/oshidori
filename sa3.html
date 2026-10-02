@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>約数と倍数</title>
+  <title>小数の掛け算</title>
 
   <style>
 
@@ -278,7 +278,7 @@
     <header class="page-header">
 
       <h1 class="page-title">
-        約数と倍数
+        小数の掛け算
       </h1>
 
     </header>
@@ -300,64 +300,29 @@
 
       <div class="answer-area">
 
-<div class="four-choice">
 
-<button
-  type="button"
-  class="choice-button"
-  onclick="selectAnswer1(this, '5人')">
+  <label
+          for="answer1"
+          class="answer-label">
 
-  5人
+          答え
 
-</button>
+        </label>
 
-<button
-  type="button"
-  class="choice-button"
-  onclick="selectAnswer1(this, '6人')">
+        <input
+          type="text"
+          id="answer1"
+          class="answer-input"
+          autocomplete="off"> m
 
-  6人
+      </div>
 
-</button>
-
-  <button
-  type="button"
-  class="choice-button"
-  onclick="selectAnswer1(this, '7人')">
-
-  7人
-
-</button>
-
-<button
-  type="button"
-  class="choice-button"
-  onclick="selectAnswer1(this, '10人')">
-
-  10人
-
-</button>
-
-</div>
-
-
-
-  <input
-    type="hidden"
-    id="answer1">
-
-</div>
-
-
-    
       <div
         id="result1"
         class="result-mark">
       </div>
 
     </section>
-
-
 
 
     <!-- =========================
@@ -387,7 +352,7 @@
           type="text"
           id="answer2"
           class="answer-input"
-          autocomplete="off"> 袋
+          autocomplete="off"> g
 
       </div>
 
@@ -415,54 +380,23 @@
 
 <div class="answer-area">
 
-<div class="four-choice">
 
- <button
-  type="button"
-  class="choice-button"
-  onclick="selectAnswer3(this, 'A')">
+  <label
+          for="answer3"
+          class="answer-label">
 
-  A
+          答え
 
-</button>
+        </label>
 
-<button
-  type="button"
-  class="choice-button"
-  onclick="selectAnswer3(this, 'B')">
+        <input
+          type="text"
+          id="answer3"
+          class="answer-input"
+          autocomplete="off"> 枚
 
-  B
+      </div>
 
-</button>
-
-<button
-  type="button"
-  class="choice-button"
-  onclick="selectAnswer3(this, 'C')">
-
-  C
-
-</button>
-
-<button
-  type="button"
-  class="choice-button"
-  onclick="selectAnswer3(this, 'D')">
-
-  D
-
-</button>
-
-</div>
-
-  <input
-    type="hidden"
-    id="answer3">
-
-</div>
-
-
-    
       <div
         id="result3"
         class="result-mark">
@@ -499,7 +433,7 @@
           type="text"
           id="answer4"
           class="answer-input"
-          autocomplete="off">
+          autocomplete="off"> ㎏
 
       </div>
 
@@ -538,7 +472,7 @@
           type="text"
           id="answer5"
           class="answer-input"
-          autocomplete="off"> 日後
+          autocomplete="off"> m
 
       </div>
 
@@ -578,7 +512,7 @@
           type="text"
           id="answer6"
           class="answer-input"
-          autocomplete="off"> 時間後
+          autocomplete="off"> kg
 
       </div>
 
@@ -618,7 +552,7 @@
           type="text"
           id="answer7"
           class="answer-input"
-          autocomplete="off">
+          autocomplete="off"> m
 
       </div>
 
@@ -658,7 +592,7 @@
           type="text"
           id="answer8"
           class="answer-input"
-          autocomplete="off"> 人
+          autocomplete="off"> kg
 
       </div>
 
@@ -699,7 +633,7 @@
           type="text"
           id="answer9"
           class="answer-input"
-          autocomplete="off">
+          autocomplete="off"> リットル
 
       </div>
 
@@ -741,7 +675,7 @@
           type="text"
           id="answer10"
           class="answer-input"
-          autocomplete="off"> 個
+          autocomplete="off"> g
 
       </div>
 
@@ -839,16 +773,16 @@
 
     const correctAnswers = [
 
-      "6人",
-      "1 2 3 4 6 9 12 18 36",
-      "B",
-      "12",
-      "12",
+      "35",
+      "420",
+      "56",
+      "7.2",
+      "9",
+      "25.2",
+      "4.8",
+      "9.4",
       "15",
-      "1 2 3 6",
-      "12",
-      "6 18",
-      "24"
+      "11.7"
 
     ];
 
@@ -940,10 +874,8 @@ function createQuestion1() {
   document.getElementById("questionText1").innerHTML =
 
 "<strong>" + mainName + "</strong>は"+
-"<strong>" + oshiName1 + "</strong>の素敵な写真を24枚持っています。<br>"+
-"同じく"+
-"<strong>" + oshiName1 + "</strong>を応援している何人かの友達に同じ枚数ずつ分けることにしました。<br>"+
-"写真があまらないように分けることができる人数は、次のうちどれでしょう";
+"<strong>" + oshiName1 + "</strong>のライブで3.5mの銀テープをゲットしました。<br>"+
+"このテープの長さを10倍したら、何mになるでしょぅか。";
 
 }
 
@@ -952,46 +884,33 @@ function createQuestion1() {
 function createQuestion2() {
 
   const oshiName2 = getNextOshiName();
+  const oshiName3 = getNextOshiName();
 
   document.getElementById("questionText2").innerHTML =
 
 
 
-    "<strong>" + oshiName2 + "</strong>は、仲間に配りたいと思い36個のお菓子を用意して、<br>"+
-"同じ数ずつ袋に入れます。<br><br>"+
-"あまりなく分ける場合、何袋用意できますか。全て答えましょう。<br>"+
-"数字は小さい順に、スペースを入れて答えてね。"; 
+    "<strong>" + oshiName2 + "</strong>は、チョコレートを4.2g持っていました。<br>"+
+"すると、魔法使いの"+
+"<strong>" + oshiName3 + "</strong>がやって来て「100倍にしてあげよう!」と魔法をかけました。<br>"+
+"チョコレートは何グラムになりましたか。";
 
 }
 
 
 function createQuestion3() {
 
-  const oshiName3 = getNextOshiName();
   const oshiName4 = getNextOshiName();
-  const oshiName5 = getNextOshiName();
+  
 
 
   document.getElementById("questionText3").innerHTML =
 
 
-"カードゲームをしています。5の倍数を引いた人が勝ちです。<br><br>"+
-"カードの数字は<br>"+
-
-"<strong>" + mainName + "</strong>が23、"+
-"<strong>" + oshiName3 + "</strong>が35、"+
-"<strong>" + oshiName4 + "</strong>が42、"+
-"<strong>" + oshiName5 + "</strong>が48でした。<br>"+
-"誰が勝ちましたか。<br><br>"+
-
-"A "+
-"<strong>" + mainName + "</strong>"+
-"　B "+
-"<strong>" + oshiName3 + "</strong>"+
-"　C "+
-"<strong>" + oshiName4 + "</strong>"+
-"　D "+
-"<strong>" + oshiName5 + "</strong>";
+"<strong>" + mainName + "</strong>は、560枚のシールを持っています。<br>"+
+"10分の1を大好きな"+
+"<strong>" + oshiName4 + "</strong>にあげることにしました。<br>"+
+"何枚あげましたか。";
 
 }
 
@@ -1000,13 +919,14 @@ function createQuestion3() {
 
 function createQuestion4() {
 
-  const oshiName6 = getNextOshiName();
+  const oshiName5 = getNextOshiName();
 
   document.getElementById("questionText4").innerHTML =
 
-"<strong>" + oshiName6 + "</strong>から"+
-"<strong>" + mainName + "</strong>への質問です。<br>"+
-"「12、24、36、48、60…これは何の倍数でしょう。数字だけ答えてね」<br>";
+"甘いものが大好きな"+
+"<strong>" + oshiName5 + "</strong>は、お菓子を買いすぎて2.4kgの袋が3つにもなってしまいました。<br>"+
+"<strong>" + oshiName5 + "</strong>の持っているお菓子は、全部で何㎏ですか。";
+
 
 
 }
@@ -1014,30 +934,30 @@ function createQuestion4() {
 
 function createQuestion5() {
 
-  const oshiName7 = getNextOshiName();
-  const oshiName8 = getNextOshiName();
-
+  const oshiName6 = getNextOshiName();
+ 
   document.getElementById("questionText5").innerHTML =
-"<strong>" + oshiName7 + "</strong>は4日ごと、" +
-"<strong>" + oshiName8 + "</strong>は6日ごとにサウナに行きます。<br>"+
-"今日、二人は一緒にサウナに行きました。<br>"+
-"次に二人が一緒にサウナに行く日は何日後でしょうか。";
 
-
+"<strong>" + oshiName6 + "</strong>は、" +
+"<strong>" + mainName + "</strong>のお誕生日プレゼントのラッピングのため、<br>"+
+"1本1.8mのリボンを5本買いました。<br>"+
+"<strong>" + oshiName6 + "</strong>が買ったリボンは全部で何mですか。";
 
 }
 
 
 function createQuestion6() {
 
-const oshiName9 = getNextOshiName();
+const oshiName7 = getNextOshiName();
+const oshiName8 = getNextOshiName();
 
 document.getElementById("questionText6").innerHTML =
 
 
-"<strong>" + mainName + "</strong>の時計は3時間ごと、"+
-"<strong>" + oshiName9 + "</strong>の時計は5時間ごとにアラームが鳴ります。<br>"+
-"今、二人のアラームが同時に鳴りました。次は何時間後に同時に鳴りますか。<br>";
+"<strong>" + oshiName7 + "</strong>の引越しを"+
+"<strong>" + oshiName8 + "</strong>が手伝います<br>"+
+"荷物の箱は7箱、一つ3.6kgありました。<br>"+
+"荷物は全部で何kgですか";
 
 }
 
@@ -1045,50 +965,44 @@ document.getElementById("questionText6").innerHTML =
 
 function createQuestion7() {
 
-const oshiName10 = getNextOshiName();
+const oshiName9 = getNextOshiName();
 
 
 document.getElementById("questionText7").innerHTML =
 
-"<strong>" + mainName + "</strong>が自習室に行くと、先に"+
-"<strong>" + oshiName10 + "</strong>が来ていて、こう言いました。<br>"+
-"「18と24の公約数って何だっけ…全部知りたくて…」<br><br>"+
-"数字は小さい順に、スペースを入れて答えてね。<br>";
+"<strong>" + mainName + "</strong>は、大事にしている"+
+"<strong>" + oshiName9 + "</strong>のポスターを6枚つなげて弾幕を作りました。<br>"+
+"ポスターは1枚0.8メートルです。<br>"+
+"弾幕は何mになりましたか。";
 
 }
 
 
 function createQuestion8() {
 
-const oshiName11 = getNextOshiName();
-const oshiName12 = getNextOshiName();
+const oshiName9 = getNextOshiName();
 
 document.getElementById("questionText8").innerHTML =
 
-"<strong>" + oshiName11 + "</strong>は24個、"+
-"<strong>" + oshiName12 + "</strong>は36個のキャンディーを持っています。<br>"+
-"それぞれ同じ数ずつ、あまりが出ないように袋に入れて、<br>"+
-"明日できるだけ多くのファンにプレゼントしたいです。<br><br>"+
-"何人にプレゼントすることができるでしょうか。";
 
-
+"力持ちで有名な"+
+"<strong>" + oshiName9 + "</strong>は、2.35kgのダンベルを4つも持ってみせました。<br>"+
+"<strong>" + oshiName9 + "</strong>は全部で何kg持ったことになりますか。";
 
 }
 
 
 function createQuestion9() {
 
-const oshiName13 = getNextOshiName();
-const oshiName14 = getNextOshiName();
+const oshiName10 = getNextOshiName();
 
 document.getElementById("questionText9").innerHTML =
 
-"<strong>" + oshiName13 + "</strong>は18の約数を、"+
-"<strong>" + oshiName14 + "</strong>は6の倍数を書きました。<br>"+
-"2人が共に書いた数字は何でしょう。<br><br>"+
-"数字は小さい順に、スペースを入れて答えてね。<br>";
-
-
+"スペシャルパーティの準備中の会場で、"+
+"<strong>" + oshiName10 + "</strong>は2.5リットルのジュースを1本見つけました。<br>"+
+"<strong>" + mainName + "</strong>など、たくさんの人が来るので足りないと思い、"+
+"ジュースを6倍用意することにしました。<br>"+
+"全部で何リットル用意しましたか。";
 
 
 }
@@ -1096,16 +1010,16 @@ document.getElementById("questionText9").innerHTML =
 
 function createQuestion10() {
 
-const oshiName15 = getNextOshiName();
+const oshiName11 = getNextOshiName();
 
 document.getElementById("questionText10").innerHTML =
 
 
-"<strong>" + mainName + "</strong>は、6個入りの袋のアメを買い、"+
-"<strong>" + oshiName15 + "</strong>は8個入りの袋のアメを買いました。<br>"+
-"<strong>" + mainName + "</strong>と"+
-"<strong>" + oshiName15 + "</strong>が買ったアメの数が同じになる時、<br>"+
-"最低何個のアメを買うことになるでしょぅか";
+"<strong>" + oshiName11 + "</strong>と"+
+"<strong>" + mainName + "</strong>は、一緒にシーグラスを集めています。<br>"+
+"集めたシーグラスは、3.9g入るビンで5つ分になりました。<br>"+
+"この前、素敵な写真立てを作るためにビン2本分使いました。<br>"+
+"残っているシーグラスは何gですか。";
 
 
 }
@@ -1128,19 +1042,7 @@ function selectAnswer1(button, answer) {
 
 
 
-function selectAnswer3(button, answer) {
 
-  document.getElementById("answer3").value = answer;
-
-  const buttons =
-    button.parentElement.querySelectorAll(".choice-button");
-
-  buttons.forEach(function(btn) {
-    btn.classList.remove("selected");
-  });
-
-  button.classList.add("selected");
-}
 
 
 
@@ -1337,7 +1239,6 @@ createQuestion7();
 createQuestion8();
 createQuestion9();
 createQuestion10();
-
 
 
 </script>

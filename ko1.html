@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>読みの練習｜推しドリ！</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f1eadf;
+      color: #514b43;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      padding: 12px;
+      text-align: center;
+      font-size: 24px;
+      background: #fffaf0;
+      border: 3px dotted #b8aaa0;
+    }
+
+    .question-area {
+      background: #fffaf0;
+      border: 3px dotted #b8aaa0;
+      padding: 30px;
+    }
+
+
+
+    .story-text {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-size: 20px;
+      line-height: 1.8;
+      letter-spacing: 0.08em;
+    }
+
+   
+.reading-word {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+
+.reading-number {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  margin-bottom: 3px;
+}
+
+  
+.story-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.answer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-list {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.check-button {
+  display: block;
+  margin: 20px 0 0;
+  padding: 12px 30px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #514b43;
+  background: white;
+  border: 2px solid #8f847b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.answer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.answer-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.answer-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.answer-item input {
+  width: 150px;
+  height: 38px;
+  padding: 5px 8px;
+  font-size: 16px;
+  text-align: center;
+  border: 2px solid #aaa;
+  border-radius: 6px;
+  background: white;
+}
+
+
+
+    .answer-item input:focus {
+      outline: none;
+      border-color: #888;
+    }
+
+
+.result {
+  width: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+.writing-area {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+
+.writing-item {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+
+.writing-word {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+
+
+.writing-number {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  margin-right: 3px;
+}
+
+
+
+
+.writing-answer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+ 
+
+    @media (max-width: 600px) {
+
+      .page {
+        padding: 10px;
+      }
+
+      .question-area {
+        padding: 20px 10px;
+      }
+
+      .story-text {
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <h1>読みの練習</h1>
+
+  
+<div class="story-area">
+
+  <!-- 解答エリア -->
+  <div class="answer-area">
+
+    <div class="answer-list">
+
+      <div class="answer-column">
+
+        <div class="answer-item">
+          <span class="answer-number">①</span>
+          <input type="text" id="answer1" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result1"></span>
+        </div>
+
+        <div class="answer-item">
+          <span class="answer-number">③</span>
+          <input type="text" id="answer3" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result3"></span>
+        </div>
+
+        <div class="answer-item">
+          <span class="answer-number">⑤</span>
+          <input type="text" id="answer5" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result5"></span>
+        </div>
+
+      </div>
+
+      <div class="answer-column">
+
+        <div class="answer-item">
+          <span class="answer-number">②</span>
+          <input type="text" id="answer2" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result2"></span>
+        </div>
+
+        <div class="answer-item">
+          <span class="answer-number">④</span>
+          <input type="text" id="answer4" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result4"></span>
+        </div>
+
+        <div class="answer-item">
+          <span class="answer-number">⑥</span>
+          <input type="text" id="answer6" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result6"></span>
+        </div>
+
+      </div>
+
+    </div>
+
+   <button
+  type="button"
+  class="check-button"
+  onclick="checkAnswers()">
+  答え合わせ
+</button>
+
+  </div>
+
+
+  <!-- 問題文 -->
+  <div class="story-text">
+
+
+
+      <strong id="oshiName1"></strong>の日記<br>
+    <br>
+
+    今日は<strong id="friend-Name"></strong>と「<span class="reading-word"><span class="reading-number">①</span>金属</span>の世界<ruby>展<rt>てん</rt></ruby>」というイベントにでかけました。<br>
+
+    見学の途中で<strong class="friend-name"></strong>が「<ruby>喉<rt>のど</rt></ruby>が<ruby>渇<rt>かわ</rt></ruby>いたけど、お<span class="reading-word"><span class="reading-number">②</span>財布</span>忘れた。。。」<br>
+と言うので、<span class="reading-word"><span class="reading-number">③</span>炭酸</span>飲料を買ってあげました。<br>
+
+    お金を出してあげたら<strong class="friend-name"></strong>はニッコリ笑って<br>
+「得したー!ありがと!」なんて言ってました。<br>
+    まったく、もう。<br>
+<br>
+    <ruby>展示<rt>てんじ</rt></ruby>で一番気になったのは、<span class="reading-word"><span class="reading-number">④</span>銅</span>でできた<span class="reading-word"><span class="reading-number">⑤</span>貯金箱</span>でした。<br>
+
+    ピカピカでお金がたくさん<span class="reading-word"><span class="reading-number">⑥</span>貯</span>まりそうだなぁと思いました。
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+const savedSettings =
+  localStorage.getItem("oshiDoriSettings");
+
+let oshiSettings = null;
+
+let mainName = "あなた";
+let oshiNames = [];
+
+
+if (savedSettings) {
+  try {
+    oshiSettings = JSON.parse(savedSettings);
+  } catch (error) {
+    console.log("推し設定の読み込みに失敗しました。");
+  }
+}
+
+
+if (oshiSettings && oshiSettings.mainCharacter) {
+  mainName = oshiSettings.mainCharacter;
+}
+
+
+function prepareOshiNames() {
+
+  if (
+    oshiSettings &&
+    oshiSettings.names &&
+    oshiSettings.names.length > 0
+  ) {
+    oshiNames = [...oshiSettings.names];
+
+  } else {
+
+    oshiNames = [
+      "はる",
+      "あき",
+      "そら",
+      "ゆう",
+      "りん",
+      "なお",
+      "けい",
+      "まお",
+      "つばさ",
+      "ひなた"
+    ];
+  }
+
+  oshiNames.sort(() => Math.random() - 0.5);
+}
+
+
+function getNextOshiName() {
+
+  if (oshiNames.length === 0) {
+    prepareOshiNames();
+  }
+
+  return oshiNames.shift();
+}
+
+
+const oshiName1 = getNextOshiName();
+const oshiName2 = getNextOshiName();
+const oshiName3 = getNextOshiName();
+
+document.getElementById("oshiName1").textContent = oshiName1;
+
+document.querySelectorAll(".friend-name").forEach(element => {
+  element.textContent = oshiName2;
+});
+
+
+function checkAnswers() {
+
+  const answers = [
+    "きんぞく",
+    "さいふ",
+    "たんさん",
+    "どう",
+    "ちょきんばこ",
+    "た"
+  ];
+
+
+  for (let i = 0; i < answers.length; i++) {
+
+    const input =
+      document.getElementById("answer" + (i + 1));
+
+    const result =
+      document.getElementById("result" + (i + 1));
+
+    const userAnswer =
+      input.value.trim();
+
+
+    if (userAnswer === answers[i]) {
+
+      result.textContent = "○";
+      result.style.color = "red";
+
+    } else {
+
+      result.textContent = "×";
+      result.style.color = "#555";
+
+    }
+
+  }
+
+}
+
+
+
+document.getElementById("mainName").textContent = mainName;
+
+
+</script>
+ 
+
+
+<!-- 書きの練習 -->
+
+<div class="writing-section">
+
+  <h1>書きの練習</h1>
+
+  <div class="writing-area">
+
+    <div class="writing-item">
+
+     
+<strong class="letter-name"></strong>へのファンレター<br>
+<br>
+
+<strong class="letter-name"></strong>へ<br>
+<br>
+
+私はファン<span class="writing-word"><span class="writing-number">①</span>れき</span>10年の、<ruby>筋金<rt>すじがね</rt></ruby>入りの<strong class="letter-name"></strong>のファンです。<br>
+毎日<span class="writing-word"><span class="writing-number">②</span>ゆめ</span>に出てくるくらい、<strong class="letter-name"></strong>を
+<span class="writing-word"><span class="writing-number">③</span>ぜっさん</span>応援中です。<br>
+最近のトキメキポイントをお伝えしますね。<br>
+まず、ドラマで演じた<span class="writing-word"><span class="writing-number">④</span>ざいにん</span>の<ruby>姿<rt>すがた</rt></ruby>がアンニュイで素敵でした!<br>
+<ruby>役柄<rt>やくがら</rt></ruby>の<span class="writing-word"><span class="writing-number">⑤</span>せいふく</span>も似合ってましたよ。<br>
+あと、計算が早いところ!<br>
+この前のバラエティで<span class="writing-word"><span class="writing-number">⑥</span>ぜいきん</span>を暗算してて、カッコ良すぎました。<br>
+<br>
+まだまだ言い足りないけど、最近のトキメキポイントの<span class="writing-word"><span class="writing-number">⑦</span>ほうこく</span>でした。<br>
+またお手紙書きますね。<br>
+<br>
+<strong id="mainName"></strong>より
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+
+  <button
+    type="button"
+    class="check-button"
+    onclick="showWritingAnswer()">
+    答えを見る
+  </button>
+
+  <div id="writing-answer" class="writing-answer"></div>
+
+</div>
+
+<script>
+
+document.querySelectorAll(".letter-name").forEach(element => {
+  element.textContent = oshiName3;
+});
+
+document.getElementById("mainName").textContent = mainName;
+
+
+function showWritingAnswer() {
+
+  const answer = document.getElementById("writing-answer");
+
+  answer.innerHTML =
+    "① 歴　② 夢　③絶賛　④ 罪人　⑤制服　⑥税金　⑦報告";
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
