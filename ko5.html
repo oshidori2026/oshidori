@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Day.5</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f1eadf;
+      color: #514b43;
+    }
+
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      padding: 12px;
+      text-align: center;
+      font-size: 24px;
+      background: #fffaf0;
+      border: 3px dotted #b8aaa0;
+    }
+
+
+
+   .part-a-text {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+   
+.part-a-word {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+
+.part-a-number {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  margin-bottom: 3px;
+}
+
+  
+.part-a-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.part-a-answer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.part-b-answer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.part-a-answer-list {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.check-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 30px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #514b43;
+  background: white;
+  border: 2px solid #8f847b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.part-a-answer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.part-a-answer-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.part-a-answer-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.part-a-answer-item input {
+  width: 150px;
+  height: 38px;
+  padding: 5px 8px;
+  font-size: 16px;
+  text-align: center;
+  border: 2px solid #aaa;
+  border-radius: 6px;
+  background: white;
+}
+
+
+
+    .part-a-answer-item input:focus {
+      outline: none;
+      border-color: #888;
+    }
+
+.result {
+  width: auto;
+  min-width: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.part-b-area {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+
+.part-b-item {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+
+.part-b-word {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+
+
+.part-b-number {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  margin-right: 3px;
+}
+
+
+
+
+.part-b-answer {
+  font-size: 18px;
+  
+}
+
+
+.part-a-answer {
+  font-size: 18px;
+}
+
+
+.b-name,
+.a-name,
+#oshiName1,
+#oshiName3 {
+  color: #d77b9a;
+}
+
+
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+ 
+  <div class="page">
+
+    <h1>Day.5　読みの練習</h1>
+
+  
+
+
+
+  <!-- 問題文 -->
+  <div class="part-a-text">
+
+
+<strong class="a-name"></strong>と<strong class="b-name"></strong>の<span class="part-a-word"><span class="part-a-number">①</span>演技</span>練習<br>
+<br>
+
+<strong class="a-name"></strong>「<span class="part-a-word"><span class="part-a-number">②</span>検査</span>が終わりました。<span class="part-a-word"><span class="part-a-number">③</span>殺人犯</span>は…彼で間違いないかと。」<br>
+
+
+<strong class="b-name"></strong>「そうか…。まさか初<span class="part-a-word"><span class="part-a-number">④</span>公判</span>前にこんな事実が分かるとは…。」<br>
+
+
+<strong class="a-name"></strong>「<span class="part-a-word"><span class="part-a-number">⑤</span>証</span><ruby>拠<rt>こ</rt></ruby>として<span class="part-a-word"><span class="part-a-number">⑥</span>採用</span>されるでしょうか。」<br>
+
+
+<strong class="b-name"></strong>「もちろんだ。<ruby>遺族<rt>いぞく</rt></ruby>も君に<span class="part-a-word"><span class="part-a-number">⑦</span>感謝</span>するだろう。」
+
+
+
+  </div>
+
+<div class="part-a-area">
+
+
+  <!-- 解答エリア -->
+ <div class="part-a-answer-area">
+
+    <div class="part-a-answer-list">
+
+      <div class="part-a-answer-column">
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">①</span>
+          <input type="text" id="answer1" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result1"></span>
+        </div>
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">④</span>
+          <input type="text" id="answer4" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result4"></span>
+        </div>
+
+   <div class="part-a-answer-item">
+          <span class="part-a-answer-number">⑦</span>
+          <input type="text" id="answer7" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result7"></span>
+        </div>
+
+
+      </div>
+
+      <div class="part-a-answer-column">
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">②</span>
+          <input type="text" id="answer2" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result2"></span>
+        </div>
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">⑤</span>
+          <input type="text" id="answer5" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result5"></span>
+        </div>
+
+      </div>
+
+<div class="part-a-answer-column">
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">③</span>
+          <input type="text" id="answer3" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result3"></span>
+        </div>
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">⑥</span>
+          <input type="text" id="answer6" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result6"></span>
+        </div>
+
+      </div>
+
+
+    </div> 
+
+<br>
+
+   <button
+  type="button"
+  class="check-button"
+  onclick="checkAnswers()">
+  答え合わせ
+</button>
+
+<button
+  type="button"
+  class="check-button"
+  onclick="showReadingAnswer()">
+  正解を見る
+</button>
+
+<br>
+<div id="part-a-answer" class="part-a-answer"></div>
+
+  </div>
+
+
+
+
+
+
+<script>
+
+const savedSettings =
+  localStorage.getItem("oshiDoriSettings");
+
+let oshiSettings = null;
+
+let mainName = "あなた";
+let oshiNames = [];
+
+
+if (savedSettings) {
+  try {
+    oshiSettings = JSON.parse(savedSettings);
+  } catch (error) {
+    console.log("推し設定の読み込みに失敗しました。");
+  }
+}
+
+
+if (oshiSettings && oshiSettings.mainCharacter) {
+  mainName = oshiSettings.mainCharacter;
+}
+
+
+function prepareOshiNames() {
+
+  if (
+    oshiSettings &&
+    oshiSettings.names &&
+    oshiSettings.names.length > 0
+  ) {
+    oshiNames = [...oshiSettings.names];
+
+  } else {
+
+    oshiNames = [
+      "はる",
+      "あき",
+      "そら",
+      "ゆう",
+      "りん",
+      "なお",
+      "けい",
+      "まお",
+      "つばさ",
+      "ひなた"
+    ];
+  }
+
+  oshiNames.sort(() => Math.random() - 0.5);
+}
+
+
+function getNextOshiName() {
+
+  if (oshiNames.length === 0) {
+    prepareOshiNames();
+  }
+
+  return oshiNames.shift();
+}
+
+
+const oshiName1 = getNextOshiName();
+const oshiName2 = getNextOshiName();
+
+
+document.querySelectorAll(".a-name").forEach(element => {
+  element.textContent = oshiName1;
+});
+
+document.querySelectorAll(".b-name").forEach(element => {
+  element.textContent = oshiName2;
+});
+
+
+function checkAnswers() {
+
+  const answers = [
+    "えんぎ",
+    "けんさ",
+    "さつじんはん",
+    "こうはん",
+    "しょう",
+　 　"さいよう",
+    "かんしゃ" 
+];
+
+
+  for (let i = 0; i < answers.length; i++) {
+
+    const input =
+      document.getElementById("answer" + (i + 1));
+
+    const result =
+      document.getElementById("result" + (i + 1));
+
+    const userAnswer =
+      input.value.trim();
+
+
+    if (userAnswer === answers[i]) {
+
+      result.textContent = "○";
+      result.style.color = "red";
+
+    } else {
+
+     result.textContent = "× ";
+  result.style.color = "#555";
+
+    }
+
+  }
+
+}
+
+
+function showReadingAnswer() {
+
+  const answer =
+    document.getElementById("part-a-answer");
+
+  answer.innerHTML =
+    "① えんぎ　② けんさ　③ さつじんはん　④ こうはん　⑤ しょう<br>⑥ さいよう　⑦ かんしゃ";
+
+}
+
+</script>
+ 
+
+
+
+
+<!-- 書きの練習 -->
+
+<div class="part-b-section">
+
+  <h1>Day.5 書きの練習</h1>
+
+  <div class="part-b-area">
+
+    <div class="part-b-item">
+
+
+
+いつも応援してくれる皆様へ<br>
+<br>
+こんにちは。<strong id="oshiName3"></strong>です。<br>
+この度はミラクルニット<span class="part-b-word"><span class="part-b-number">①</span>しょう</span>をいただき<span class="part-b-word"><span class="part-b-number">②</span>よろこ</span>びの気持ちでいっぱいです！<br>
+<span class="part-b-word"><span class="part-b-number">③</span>あ</span>み物を始めたきっかけは、ある<span class="part-b-word"><span class="part-b-number">④</span>ふさい</span>がお<ruby>揃<rt>そろ</rt></ruby>いのセーターを着ていて、それが<span class="part-b-word"><span class="part-b-number">⑤</span>ひじょう</span>に<span class="part-b-word"><span class="part-b-number">⑥</span>すてき</span>で。<br>
+<span class="part-b-word"><span class="part-b-number">⑦</span>きんちょう</span>しながらお声をかけたら手編みだと教えてくれたんです。<br>
+集中してると<span class="part-b-word"><span class="part-b-number">⑧</span>せいしん</span>も安定しますし、これからも楽しみたいです。
+
+    </div>
+
+  </div>
+
+<div class="part-b-answer-area">
+
+  <button
+    type="button"
+    class="check-button"
+    onclick="showWritingAnswer()">
+    正解を見る
+  </button><br>
+
+  <div id="part-b-answer" class="part-b-answer"></div>
+
+</div> 
+
+</div>
+
+<script>
+
+
+const oshiName3 = getNextOshiName();
+document.getElementById("oshiName3").textContent = oshiName3;
+
+function showWritingAnswer() {
+
+  const answer = document.getElementById("part-b-answer");
+
+  answer.innerHTML =
+    "① 賞　② 喜　③ 編　④ 夫妻　⑤ 非常　⑥ 素敵　⑦ 緊張　⑧ 精神";
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

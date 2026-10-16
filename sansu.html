@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>算数</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -14,122 +16,391 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background: white;
-      color: black;
+      background: #f1eadf;
+      color: #514b43;
     }
+
+
+    /* =========================
+       ページ全体
+       ========================= */
 
     .container {
       display: flex;
       max-width: 1000px;
       margin: 30px auto;
-      border: 1px solid black;
+      background: #fffaf0;
+      border: 2px solid #aaa095;
+      border-radius: 8px;
+      overflow: hidden;
     }
+
+
+    /* =========================
+       左メニュー
+       ========================= */
 
     .side-menu {
       width: 250px;
-      padding: 20px;
-      border-right: 1px solid black;
+      padding: 25px 20px;
+      background: #fffdf9;
+      border-right: 2px dotted #aaa095;
+      flex-shrink: 0;
     }
 
-   .content {
-  flex: 1;
-  padding: 0;
+
+    .side-title {
+      margin: 0 0 20px;
+      padding-bottom: 12px;
+      text-align: center;
+      font-size: 26px;
+      border-bottom: 2px dotted #aaa095;
+    }
+
+ .home-button {
+  display:block;
+  margin-top:35px;
+  text-align:center;
 }
 
-.content iframe {
-  width: 100%;
-  height: 900px;
-  border: none;
+.home-button img {
+  display:block;
+  width:120px;
+  height:auto;
+  margin:0 auto;
 }
+
+
+
+
+    /* =========================
+       推し設定
+       ========================= */
+
+    .setting-link {
+      display: block;
+      margin-bottom: 20px;
+      padding: 12px 10px;
+      text-align: center;
+      border: 1px solid #c98aa8;
+      border-radius: 6px;
+      background: #f3d6e4;
+      color: #514b43;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+
+    .setting-link:hover {
+      background: #edd0df;
+    }
+
+
+
+    /* =========================
+       学年メニュー
+       ========================= */
+
+    .grade {
+      margin-top: 10px;
+    }
 
 
     .grade summary {
       cursor: pointer;
+      padding: 12px;
+      border: 2px solid #aaa095;
+      border-radius: 6px;
+      background: #fffaf0;
       font-weight: bold;
-      padding: 8px;
-      border: 1px solid black;
+      text-align: center;
+      list-style-position: inside;
     }
 
-    .side-menu a {
-      display: block;
-      padding: 8px;
-      color: black;
+
+    .grade summary:hover {
+      background: #f5eee5;
     }
+
+
+    /* =========================
+       単元リンク
+       ========================= */
+
+    .unit-menu {
+      margin-top: 10px;
+    }
+
+
+    .unit-menu a {
+      display: block;
+      margin-bottom: 8px;
+      padding: 11px 12px;
+      border: 1px solid #c8beb5;
+      border-radius: 6px;
+      background: white;
+      color: #514b43;
+      text-decoration: none;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+
+    .unit-menu a:hover {
+      background: #f3d6e4;
+      border-color: #c98aa8;
+    }
+
+
+    /* =========================
+       右側コンテンツ
+       ========================= */
+
+    .content {
+      flex: 1;
+      min-width: 0;
+      background: #fffaf0;
+    }
+
+.top-setting {
+  width: 220px;
+  margin: 5px auto 25px;
+}
+
+    /* =========================
+       最初の案内
+       ========================= */
+
+    #top-message {
+      padding: 50px 35px;
+      text-align: center;
+    }
+
+
+    .page-title {
+      margin: 0 0 20px;
+      font-size: 32px;
+    }
+
+
+    .top-description {
+      margin: 12px 0;
+      line-height: 1.9;
+    }
+
+
+    .top-note {
+      margin-top: 30px;
+      padding: 18px;
+      border: 1px solid #aaa095;
+      border-radius: 6px;
+      background: white;
+      line-height: 1.8;
+    }
+
+
+    /* =========================
+       iframe
+       ========================= */
+
+    .content iframe {
+      display: none;
+      width: 100%;
+      height: 900px;
+      border: none;
+      background: white;
+    }
+
+
+    /* =========================
+       スマホ
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .container {
+        display: block;
+        margin: 15px;
+      }
+
+      .side-menu {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px dotted #aaa095;
+      }
+
+      .side-title {
+        font-size: 24px;
+      }
+
+      #top-message {
+        padding: 35px 20px;
+      }
+
+      .page-title {
+        font-size: 28px;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
+
   <div class="container">
+
+
+    <!-- =========================
+         左メニュー
+         ========================= -->
 
     <aside class="side-menu">
 
+      <h2 class="side-title">
+        算数
+      </h2>
 
-      <h2>算数</h2>
 
- <a href="setting.html" target="math-content">★ 推し設定</a>
+      <a
+        href="setting.html"
+        target="math-content"
+        class="setting-link">
+
+        推し設定
+
+      </a>
+
 
       <details class="grade">
 
-        <summary>5年生</summary>
+        <summary>
+          5年生
+        </summary>
+
 
         <div class="unit-menu">
 
-          <a href="sa1.html" target="math-content">偶数と奇数</a>
+          <a
+            href="sa1.html"
+            target="math-content">
 
-          <a href="sa2.html" target="math-content">約数と倍数</a>
+            偶数と奇数
 
-          <a href="sa3.html" target="math-content">少数の掛け算</a>
-<a href="sa4.html" target="math-content">少数の割り算</a>
+          </a>
+
+
+          <a
+            href="sa2.html"
+            target="math-content">
+
+            約数と倍数
+
+          </a>
+
+
+          <a
+            href="sa3.html"
+            target="math-content">
+
+            小数の掛け算
+
+          </a>
+
+
+          <a
+            href="sa4.html"
+            target="math-content">
+
+            小数の割り算
+
+          </a>
+
 
         </div>
 
       </details>
 
+ <a href="index.html" class="home-button">
+  <img src="home.png" alt="HOME">
+</a>
+
+
     </aside>
 
 
-<main class="content">
 
-  <div id="top-message">
+    <!-- =========================
+         右側
+         ========================= -->
 
-    <h1>推しドリ！算数</h1>
+    <main class="content">
 
-    <p>好きな単元を選んで、問題に挑戦してね！</p>
 
-    <p>★ 推し設定をすると、問題の中に推しが登場するよ！</p>
+      <!-- 最初に表示する案内 -->
 
-    <p>左のメニューから単元を選んでね。</p>
+
+<div id="top-message">
+
+  <p class="top-description">
+    まずはここから！
+  </p>
+
+  <a href="setting.html" target="math-content" class="setting-link top-setting">
+    推し設定
+  </a>
+
+  <p class="top-description">
+   「推し設定」ができたら、<br>
+    好きな単元を選んで問題に挑戦してね！
+  </p>
+
+</div>
+
+
+      <!-- 問題ページを表示 -->
+
+      <iframe
+        name="math-content">
+      </iframe>
+
+
+    </main>
+
 
   </div>
 
- <iframe
-  name="math-content">
-</iframe>
-
-</main>
 
 
-  </div>
+  <script>
 
-<script>
+    const links =
+  document.querySelectorAll("a[target='math-content']");
 
-  const links = document.querySelectorAll(".side-menu a");
-  const topMessage = document.getElementById("top-message");
-  const iframe = document.querySelector(".content iframe");
+    const topMessage =
+      document.getElementById("top-message");
 
-  links.forEach(function(link) {
+    const iframe =
+      document.querySelector(".content iframe");
 
-    link.addEventListener("click", function() {
 
-      topMessage.style.display = "none";
-      iframe.style.display = "block";
+    links.forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        topMessage.style.display = "none";
+
+        iframe.style.display = "block";
+
+      });
 
     });
 
-  });
+  </script>
 
-</script>
 
 </body>
 

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>読みの練習｜推しドリ！</title>
+  <title>Day.1</title>
 
   <style>
 
@@ -19,6 +19,7 @@
       background: #f1eadf;
       color: #514b43;
     }
+
 
     .page {
       max-width: 800px;
@@ -35,24 +36,16 @@
       border: 3px dotted #b8aaa0;
     }
 
-    .question-area {
-      background: #fffaf0;
-      border: 3px dotted #b8aaa0;
-      padding: 30px;
-    }
 
 
-
-    .story-text {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: 20px;
-      line-height: 1.8;
-      letter-spacing: 0.08em;
-    }
+   .part-a-text {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
 
    
-.reading-word {
+.part-a-word {
   font-weight: bold;
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -60,7 +53,7 @@
 }
 
 
-.reading-number {
+.part-a-number {
   display: inline-block;
   font-size: 12px;
   font-weight: normal;
@@ -70,22 +63,21 @@
 }
 
   
-.story-area {
+.part-a-area {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
   margin-bottom: 30px;
 }
 
-.answer-area {
+.part-a-answer-area {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.answer-list {
+.part-a-answer-list {
   display: flex;
   gap: 25px;
   margin-top: 20px;
@@ -93,7 +85,7 @@
 
 .check-button {
   display: block;
-  margin: 20px 0 0;
+  margin: 20px auto 0;
   padding: 12px 30px;
   font-size: 17px;
   font-weight: bold;
@@ -105,27 +97,27 @@
 }
 
 
-.answer-column {
+.part-a-answer-column {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
 
-.answer-item {
+.part-a-answer-item {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
 
-.answer-number {
+.part-a-answer-number {
   font-size: 18px;
   font-weight: bold;
 }
 
 
-.answer-item input {
+.part-a-answer-item input {
   width: 150px;
   height: 38px;
   padding: 5px 8px;
@@ -138,38 +130,35 @@
 
 
 
-    .answer-item input:focus {
+    .part-a-answer-item input:focus {
       outline: none;
       border-color: #888;
     }
 
-
 .result {
-  width: 24px;
-  font-size: 24px;
+  width: auto;
+  min-width: 24px;
+  font-size: 16px;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
+  white-space: nowrap;
 }
 
-
-
-.writing-area {
-  writing-mode: horizontal-tb;
-  text-orientation: mixed;
+.part-b-area {
   font-size: 20px;
   line-height: 1.8;
   letter-spacing: 0.08em;
 }
 
 
-.writing-item {
+.part-b-item {
   font-size: 20px;
   line-height: 1.8;
   letter-spacing: 0.08em;
 }
 
 
-.writing-word {
+.part-b-word {
   display: inline-block;
   font-weight: bold;
   text-decoration: underline;
@@ -179,7 +168,7 @@
 
 
 
-.writing-number {
+.part-b-number {
   display: inline-block;
   font-size: 12px;
   font-weight: normal;
@@ -191,7 +180,7 @@
 
 
 
-.writing-answer {
+.part-b-answer {
   margin-top: 25px;
   text-align: center;
   font-size: 24px;
@@ -199,28 +188,21 @@
 }
 
 
+#part-a-answer {
+  font-size: 18px;
+}
+
+.letter-name,
+.friend-name,
+#oshiName1,
+#oshiName3,
+#mainName
+
+ {
+  color: #d77b9a;
+}
 
 
-
-
-
- 
-
-    @media (max-width: 600px) {
-
-      .page {
-        padding: 10px;
-      }
-
-      .question-area {
-        padding: 20px 10px;
-      }
-
-      .story-text {
-        font-size: 20px;
-      }
-
-    }
 
   </style>
 
@@ -229,56 +211,105 @@
 
 <body>
 
+ 
   <div class="page">
 
-    <h1>読みの練習</h1>
+    <h1>Day.1　読みの練習</h1>
 
   
-<div class="story-area">
+
+
+
+  <!-- 問題文 -->
+  <div class="part-a-text">
+
+
+
+      <strong id="oshiName1"></strong>の日記<br>
+    <br>
+
+    今日は<strong class="friend-name"></strong>と「<span class="part-a-word"><span class="part-a-number">①</span>金属</span>の世界<ruby>展<rt>てん</rt></ruby>」というイベントにでかけました。<br>
+
+    見学の途中で<strong class="friend-name"></strong>が「<ruby>喉<rt>のど</rt></ruby>が<ruby>渇<rt>かわ</rt></ruby>いたけど、お<span class="part-a-word"><span class="part-a-number">②</span>財布</span>忘れた。。。」<br>
+と言うので、<span class="part-a-word"><span class="part-a-number">③</span>炭酸</span>飲料を買ってあげました。<br>
+
+    お金を出してあげたら<strong class="friend-name"></strong>はニッコリ笑って<br>
+「ラッキー!ありがと!」なんて言ってました。<br>
+    まったく、もう。<br>
+<br>
+    <ruby>展示<rt>てんじ</rt></ruby>で一番気になったのは、<span class="part-a-word"><span class="part-a-number">④</span>銅</span>でできた<span class="part-a-word"><span class="part-a-number">⑤</span>貯金箱</span>でした。<br>
+
+    ピカピカでお金がたくさん<span class="part-a-word"><span class="part-a-number">⑥</span>貯</span>まりそうだなぁと思いました。
+
+  </div>
+
+</div>
+
+
+<div class="part-a-area">
+
 
   <!-- 解答エリア -->
-  <div class="answer-area">
 
-    <div class="answer-list">
+  <div class="part-a-answer-area">
 
-      <div class="answer-column">
+    <div class="part-a-answer-list">
 
-        <div class="answer-item">
-          <span class="answer-number">①</span>
+       <div class="part-a-answer-column">
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">①</span>
           <input type="text" id="answer1" inputmode="hiragana" autocomplete="off">
 <span class="result" id="result1"></span>
         </div>
 
-        <div class="answer-item">
-          <span class="answer-number">③</span>
-          <input type="text" id="answer3" inputmode="hiragana" autocomplete="off">
-<span class="result" id="result3"></span>
-        </div>
-
-        <div class="answer-item">
-          <span class="answer-number">⑤</span>
-          <input type="text" id="answer5" inputmode="hiragana" autocomplete="off">
-<span class="result" id="result5"></span>
-        </div>
-
-      </div>
-
-      <div class="answer-column">
-
-        <div class="answer-item">
-          <span class="answer-number">②</span>
-          <input type="text" id="answer2" inputmode="hiragana" autocomplete="off">
-<span class="result" id="result2"></span>
-        </div>
-
-        <div class="answer-item">
-          <span class="answer-number">④</span>
+  <div class="part-a-answer-item">
+          <span class="part-a-answer-number">④</span>
           <input type="text" id="answer4" inputmode="hiragana" autocomplete="off">
 <span class="result" id="result4"></span>
         </div>
 
-        <div class="answer-item">
-          <span class="answer-number">⑥</span>
+      </div>
+
+
+
+      <div class="part-a-answer-column">
+
+        
+
+<div class="part-a-answer-item">
+          <span class="part-a-answer-number">②</span>
+          <input type="text" id="answer2" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result2"></span>
+        </div>
+
+
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">⑤</span>
+          <input type="text" id="answer5" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result5"></span>
+        </div>
+
+
+
+
+      </div>
+
+<div class="part-a-answer-column">
+
+
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">③</span>
+          <input type="text" id="answer3" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result3"></span>
+        </div>
+
+
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">⑥</span>
           <input type="text" id="answer6" inputmode="hiragana" autocomplete="off">
 <span class="result" id="result6"></span>
         </div>
@@ -287,6 +318,8 @@
 
     </div>
 
+<br>
+
    <button
   type="button"
   class="check-button"
@@ -294,33 +327,20 @@
   答え合わせ
 </button>
 
-  </div>
+<button
+  type="button"
+  class="check-button"
+  onclick="showReadingAnswer()">
+  正解を見る
+</button>
 
-
-  <!-- 問題文 -->
-  <div class="story-text">
-
-
-
-      <strong id="oshiName1"></strong>の日記<br>
-    <br>
-
-    今日は<strong id="friend-Name"></strong>と「<span class="reading-word"><span class="reading-number">①</span>金属</span>の世界<ruby>展<rt>てん</rt></ruby>」というイベントにでかけました。<br>
-
-    見学の途中で<strong class="friend-name"></strong>が「<ruby>喉<rt>のど</rt></ruby>が<ruby>渇<rt>かわ</rt></ruby>いたけど、お<span class="reading-word"><span class="reading-number">②</span>財布</span>忘れた。。。」<br>
-と言うので、<span class="reading-word"><span class="reading-number">③</span>炭酸</span>飲料を買ってあげました。<br>
-
-    お金を出してあげたら<strong class="friend-name"></strong>はニッコリ笑って<br>
-「得したー!ありがと!」なんて言ってました。<br>
-    まったく、もう。<br>
-<br>
-    <ruby>展示<rt>てんじ</rt></ruby>で一番気になったのは、<span class="reading-word"><span class="reading-number">④</span>銅</span>でできた<span class="reading-word"><span class="reading-number">⑤</span>貯金箱</span>でした。<br>
-
-    ピカピカでお金がたくさん<span class="reading-word"><span class="reading-number">⑥</span>貯</span>まりそうだなぁと思いました。
+<br><br>
+<div id="part-a-answer" class="part-a-answer"></div>
 
   </div>
 
-</div>
+
+
 
 
 
@@ -430,8 +450,8 @@ function checkAnswers() {
 
     } else {
 
-      result.textContent = "×";
-      result.style.color = "#555";
+     result.textContent = "× ";
+  result.style.color = "#555";
 
     }
 
@@ -440,23 +460,31 @@ function checkAnswers() {
 }
 
 
+function showReadingAnswer() {
 
-document.getElementById("mainName").textContent = mainName;
+  const answer =
+    document.getElementById("part-a-answer");
 
+  answer.innerHTML =
+    "① きんぞく　② さいふ　③ たんさん<br>　④ どう　⑤ ちょきんばこ　⑥ た";
+
+}
 
 </script>
  
 
 
+
+
 <!-- 書きの練習 -->
 
-<div class="writing-section">
+<div class="part-b-section">
 
-  <h1>書きの練習</h1>
+  <h1>Day.1 書きの練習</h1>
 
-  <div class="writing-area">
+  <div class="part-b-area">
 
-    <div class="writing-item">
+    <div class="part-b-item">
 
      
 <strong class="letter-name"></strong>へのファンレター<br>
@@ -465,25 +493,19 @@ document.getElementById("mainName").textContent = mainName;
 <strong class="letter-name"></strong>へ<br>
 <br>
 
-私はファン<span class="writing-word"><span class="writing-number">①</span>れき</span>10年の、<ruby>筋金<rt>すじがね</rt></ruby>入りの<strong class="letter-name"></strong>のファンです。<br>
-毎日<span class="writing-word"><span class="writing-number">②</span>ゆめ</span>に出てくるくらい、<strong class="letter-name"></strong>を
-<span class="writing-word"><span class="writing-number">③</span>ぜっさん</span>応援中です。<br>
+私はファン<span class="part-b-word"><span class="part-b-number">①</span>れき</span>10年の、<ruby>筋金<rt>すじがね</rt></ruby>入りの<strong class="letter-name"></strong>のファンです。<br>
+毎日<span class="part-b-word"><span class="part-b-number">②</span>ゆめ</span>に出てくるくらい、<strong class="letter-name"></strong>を
+<span class="part-b-word"><span class="part-b-number">③</span>ぜっさん</span>応援中です。<br>
 最近のトキメキポイントをお伝えしますね。<br>
-まず、ドラマで演じた<span class="writing-word"><span class="writing-number">④</span>ざいにん</span>の<ruby>姿<rt>すがた</rt></ruby>がアンニュイで素敵でした!<br>
-<ruby>役柄<rt>やくがら</rt></ruby>の<span class="writing-word"><span class="writing-number">⑤</span>せいふく</span>も似合ってましたよ。<br>
+まず、ドラマで演じた<span class="part-b-word"><span class="part-b-number">④</span>ざいにん</span>の<ruby>姿<rt>すがた</rt></ruby>がアンニュイで素敵でした!<br>
+<ruby>役柄<rt>やくがら</rt></ruby>の<span class="part-b-word"><span class="part-b-number">⑤</span>せいふく</span>も似合ってましたよ。<br>
 あと、計算が早いところ!<br>
-この前のバラエティで<span class="writing-word"><span class="writing-number">⑥</span>ぜいきん</span>を暗算してて、カッコ良すぎました。<br>
+この前のバラエティで<span class="part-b-word"><span class="part-b-number">⑥</span>ぜいきん</span>を暗算してて、カッコ良すぎました。<br>
 <br>
-まだまだ言い足りないけど、最近のトキメキポイントの<span class="writing-word"><span class="writing-number">⑦</span>ほうこく</span>でした。<br>
+まだまだ言い足りないけど、最近のトキメキポイントの<span class="part-b-word"><span class="part-b-number">⑦</span>ほうこく</span>でした。<br>
 またお手紙書きますね。<br>
 <br>
 <strong id="mainName"></strong>より
-
-
-
-
-
-
 
 
     </div>
@@ -497,7 +519,7 @@ document.getElementById("mainName").textContent = mainName;
     答えを見る
   </button>
 
-  <div id="writing-answer" class="writing-answer"></div>
+  <div id="part-b-answer" class="part-b-answer"></div>
 
 </div>
 
@@ -512,7 +534,7 @@ document.getElementById("mainName").textContent = mainName;
 
 function showWritingAnswer() {
 
-  const answer = document.getElementById("writing-answer");
+  const answer = document.getElementById("part-b-answer");
 
   answer.innerHTML =
     "① 歴　② 夢　③絶賛　④ 罪人　⑤制服　⑥税金　⑦報告";

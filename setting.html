@@ -5,128 +5,282 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>推し設定｜推しドリ！</title>
+  <title>推し設定</title>
 
-  <style>
+ <style>
+  * {
+    box-sizing: border-box;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #514b43;
+    background-color: #f1eadf;
+    line-height: 1.7;
+  }
 
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: white;
-      color: black;
-    }
+  /* 全体のパネル */
+  .setting-page {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fffaf0;
+    border: 4px dotted #b8aaa0;
+    border-radius: 18px;
+    box-shadow: 0 5px 0 #dfd3c5;
+  }
 
+  /* タイトル */
+  h1 {
+    margin: 0 0 15px;
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #68558b;
+    background: #f0e8fa;
+    border: 3px dotted #b9a5d5;
+    border-radius: 14px;
+    text-shadow: 1px 1px 0 white;
+  }
+
+  h2 {
+    margin-top: 32px;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    color: #66527e;
+    font-size: 21px;
+    background: #eee6f6;
+    border-left: 6px solid #b6a0d5;
+    border-radius: 5px 12px 12px 5px;
+  }
+
+  /* 最初の説明 */
+  .explanation {
+    margin: 20px 0 28px;
+    padding: 14px 18px;
+    text-align: center;
+    background: #fff;
+    border: 2px dotted #d6c6b6;
+    border-radius: 12px;
+  }
+
+  /* 名前入力欄 */
+  input[type="text"] {
+    width: 220px;
+    max-width: 100%;
+    padding: 9px 12px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #514b43;
+    background: #fff;
+    border: 2px solid #d8cabc;
+    border-radius: 9px;
+    outline: none;
+  }
+
+  input[type="text"]:focus {
+    border-color: #a995ce;
+    box-shadow: 0 0 0 3px #eee6f6;
+  }
+
+  input[type="text"]::placeholder {
+    color: #aaa09a;
+    opacity: 1;
+  }
+
+  input[type="radio"] {
+    accent-color: #8d78b5;
+    margin-right: 7px;
+    transform: scale(1.15);
+  }
+
+  /* 名前の行 */
+  .name-row {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .name-row label {
+    display: inline-block;
+    width: 35px;
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #79688f;
+  }
+
+  /* 主人公の入力欄 */
+  #mainCharacter {
+    width: 260px;
+  }
+
+  /* ランダム・優先のカード */
+  .mode {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border: 3px dotted #c7b6d9;
+    border-radius: 16px;
+    box-shadow: 0 3px 0 #eee4f2;
+  }
+
+  .mode-title {
+    margin: -4px 0 12px;
+    padding: 10px 12px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #655080;
+    background: #f3edfa;
+    border-radius: 10px;
+  }
+
+  .mode p {
+    margin: 10px 0 16px;
+  }
+
+  /* 名前リスト */
+  .name-list {
+    margin-top: 15px;
+    padding: 12px 15px;
+    background: #fbf7ff;
+    border-radius: 12px;
+  }
+
+  .name-list .name-row label {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee5f8;
+    border: 1px solid #d3c3e7;
+    border-radius: 50%;
+    color: #6b5789;
+  }
+
+  /* 名前についての注意 */
+  .notice {
+    margin-top: 30px;
+    padding: 18px 20px;
+    background: #fff8e8;
+    border: 2px dashed #d8bc85;
+    border-radius: 14px;
+  }
+
+  .notice strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #87672e;
+    font-size: 18px;
+  }
+
+  .notice p {
+    margin: 8px 0;
+  }
+
+  /* 保存結果・エラーメッセージ */
+  .error {
+    margin-top: 18px;
+    min-height: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #b14f55;
+  }
+
+  /* ボタン */
+  .buttons {
+    margin-top: 28px;
+    text-align: center;
+  }
+
+  button,
+  .home-button {
+    display: inline-block;
+    margin: 6px;
+    padding: 12px 22px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    color: #5d4b76;
+    background: #eee6f6;
+    border: 2px solid #b9a5d5;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  button:hover,
+  .home-button:hover {
+    background: #dfd1f0;
+    transform: translateY(-2px);
+  }
+
+  /* 保存ボタンを目立たせる */
+  button:first-child {
+    color: #fff;
+    background: #8974b1;
+    border-color: #8974b1;
+    box-shadow: 0 4px 0 #6e598f;
+  }
+
+  button:first-child:hover {
+    background: #77619f;
+  }
+
+  /* スマホ対応 */
+  @media (max-width: 600px) {
     .setting-page {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 30px;
-      border: 1px solid black;
+      margin: 12px;
+      padding: 16px;
+      border-width: 3px;
     }
 
     h1 {
-      margin-top: 0;
+      font-size: 25px;
+      padding: 12px 6px;
     }
 
     h2 {
-      margin-top: 30px;
-    }
-
-    .explanation {
-      margin-bottom: 25px;
+      font-size: 19px;
     }
 
     .mode {
-      margin: 15px 0;
-      padding: 15px;
-      border: 1px solid black;
-    }
-
-    .mode-title {
-      font-weight: bold;
-      margin-bottom: 10px;
+      padding: 13px;
     }
 
     .name-list {
-      margin-top: 15px;
-    }
-
-    .name-row {
-      margin: 8px 0;
-    }
-
-    .name-row label {
-      display: inline-block;
-      width: 35px;
+      padding: 10px;
     }
 
     input[type="text"] {
-      width: 220px;
-      padding: 7px;
-      font-size: 16px;
-      border: 1px solid #888;
-      background: white;
+      width: 100%;
+      min-width: 0;
     }
 
-    input[type="text"]::placeholder {
-      color: #999;
-      opacity: 1;
+    .name-row {
+      gap: 8px;
     }
 
-    input[type="radio"] {
-      margin-right: 5px;
+    .name-row label {
+      width: 30px;
     }
 
-    .default-names {
-      margin-top: 15px;
-      padding: 15px;
-      border: 1px solid #888;
-      background: #f7f7f7;
-    }
-
-    .default-names ul {
-      margin-bottom: 0;
-    }
-
-    .notice {
-      margin-top: 25px;
-      padding: 15px;
-      border: 1px solid black;
-    }
-
-    .error {
-      margin-top: 15px;
-      font-weight: bold;
-      min-height: 24px;
-    }
-
-    .buttons {
-      margin-top: 30px;
-      text-align: center;
+    #mainCharacter {
+      width: 100%;
     }
 
     button,
     .home-button {
-      display: inline-block;
-      padding: 10px 25px;
-      margin: 5px;
-      border: 1px solid black;
-      background: white;
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-      font-size: 16px;
+      padding: 11px 16px;
+      font-size: 15px;
     }
+  }
+</style>
 
-    button:hover,
-    .home-button:hover {
-      background: #eeeeee;
-    }
 
-  </style>
 
 </head>
 
@@ -321,11 +475,6 @@
       <p>
         ・主人公、推し、デフォルト名を含め、
         同じ名前を2回以上登録することはできません。
-      </p>
-
-      <p>
-        ・登録した名前が登場人数に足りない場合は、
-        デフォルト名で補われます。
       </p>
 
       <p>
