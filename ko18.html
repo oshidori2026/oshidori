@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Day.18</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f1eadf;
+      color: #514b43;
+    }
+
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      padding: 12px;
+      text-align: center;
+      font-size: 24px;
+      background: #fffaf0;
+      border: 3px dotted #b8aaa0;
+    }
+
+
+
+   .question-text {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+   
+.word {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+
+.number {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  margin-bottom: 3px;
+}
+
+
+  
+.part-a-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.answer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.part-a-answer-list {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.check-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 30px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #514b43;
+  background: white;
+  border: 2px solid #8f847b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.part-a-answer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.part-a-answer-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.part-a-answer-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.part-a-answer-item input {
+  width: 150px;
+  height: 38px;
+  padding: 5px 8px;
+  font-size: 16px;
+  text-align: center;
+  border: 2px solid #aaa;
+  border-radius: 6px;
+  background: white;
+}
+
+
+
+    .part-a-answer-item input:focus {
+      outline: none;
+      border-color: #888;
+    }
+
+.result {
+  width: auto;
+  min-width: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.part-b-area {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.answer {
+  font-size: 18px;
+}
+
+
+#oshiName4,
+#oshiName3,
+
+.a-name{
+  color: #d77b9a;
+}
+
+.b-name{
+  color: #d77b9a;
+}
+
+
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+ 
+  <div class="page">
+
+    <h1>Day.18　読みの練習</h1>
+
+  
+
+
+
+  <!-- 問題文 -->
+  <div class="question-text">
+
+
+<strong id="oshiName3"></strong>の日記<br>
+<br>
+今日は鎌倉に<span class="word"><span class="number">①</span>大仏</span>を見に行った。<br>
+雨の<span class="word"><span class="number">②</span>可能性</span>もあったけど、晴れて良かった。<br>
+景色が良いところに立ち<span class="word"><span class="number">③</span>寄</span>ったので、写生をすることにした。<br>
+ここが人気スポットなのも<ruby>納<rt>なっ</rt></ruby><span class="word"><span class="number">④</span>得</span>の美しさだった。<br>
+この世の物とは思えない空の色を描きたくて、たくさんの絵の具を<span class="word"><span class="number">⑤</span>混</span>ぜた。<br>
+心地よい風も吹いていて、それは描けないから心に<span class="word"><span class="number">⑥</span>留</span>めることにした。<br>
+良い休日だった。<br>
+
+
+  </div>
+
+<div class="part-a-area">
+
+
+  <!-- 解答エリア -->
+
+<div class="answer-area">
+
+    <div class="part-a-answer-list">
+
+      <div class="part-a-answer-column">
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">①</span>
+          <input type="text" id="answer1" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result1"></span>
+        </div>
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">④</span>
+          <input type="text" id="answer4" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result4"></span>
+        </div>
+
+
+      </div>
+
+      <div class="part-a-answer-column">
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">②</span>
+          <input type="text" id="answer2" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result2"></span>
+        </div>
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">⑤</span>
+          <input type="text" id="answer5" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result5"></span>
+        </div>
+
+
+
+
+
+      </div>
+
+<div class="part-a-answer-column">
+
+        <div class="part-a-answer-item">
+          <span class="part-a-answer-number">③</span>
+          <input type="text" id="answer3" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result3"></span>
+        </div>
+
+ <div class="part-a-answer-item">
+          <span class="part-a-answer-number">⑥</span>
+          <input type="text" id="answer6" inputmode="hiragana" autocomplete="off">
+<span class="result" id="result6"></span>
+        </div>
+
+
+       
+      </div>
+
+
+    </div> 
+
+<br>
+
+
+   <button
+  type="button"
+  class="check-button"
+  onclick="checkAnswers()">
+  答え合わせ
+</button>
+
+<button
+  type="button"
+  class="check-button"
+  onclick="showReadingAnswer()">
+  正解を見る
+</button>
+
+<br>
+<div id="part-a-answer" class="answer"></div>
+
+  </div>
+
+
+
+
+<script>
+
+
+const savedSettings =
+  localStorage.getItem("oshiDoriSettings");
+
+let oshiSettings = null;
+
+let mainName = "あなた";
+let oshiNames = [];
+
+
+if (savedSettings) {
+  try {
+    oshiSettings = JSON.parse(savedSettings);
+  } catch (error) {
+    console.log("推し設定の読み込みに失敗しました。");
+  }
+}
+
+
+if (oshiSettings && oshiSettings.mainCharacter) {
+  mainName = oshiSettings.mainCharacter;
+}
+
+
+function prepareOshiNames() {
+
+  if (
+    oshiSettings &&
+    oshiSettings.names &&
+    oshiSettings.names.length > 0
+  ) {
+    oshiNames = [...oshiSettings.names];
+
+  } else {
+
+    oshiNames = [
+      "はる",
+      "あき",
+      "そら",
+      "ゆう",
+      "りん",
+      "なお",
+      "けい",
+      "まお",
+      "つばさ",
+      "ひなた"
+    ];
+  }
+
+  oshiNames.sort(() => Math.random() - 0.5);
+}
+
+
+function getNextOshiName() {
+
+  if (oshiNames.length === 0) {
+    prepareOshiNames();
+  }
+
+  return oshiNames.shift();
+}
+
+const oshiName3 = getNextOshiName();
+document.getElementById("oshiName3").textContent = oshiName3;
+
+
+function checkAnswers() {
+
+  const answers = [
+    "だいぶつ",
+    "かのうせい",
+    "よ",
+    "とく",
+    "ま",
+    "とど"
+];
+
+
+  for (let i = 0; i < answers.length; i++) {
+
+    const input =
+      document.getElementById("answer" + (i + 1));
+
+    const result =
+      document.getElementById("result" + (i + 1));
+
+    const userAnswer =
+      input.value.trim();
+
+
+    if (userAnswer === answers[i]) {
+
+      result.textContent = "○";
+      result.style.color = "red";
+
+    } else {
+
+     result.textContent = "× ";
+  result.style.color = "#555";
+
+    }
+
+  }
+
+}
+
+
+function showReadingAnswer() {
+
+  const answer =
+    document.getElementById("part-a-answer");
+
+  answer.innerHTML =
+    "① だいぶつ　② かのうせい　③ よ　④ とく　⑤ ま　⑥ とど";
+
+}
+
+</script>
+ 
+
+
+<!-- 書きの練習 -->
+
+<div class="part-b-section">
+
+  <h1>Day.18 書きの練習</h1>
+
+  <div class="part-b-area">
+
+   <div class="question-text">
+
+
+<strong class="a-name"></strong>がテレビをつけると、最新人気急上昇中のアイドル<strong class="b-name"></strong>がテレビショッピングに出ていた。<br>
+<br>
+<strong class="b-name"></strong>「今日は特別な商品をご紹介です。一見普通に見えるこの石!!<span class="word"><span class="number">①</span>ざいしつ</span>は何だか分からないけど、とにかくパワーがすごいんです。」<br>
+
+<strong class="b-name"></strong>はそこらへんに転がってそうな、全くパワーを感じない石を手にニッコリしている。<br>
+
+<strong class="b-name"></strong>「これは持ってるだけで<span class="word"><span class="number">②</span>こうか</span>てきめん!この前、転びそうになったけど、おっとっとっ…ってでも転ばなくて。この石のおかげで<span class="word"><span class="number">③</span>すく</span>われました。」<br>
+<strong class="a-name"></strong>は胡散臭そうな目で画面を見つめている。<br>
+<strong class="b-name"></strong>「でも、粗末にしたら大変。<span class="word"><span class="number">④</span>ぎゃく</span>に<ruby>危<rt>き</rt></ruby><span class="word"><span class="number">⑤</span>けん</span>なことがおこりますからね。この前家に石を置き<ruby>忘<rt>わす</rt></ruby>れてしまって、そしたら、くしゃみをした瞬間に鼻水が出たのをみんなに見られてしまって…。」<br>
+<br>
+<strong class="a-name"></strong>は大きなため息をつき、そっとテレビを消した。
+
+
+
+
+
+
+    </div>
+
+  </div>
+
+<div class="answer-area">
+
+  <button
+    type="button"
+    class="check-button"
+    onclick="showWritingAnswer()">
+    正解を見る
+  </button><br>
+
+  <div id="part-b-answer" class="answer"></div>
+
+</div> 
+
+</div>
+
+<script>
+
+const oshiName1 = getNextOshiName();
+const oshiName2 = getNextOshiName();
+
+
+document.querySelectorAll(".a-name").forEach(element => {
+  element.textContent = oshiName1;
+});
+
+document.querySelectorAll(".b-name").forEach(element => {
+  element.textContent = oshiName2;
+});
+
+
+
+function showWritingAnswer() {
+
+  const answer = document.getElementById("part-b-answer");
+
+  answer.innerHTML =
+    "① 材質　② 効果　③ 救　④ 逆　⑤ 険";
+
+}
+
+
+const answerInputs = [
+  document.getElementById("answer1"),
+  document.getElementById("answer2"),
+  document.getElementById("answer3"),
+  document.getElementById("answer4"),
+  document.getElementById("answer5"),
+  document.getElementById("answer6")
+];
+
+answerInputs.forEach((input, index) => {
+  input.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+      event.preventDefault();
+
+      if (index < answerInputs.length - 1) {
+        answerInputs[index + 1].focus();
+      } else {
+        checkAnswers();
+      }
+    }
+
+  });
+});
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

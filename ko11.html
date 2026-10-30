@@ -236,7 +236,7 @@
 <strong class="a-name"></strong>は<span class="part-a-word"><span class="part-a-number">①</span>確</span>かめるように、<span class="part-a-word"><span class="part-a-number">②</span>再度</span>自分の<span class="part-a-word"><span class="part-a-number">③</span>綿</span>のTシャツを見下ろした。<br>
 やはり...<span class="part-a-word"><span class="part-a-number">④</span>破</span>けている。
 これは<span class="part-a-word"><span class="part-a-number">⑤</span>弁償</span>が必要かも知れない。<br>
-<strong class="a-name"></strong>は<span class="part-a-word"><span class="part-a-number">⑥</span>額</span>に<ruby>浮<rt>う</rt></ruby>かんだ汗を手の<ruby>甲<rt>こう</rt></ruby>で拭った。<br>
+<strong class="a-name"></strong>は<span class="part-a-word"><span class="part-a-number">⑥</span>額</span>に<ruby>浮<rt>う</rt></ruby>かんだ汗を手の<ruby>甲<rt>こう</rt></ruby>で<ruby>拭<rt>ぬぐ</tr></ruby>った。<br>
 <br>
 ー5分前のことー<br>
 <strong class="a-name"></strong>「ねぇ<strong class="b-name"></strong>、Tシャツ<span class="part-a-word"><span class="part-a-number">⑦</span>貸</span>してくれない？」<br>
@@ -494,7 +494,7 @@ function showReadingAnswer() {
 3歳のころ、勝手にバスに乗って遊びに行こうとして、バス<span class="part-b-word"><span class="part-b-number">②</span>てい</span>で<span class="part-b-word"><span class="part-b-number">③</span>ほご</span>されたことも。<ruby>困<rt>こま</rt></ruby>った子だよね。<br>
 中学に入ってからは<span class="part-b-word"><span class="part-b-number">④</span>ぶんぶりょうどう</span>を目指して、<span class="part-b-word"><span class="part-b-number">⑤</span>じゅぎょう</span>も熱心に受けたし、運動会では<span class="part-b-word"><span class="part-b-number">⑥</span>おうえんだん</span>も<span class="part-b-word"><span class="part-b-number">⑦</span>つと</span>めた。<br>
 その後も勉強が楽しくて、研究も楽しくて、大学院も<span class="part-b-word"><span class="part-b-number">⑧</span>しゅう</span><ruby>了<rt>りょう</rt></ruby>したよ。<br>
-みんなも<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>頑張<rt>がんば</rt></span>ろう!<br>
+みんなも<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>頑張<rt>がんば</rt></ruby>ろう!<br>
 
     </div>
 
@@ -533,7 +533,31 @@ function showWritingAnswer() {
 }
 
 
+const answerInputs = [
+  document.getElementById("answer1"),
+  document.getElementById("answer2"),
+  document.getElementById("answer3"),
+  document.getElementById("answer4"),
+  document.getElementById("answer5"),
+  document.getElementById("answer6"),
+  document.getElementById("answer7")
+];
 
+answerInputs.forEach((input, index) => {
+  input.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+      event.preventDefault();
+
+      if (index < answerInputs.length - 1) {
+        answerInputs[index + 1].focus();
+      } else {
+        checkAnswers();
+      }
+    }
+
+  });
+});
 
 </script>
 

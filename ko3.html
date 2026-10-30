@@ -508,8 +508,6 @@ document.querySelectorAll(".b-name").forEach(element => {
   element.textContent = oshiName4;
 });
 
-document.getElementById("mainName").textContent = mainName;
-
 
 function showWritingAnswer() {
 
@@ -519,6 +517,33 @@ function showWritingAnswer() {
     "① 増　② 白玉粉　③ 毒　④ 減　⑤ 肥　⑥ 禁　⑦ 暴飲暴食";
 
 }
+
+
+
+const answerInputs = [
+  document.getElementById("answer1"),
+  document.getElementById("answer2"),
+  document.getElementById("answer3"),
+  document.getElementById("answer4"),
+  document.getElementById("answer5"),
+  document.getElementById("answer6")
+];
+
+answerInputs.forEach((input, index) => {
+  input.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+      event.preventDefault();
+
+      if (index < answerInputs.length - 1) {
+        answerInputs[index + 1].focus();
+      } else {
+        checkAnswers();
+      }
+    }
+
+  });
+});
 
 </script>
 
